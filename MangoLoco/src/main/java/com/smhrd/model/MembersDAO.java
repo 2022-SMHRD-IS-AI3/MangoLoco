@@ -5,10 +5,10 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.mybatis.SqlSessionManager;
 
-public class MemberDAO {
+public class MembersDAO {
 private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	
-	public int join(MemberDTO dto) {
+	public int join(MembersDTO dto) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 	}
 }

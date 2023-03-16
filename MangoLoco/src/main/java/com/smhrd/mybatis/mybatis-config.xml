@@ -5,7 +5,8 @@
 <configuration>
 	<properties resource="com/smhrd/mybatis/db.properties"></properties>
 	<typeAliases>
-		<typeAlias type="com.smhrd.model.MemberDTO" alias="MemberDTO"/>
+		<typeAlias type="com.smhrd.model.MembersDTO" alias="MembersDTO"/>
+		
 	</typeAliases>
   <environments default="development">
     <environment id="development">
@@ -19,7 +20,8 @@
     </environment>
   </environments>
   <mappers>
-  	<mapper resource="com/smhrd/mapper/MemberMapper.xml"/>
+  	<mapper resource="com/smhrd/mapper/MembersMapper.xml"/>
+  	
   </mappers>
 </configuration>
 

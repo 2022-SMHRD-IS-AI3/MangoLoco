@@ -7,9 +7,9 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class MemberDTO {
+public class MembersDTO {
 	private String id;
 	private String pw;
 	private String nick;
-	private int money;
+	private int balance;
 }
