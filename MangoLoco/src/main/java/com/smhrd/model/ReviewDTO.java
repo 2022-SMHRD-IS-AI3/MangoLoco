@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class reveiwDTO {
+public class ReviewDTO {
 	private int 리뷰순번;
 	private int 제품순번;
 	private String 작성일자;
