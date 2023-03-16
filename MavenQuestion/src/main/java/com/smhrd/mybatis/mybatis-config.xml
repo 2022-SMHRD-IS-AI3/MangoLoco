@@ -4,9 +4,6 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<properties resource="com/smhrd/mybatis/db.properties"></properties>
-	<typeAliases>
-		<typeAlias type="com.smhrd.model.BookDTO" alias="BookDTO"/>
-	</typeAliases>
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC" />
@@ -18,7 +15,4 @@
 			</dataSource>
 		</environment>
 	</environments>
-	<mappers>
-		<mapper resource="com/smhrd/mapper/BookMemberMapper.xml" />
-	</mappers>
 </configuration>
