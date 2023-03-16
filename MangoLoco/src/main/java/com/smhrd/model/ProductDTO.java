@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class NotebookDTO {
+public class ProductDTO {
 	private int num;
 	private String modelname;
 	private String 제조사;
