@@ -6,6 +6,16 @@
 	<properties resource="com/smhrd/mybatis/db.properties"></properties>
 	<typeAliases>
 		<typeAlias type="com.smhrd.model.MembersDTO" alias="MembersDTO"/>
+		<typeAlias type="com.smhrd.model.ProductDTO" alias="ProductDTO"/>
+		<typeAlias type="com.smhrd.model.ReviewDTO" alias="ReviewDTO"/>
+		<typeAlias type="com.smhrd.model.BoardDTO" alias="BoardDTO"/>
+		<typeAlias type="com.smhrd.model.ReplyDTO" alias="ReplyDTO"/>
+		<typeAlias type="com.smhrd.model.GamesDTO" alias="GamesDTO"/>
+		<typeAlias type="com.smhrd.model.Game_HistoryDTO" alias="Game_HistoryDTO"/>
+		<typeAlias type="com.smhrd.model.CouponsDTO" alias="CouponsDTO"/>
+		<typeAlias type="com.smhrd.model.Coupon_HistoryDTO" alias="Coupon_HistoryDTO"/>
+		<typeAlias type="com.smhrd.model.Shop_BasketDTO" alias="Shop_BasketDTO"/>
+		<typeAlias type="com.smhrd.model.PointsDTO" alias="PointsDTO"/>
 		
 	</typeAliases>
   <environments default="development">
@@ -21,6 +31,16 @@
   </environments>
   <mappers>
   	<mapper resource="com/smhrd/mapper/MembersMapper.xml"/>
+  	<mapper resource="com/smhrd/mapper/ProductMapper.xml"/>
+  	<mapper resource="com/smhrd/mapper/ReviewMapper.xml"/>
+  	<mapper resource="com/smhrd/mapper/BoardMapper.xml"/>
+  	<mapper resource="com/smhrd/mapper/ReplyMapper.xml"/>
+  	<mapper resource="com/smhrd/mapper/GamesMapper.xml"/>
+  	<mapper resource="com/smhrd/mapper/Game_HistoryMapper.xml"/>
+  	<mapper resource="com/smhrd/mapper/CouponsMapper.xml"/>
+  	<mapper resource="com/smhrd/mapper/Coupon_HistoryMapper.xml"/>
+  	<mapper resource="com/smhrd/mapper/Shop_BasketMapper.xml"/>
+  	<mapper resource="com/smhrd/mapper/PointsMapper.xml"/>
   	
   </mappers>
 </configuration>
