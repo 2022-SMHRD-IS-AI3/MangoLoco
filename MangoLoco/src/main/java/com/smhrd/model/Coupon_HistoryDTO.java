@@ -8,11 +8,12 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 
-public class BoardDTO {
+public class Coupon_HistoryDTO {
 	private int seq;
+	private int c_seq;
 	private String id;
-	private String nick;
-	private String title;
-	private String content;
-	private String b_date;
+	private int classification;
+	private String get_date;
+	private String use_date;
+	
 }

@@ -8,11 +8,12 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 
-public class BoardDTO {
+public class ReplyDTO {
 	private int seq;
+	private int b_seq;
 	private String id;
 	private String nick;
-	private String title;
 	private String content;
-	private String b_date;
+	private String r_date;
+
 }

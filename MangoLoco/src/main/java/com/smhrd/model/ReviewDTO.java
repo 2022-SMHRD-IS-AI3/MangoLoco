@@ -8,9 +8,9 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class ReviewDTO {
-	private int 리뷰순번;
-	private int 제품순번;
-	private String 작성일자;
-	private String 제목;
-	private String 내용;
+	private int seq;
+	private int pro_seq;
+	private String r_date;
+	private String title;
+	private String content;
 }

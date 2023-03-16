@@ -8,11 +8,10 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 
-public class BoardDTO {
+public class Shop_BasketDTO {
 	private int seq;
+	private int classification;
 	private String id;
-	private String nick;
-	private String title;
-	private String content;
-	private String b_date;
+	private String p_seq;
+	private String s_date;
 }
