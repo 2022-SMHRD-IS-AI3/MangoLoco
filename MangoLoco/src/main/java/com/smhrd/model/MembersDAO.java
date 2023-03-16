@@ -10,5 +10,6 @@ private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	
 	public int join(MembersDTO dto) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		return 0;
 	}
 }
