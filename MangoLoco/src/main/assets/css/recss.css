@@ -156,7 +156,7 @@
 .folder_btn {display:table-cell;vertical-align:middle;text-align:right}
 .folder_btn a {display:inline-block;width:40px;height:22px;margin-left:4px;text-align:center;line-height:24px;border:1px solid #b9bec5;background:#fff;color:#33383e;font-size:11px;}
 .folder_btn a:hover {text-decoration:none;}
-.folder_btn < a:hover, .folder_btn < a:active {color:#33383e}
+.folder_btn > a:hover, .folder_btn > a:active {color:#33383e}
 .folder_btn .btn_enter:hover, .folder_btn .btn_enter:hover {color:#fff;}
 .folder_btn .btn_enter {background:#33383e;color:#fff;border-color:#33383e;}
 .layer_container .srh_input[type=text]::-webkit-input-placeholder {color:#919191;font-weight:normal;}
