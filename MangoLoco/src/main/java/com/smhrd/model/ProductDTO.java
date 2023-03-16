@@ -8,11 +8,11 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class ProductDTO {
-	private int num;
-	private String modelname;
-	private String 제조사;
-	private String 사용처;
+	private int seq;
+	private String model;
+	private String company;
 	private String cpu;
+	private String graphic;
 	private int price;
-	private int cnt;
+	private int count;
 }

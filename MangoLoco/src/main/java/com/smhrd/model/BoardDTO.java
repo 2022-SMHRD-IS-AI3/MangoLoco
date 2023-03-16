@@ -9,9 +9,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 
 public class BoardDTO {
-	private int 게시판순번;
+	private int seq;
 	private String id;
-	private String 제목;
-	private String 내용;
-	private String 작성일;
+	private String nick;
+	private String title;
+	private String content;
+	private String b_date;
 }

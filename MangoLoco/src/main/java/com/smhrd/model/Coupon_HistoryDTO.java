@@ -7,10 +7,13 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class ReviewDTO {
+
+public class Coupon_HistoryDTO {
 	private int seq;
-	private int pro_seq;
-	private String r_date;
-	private String title;
-	private String content;
+	private int c_seq;
+	private String id;
+	private int classification;
+	private String get_date;
+	private String use_date;
+	
 }

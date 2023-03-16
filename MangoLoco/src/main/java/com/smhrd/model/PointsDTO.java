@@ -7,10 +7,11 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class ReviewDTO {
+
+public class PointsDTO {
 	private int seq;
-	private int pro_seq;
-	private String r_date;
-	private String title;
-	private String content;
+	private int classification;
+	private String id;
+	private String p_date;
+	private int price;
 }
