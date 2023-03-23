@@ -1,6 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.BoardDTO" %>
-<%-- <%@page import="com.smhrd.model.BoradDAO" %> --%>
+<%@page import="com.smhrd.model.BoardDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,8 +18,8 @@
 </head>
 <body>		
 	<%
-		/* BoardDAO dao = new BoradDAO(); */
-		/* List<BoardDTO> board_list = dao.BoardAll(); */
+		BoardDAO dao = new BoardDAO();
+		List<BoardDTO> board_list = dao.BoardAll();
 	%>
 			<!-- Q17. 게시글 목록 조회 기능 -->
 			<!-- Q18. 게시글 목록 세부페이지 기능(제목을 클릭하면 세부페이지 BoardDetail.jsp로 이동)-->
@@ -31,14 +31,14 @@
 						<td>작성자</td>
 						<td>시간</td>
 					</tr>
-					<%-- <%for(int i=0; i<board_list.size(); i++){ %>
+					<%for(int i=0; i<board_list.size(); i++){ %>
 					<tr>
 						<td><%=i+1 %></td>
 						<td><a href="BoardDetail.jsp?num=<%=board_list.get(i).getSeq()%>"><%=board_list.get(i).getTitle() %></a></td>
 						<td><%=board_list.get(i).getNick() %></td>
 						<td><%=board_list.get(i).getB_date() %></td>
 					</tr>
-					<%} %> --%>
+					<%} %>
 				
 				</table>
 				

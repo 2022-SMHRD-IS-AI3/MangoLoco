@@ -1,5 +1,5 @@
 <%@page import="com.smhrd.model.BoardDTO" %>
-<%-- <%@page import="com.smhrd.model.BoardDAO" %> --%>
+<%@page import="com.smhrd.model.BoardDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,13 +17,13 @@
 <body>
 	<%
 		int num = Integer.parseInt(request.getParameter("num"));
-		/* BoardDAO dao = new BoardDAO(); */
-		/* BoardDTO board_detail = dao.BoardDetail(num); */
+		BoardDAO dao = new BoardDAO();
+		BoardDTO board_detail = dao.BoardDetail(num);
 	%>
 			<!-- Q19. 게시글 세부내용 조회 기능 -->	
 			<div id = "board">
 				<table id="list">
-					<%-- <tr>
+					<tr>
 						<td>제목</td>
 						<td><%=board_detail.getTitle() %></td>
 					</tr>
@@ -37,12 +37,12 @@
 					<tr>
 						<td colspan="2">
 							<%=board_detail.getContent() %>
-							<img alt="이미지" src="./file/<%=board_detail.getFilename()%>">
+							<%-- <img alt="이미지" src="./file/<%=board_detail.getFilename()%>"> --%>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2"><a href="BoardMain.jsp"><button>뒤로가기</button></a></td>
-					</tr> --%>
+					</tr>
 				</table>
 			</div>
 			<!-- Scripts -->
