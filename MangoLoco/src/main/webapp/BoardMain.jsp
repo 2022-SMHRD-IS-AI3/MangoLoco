@@ -1,6 +1,6 @@
 <%@page import="java.util.List"%>
-<%@page import="com.smhrd.model.BoradDTO" %>
-<%@page import="com.smhrd.model.BoradDAO" %>
+<%@page import="com.smhrd.model.BoardDTO" %>
+<%-- <%@page import="com.smhrd.model.BoradDAO" %> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,8 +18,8 @@
 </head>
 <body>		
 	<%
-		BoradDAO dao = new BoradDAO();
-		List<BoradDTO> board_list = dao.BoardAll();
+		/* BoardDAO dao = new BoradDAO(); */
+		/* List<BoardDTO> board_list = dao.BoardAll(); */
 	%>
 			<!-- Q17. 게시글 목록 조회 기능 -->
 			<!-- Q18. 게시글 목록 세부페이지 기능(제목을 클릭하면 세부페이지 BoardDetail.jsp로 이동)-->
