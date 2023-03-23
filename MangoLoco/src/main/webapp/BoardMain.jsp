@@ -31,14 +31,14 @@
 						<td>작성자</td>
 						<td>시간</td>
 					</tr>
-					<%for(int i=0; i<board_list.size(); i++){ %>
+					<%-- <%for(int i=0; i<board_list.size(); i++){ %>
 					<tr>
 						<td><%=i+1 %></td>
 						<td><a href="BoardDetail.jsp?num=<%=board_list.get(i).getSeq()%>"><%=board_list.get(i).getTitle() %></a></td>
 						<td><%=board_list.get(i).getNick() %></td>
 						<td><%=board_list.get(i).getB_date() %></td>
 					</tr>
-					<%} %>
+					<%} %> --%>
 				
 				</table>
 				
