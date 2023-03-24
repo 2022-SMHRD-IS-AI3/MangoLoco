@@ -16,6 +16,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<delete id="BoardDelete">
-		delete*from board where nick=#{nick}
+		delete from board where nick=#{nick}
 	</delete>
 </mapper>
