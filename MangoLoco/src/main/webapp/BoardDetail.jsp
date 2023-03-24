@@ -41,7 +41,10 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2"><a href="BoardMain.jsp"><button>뒤로가기</button></a></td>
+						<td colspan="2"><a href="BoardMain.jsp"><button>목록보기</button></a></td>
+						<%if(board_detail.getNick().equals("")){ %>
+							<td colspan="2"><a href="BoardDelCon.do"><button>삭제</button></a></td>
+						<%} %>
 					</tr>
 				</table>
 			</div>

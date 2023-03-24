@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.Commend.Commend;
 import com.smhrd.controller.BoardWriteCon;
+import com.smhrd.controller.BoardDelCon;
 //import com.smhrd.controller.DeleteCon;
 //import com.smhrd.controller.JoinCon;
 //import com.smhrd.controller.LoginCon;
@@ -51,7 +52,10 @@ public class Frontcontroller extends HttpServlet {
 //		}else if(result.equals("DeleteCon.do")) {
 //			con = new DeleteCon();
 //			
-//		}else if(result.equals("WriteBoradCon.do")) {
+//		}else if(result.equals("BoardWriteCon.do")) {
+//			con = new BoardWriteCon();
+		
+//		}else if(result.equals("BoardDelCon.do")) {
 //			con = new BoardWriteCon();
 //		}
 		
