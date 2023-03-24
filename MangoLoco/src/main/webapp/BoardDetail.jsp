@@ -23,6 +23,7 @@
 			<!-- Q19. 게시글 세부내용 조회 기능 -->	
 			<div id = "board">
 				<table id="list">
+					<a href="BoardMain.jsp">자유게시판></a>
 					<tr>
 						<td>제목</td>
 						<td><%=board_detail.getTitle() %></td>
@@ -40,12 +41,12 @@
 							<%-- <img alt="이미지" src="./file/<%=board_detail.getFilename()%>"> --%>
 						</td>
 					</tr>
-					<tr>
-						<td colspan="2"><a href="BoardMain.jsp"><button>목록보기</button></a></td>
-						<%if(board_detail.getNick().equals("")){ %>
-							<td colspan="2"><a href="BoardDelCon.do"><button>삭제</button></a></td>
+						<%if(board_detail.getNick().equals("")||board_detail.getNick().equals("admin")){ %>
+						<tr>
+							<td><a href="BoardDelCon.do"><button>삭제</button></a></td>
+							<td><a href="BoardUpdate.jsp"><button>수정</button></a></td>
+						</tr>
 						<%} %>
-					</tr>
 				</table>
 			</div>
 			<!-- Scripts -->
