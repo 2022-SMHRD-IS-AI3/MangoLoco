@@ -15,7 +15,7 @@
 <body>
 			<!-- Q16. 게시글 작성 기능(작성된 게시글은 DB에 저장) - 파일업로드 cos.jar 사용 -->
 			<div id = "board">
-				<form action="WriteBoradCon.do" method="post" enctype="multipart/form-data">
+				<form action="BoardWriteCon.do" method="post" enctype="multipart/form-data">
 				<table id="list">
 					<tr>
 						<td>제목</td>
