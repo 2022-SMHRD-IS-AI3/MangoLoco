@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,31 +77,6 @@
 	<script src="assets/js/join.js"></script>
 
 	<script>
-	var data1 = {
-		'username' : $('#username').val(),
-		'email' : $('#email').val(),
-		'pw' : $('#password').val(),
-		'pw2' : $('#password2').val()
-	}
-
- 	$('#btn').on('click',function(){
- 		$.ajax({
-			type : 'post',
-			dataType : 'text',
-			data : 
-					"username=" + $('#username').val()+
-					"&email=" + $('#email').val()+
-					"&pw=" + $('#password').val()+
-					"&pw2=" + $('#password2').val()
-				,
-			url : 'MemberJoinCon',
-			seccess : function(data) {
-				alert('회원가입에 성공하였습니다');
-				location.replace('?id=${id}');
-			}
-
-		})
- 	})
 		
 	</script>
 </body>

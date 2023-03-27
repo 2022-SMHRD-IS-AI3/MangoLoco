@@ -21,7 +21,6 @@ public class CheckIdCon extends HttpServlet {
 		System.out.println(id);
 		MembersDAO dao = new MembersDAO();
 		String idcheck = dao.idCheck(id);
-		System.out.println("dsfad");
 		String isIdCheck = "false";
 		if(idcheck != null) {
 			isIdCheck ="true";

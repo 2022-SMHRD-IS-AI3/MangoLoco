@@ -119,7 +119,26 @@ form.addEventListener('submit', function(e) {
 		$('.password2').removeClass("shake");
 	}, 500);
 	if (isCR && isuCL && ispCL && isCPM && isDuplication) {
-		//ajax 데이터 전송
+		$.ajax({
+			type: 'post',
+			dataType: 'text',
+			data: "username=" + $('#username').val() + "&email="
+				+ $('#email').val() + "&pw="
+				+ $('#password').val() + "&pw2="
+				+ $('#password2').val(),
+			url: 'MemberJoinCon',
+			seccess: function(data) {
+				console.log(data);
+				console.log('sdasg');
+				alert('회원가입 성공');
+				/* window.location.href = "Main.html?id=${data}"; */
+			},
+			error: function() {
+				console.log("뭐야");
+				$('input').val('');
+			}
+
+		})
 	}
 });
 /*document.getElementById('emailCheck').addEventListener('click', function() { // 이 코드는 바로 밑의 ajax 코드로 변경!(중복확인)
@@ -138,15 +157,13 @@ form.addEventListener('submit', function(e) {
 		$('.password2').removeClass("shake");
 	}, 500);
 })*/
-$('#emailCheck').on(
-	{
-		'click': function() {
+$('#emailCheck').on({'click': function() {
 			if (checkEmail(email)) {
 
 				$.ajax({
 					url: "CheckIdCon",
-					type:'post',
-					data: "email="+ $('#email').val(),
+					type: 'post',
+					data: "email=" + $('#email').val(),
 					dataType: "text",
 					success: function(data) {
 						console.log(data);
@@ -155,7 +172,7 @@ $('#emailCheck').on(
 							// 중복 이메일 일때
 							isDuplication = false;
 							$('.email').children('.error-txt').removeClass('success');
-							showError(email,'중복된 이메일입니다');
+							showError(email, '중복된 이메일입니다');
 						} else {
 							// 사용 가능 이메일일때
 							$('.email .error-txt').addClass('success');
