@@ -99,7 +99,7 @@ CREATE TABLE COUPON_HISTORY (
 	FOREIGN KEY (C_SEQ) REFERENCES COUPONS (SEQ),
 	FOREIGN KEY (ID) REFERENCES MEMBERS (ID)
 )
-
+select c.* from coupons c, coupon_history ch where c.seq = ch.c_seq and classification = 1
 CREATE TABLE SHOP_BASKET (
 	SEQ NUMBER(10) PRIMARY KEY,
 	MODEL VARCHAR2(100),

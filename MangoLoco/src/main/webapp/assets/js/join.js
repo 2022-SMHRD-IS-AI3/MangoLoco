@@ -120,7 +120,6 @@ form.addEventListener('submit', function (e) {
   }, 500);
   if(isCR && isuCL && ispCL && isCPM && isDuplication){
     //ajax 데이터 전송
-    console.log('sdfsdf');
   }
 });
 document.getElementById('emailCheck').addEventListener('click',function(){ // 이 코드는 바로 밑의 ajax 코드로 변경!(중복확인)
