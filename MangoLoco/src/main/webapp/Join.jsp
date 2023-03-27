@@ -80,18 +80,24 @@
 	var data1 = {
 		'username' : $('#username').val(),
 		'email' : $('#email').val(),
-		'pw' : $('password').val(),
-		'pw2' : $('password2').val()
+		'pw' : $('#password').val(),
+		'pw2' : $('#password2').val()
 	}
+
  	$('#btn').on('click',function(){
  		$.ajax({
 			type : 'post',
 			dataType : 'text',
-			data : JSON.stringify(data1),
-			contentType: 'application/json; charset=utf-8',
-			url : 'JoinCon.do',
+			data : 
+					"username=" + $('#username').val()+
+					"&email=" + $('#email').val()+
+					"&pw=" + $('#password').val()+
+					"&pw2=" + $('#password2').val()
+				,
+			url : 'MemberJoinCon',
 			seccess : function(data) {
-				
+				alert('회원가입에 성공하였습니다');
+				location.replace('?id=${id}');
 			}
 
 		})

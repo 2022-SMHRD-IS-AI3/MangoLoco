@@ -1,5 +1,6 @@
 select * from USER_tables;
-
+select * from members
+insert into members values('aa@aa.aa','aaa','aaa',0)
 CREATE TABLE MEMBERS (
 	ID VARCHAR2(100) PRIMARY KEY,
 	PW VARCHAR2(100),

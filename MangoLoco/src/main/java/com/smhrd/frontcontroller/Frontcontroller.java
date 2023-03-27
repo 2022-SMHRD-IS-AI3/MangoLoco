@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.Commend.Commend;
 import com.smhrd.controller.BoardWriteCon;
-import com.smhrd.controller.JoinCon;
 import com.smhrd.controller.LoginCon;
 import com.smhrd.controller.BoardDelCon;
 //import com.smhrd.controller.DeleteCon;
@@ -38,11 +37,6 @@ public class Frontcontroller extends HttpServlet {
 		System.out.println("최종요청값 : "+result);
 		Commend con = null;
 		
-		if(result.equals("LoginCon.do")){
-			con = new LoginCon();
-		}else if(result.equals("JoinCon.do")) {
-			con = new JoinCon();
-		}
 //		if(result.equals("LoginCon.do")) {
 //
 //			con = new LoginCon();
