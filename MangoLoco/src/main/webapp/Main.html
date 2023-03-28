@@ -510,7 +510,7 @@
 	                        <div class="col-4 col-6-medium col-12-small">
 	                            <article class="box style2">
 	                                <a class="image featured">
-	                                    <img src="require(images/img/${data.productDTO[i].model}.jpg)" alt="">
+	                                    <img src="img/${data.productDTO[i].model}.jpg" alt="">
 	                                    <i class="fa-solid fa-heart middle"></i>
 	                                    <i class="fa-solid fa-heart small dislike"></i>
 	                                </a>
@@ -743,7 +743,7 @@
 				result += parseInt(price.replace(/,/g, "")) * val;
 
 			})
-			$('#result').text(result + '원');
+			$('#result').text(result.toLocaleString() + '원');
 			result = 0;
 		}
 		
