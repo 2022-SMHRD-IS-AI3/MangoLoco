@@ -120,16 +120,16 @@ form.addEventListener('submit', function(e) {
 	}, 500);
 	if (isCR && isuCL && ispCL && isCPM && isDuplication) {
 		$.ajax({
-			type: 'post',
-			dataType: 'text',
+			url: 'MemberJoinCon',
+			type: 'get',
+			async: false,
 			data: "username=" + $('#username').val() + "&email="
 				+ $('#email').val() + "&pw="
 				+ $('#password').val() + "&pw2="
 				+ $('#password2').val(),
-			url: 'MemberJoinCon',
-			seccess: function(data) {
+			dataType: "json",
+			success: function(data) {
 				console.log(data);
-				console.log('sdasg');
 				alert('회원가입 성공');
 				/* window.location.href = "Main.html?id=${data}"; */
 			},
@@ -138,6 +138,10 @@ form.addEventListener('submit', function(e) {
 				$('input').val('');
 			}
 
+		}).done(function(data){
+			console.log(data);
+				console.log('sdasgaaaa');
+				alert('회원가입 성공');
 		})
 	}
 });
@@ -157,33 +161,34 @@ form.addEventListener('submit', function(e) {
 		$('.password2').removeClass("shake");
 	}, 500);
 })*/
-$('#emailCheck').on({'click': function() {
-			if (checkEmail(email)) {
+$('#emailCheck').on({
+	'click': function() {
+		if (checkEmail(email)) {
 
-				$.ajax({
-					url: "CheckIdCon",
-					type: 'post',
-					data: "email=" + $('#email').val(),
-					dataType: "text",
-					success: function(data) {
-						console.log(data);
-						let temp = "";
-						if (data == "true") {
-							// 중복 이메일 일때
-							isDuplication = false;
-							$('.email').children('.error-txt').removeClass('success');
-							showError(email, '중복된 이메일입니다');
-						} else {
-							// 사용 가능 이메일일때
-							$('.email .error-txt').addClass('success');
-							temp += '<ion-icon name="shield-checkmark-outline"></ion-icon>&nbsp사용 가능한 이메일입니다'
-							$('.email .error-txt').html(temp);
-							isDuplication = true;
-						}
-					},
-					error: function(e) {
+			$.ajax({
+				url: "CheckIdCon",
+				type: 'post',
+				data: "email=" + $('#email').val(),
+				dataType: "text",
+				success: function(data) {
+					console.log(data);
+					let temp = "";
+					if (data == "true") {
+						// 중복 이메일 일때
+						isDuplication = false;
+						$('.email').children('.error-txt').removeClass('success');
+						showError(email, '중복된 이메일입니다');
+					} else {
+						// 사용 가능 이메일일때
+						$('.email .error-txt').addClass('success');
+						temp += '<ion-icon name="shield-checkmark-outline"></ion-icon>&nbsp사용 가능한 이메일입니다'
+						$('.email .error-txt').html(temp);
+						isDuplication = true;
 					}
-				})
-			}
+				},
+				error: function(e) {
+				}
+			})
 		}
-	})
+	}
+})
