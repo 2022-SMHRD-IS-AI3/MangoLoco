@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into members values(#{id}, #{pw}, #{nick}, null)
 	</insert>
 	
-	<select id="login" resultType="MembersDTO" parameterType="MemberDTO">
+	<select id="login" resultType="MembersDTO" parameterType="MembersDTO">
 		select * from members
 	</select>
 	

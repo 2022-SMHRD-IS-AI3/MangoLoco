@@ -42,13 +42,13 @@ public class BoardWriteCon implements Commend {
 		String id = multi.getParameter("id");
 		String title = multi.getParameter("title");
 		String nick = multi.getParameter("nick");
-//		String filename = multi.getFilesystemName("filename");
-//		String filename_en = URLEncoder.encode(filename,"UTF-8");
+		String filename = multi.getFilesystemName("filename");
+		String filename_en = URLEncoder.encode(filename,"UTF-8");
 		String content = multi.getParameter("content");
 		
 		System.out.println("title : "+title);
 		System.out.println("writer : "+nick);
-//		System.out.println("filename : "+filename);
+		System.out.println("filename : "+filename);
 		System.out.println("content : "+content);
 		
 		// DTO로 묶기
