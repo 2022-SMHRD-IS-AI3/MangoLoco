@@ -1,4 +1,7 @@
 select * from USER_tables;
+select * from members
+insert into members values('aa@aa.aa','aaa','aaa',0)
+delete from members
 
 CREATE TABLE MEMBERS (
 	ID VARCHAR2(100) PRIMARY KEY,
@@ -113,16 +116,12 @@ CREATE TABLE SHOP_BASKET (
 	CLASSIFICATION NUMBER(1),
 	ID VARCHAR2(100),
 	P_SEQ NUMBER(10),
-	S_DATE DATE DEFAULT SYSDATE
+	S_DATE DATE DEFAULT SYSDATE,
+	FOREIGN KEY (ID) REFERENCES MEMBERS (ID),
+	FOREIGN KEY (P_SEQ) REFERENCES PRODUCT (SEQ)
 )
 
-insert into SHOP_BASKET values(1, 'test', 1, 'testID', 1, sysdate)
-
 DROP TABLE SHOP_BASKET
-
-select*from SHOP_BASKET
-select c.* from COUPONS c, COUPON_HISTORY ch 
-where c.SEQ = ch.C_SEQ and ch.CLASSIFICATION = 1
 
 CREATE TABLE POINTS ( 
 	SEQ NUMBER(10) PRIMARY KEY,

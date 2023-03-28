@@ -1,3 +1,4 @@
+<%@page import="org.codehaus.jackson.map.JsonMappingException"%>
 <%@page import="com.smhrd.model.CouponsDTO"%>
 <%@page import="com.smhrd.model.CouponsDAO"%>
 <%@page import="java.util.List"%>
@@ -54,12 +55,13 @@
 
 	<script>
 		var ceiling = []
-		var coupons_seq = []
+		var coupons_seq_arr = []
 		var user_coupons_List_size = '<%= user_coupons_List.size()%>';
 		console.log(user_coupons_List);
-		for (let i = 0; i <user_coupons_List_size; i++) {
-			ceiling.push('')
-		    }
+		<%for (int i = 0; i <user_coupons_List.size(); i++) {%>
+			ceiling.push('<%=user_coupons_List.get(i).getCeiling() %>');
+			coupons_seq.push('<%=user_coupons_List.get(i).getSeq() %>');
+		    <%}%>
 		let coupons_seq = 0;
 		const changeFunc=()=>{
 			coupons_seq = document.getElementById('coupons').value;
@@ -74,7 +76,7 @@
 			var ceiling = 0;
 			switch(coupons_seq){
 				for(let k = 0; k<user_coupons_List_size; k++){
-					case user_coupons_List.get(k).getSeq():
+					case coupons_seq_arr[i]:
 						console.log(coupons_seq);
 						ceiling=user_coupons_List.get(k).getCeiling();
 						[break;]
