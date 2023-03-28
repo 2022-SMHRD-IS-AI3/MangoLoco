@@ -5,4 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.smhrd.mapper.CouponsMapper">
 	<insert id="" parameterType="CouponsDTO">
 	</insert>
+	<select id="user_coupons" resultType="CouponsDTO">
+		select c.* from COUPONS c, COUPON_HISTORY ch where c.SEQ = ch.C_SEQ and ch.CLASSIFICATION = 1
+	</select>
 </mapper>
