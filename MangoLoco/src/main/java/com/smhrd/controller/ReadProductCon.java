@@ -18,14 +18,16 @@ import net.sf.json.JSONObject;
 public class ReadProductCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ProductDAO dao = new ProductDAO();
-		List<ProductDTO> productDTO = dao.allProd();
-	
-		JSONObject json = new JSONObject();
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("productDTO", productDTO);
-		json.put("map", map);
 		response.setContentType("application/x-json; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		int count = Integer.parseInt(request.getParameter("count"));
+		ProductDAO dao = new ProductDAO();
+		List<ProductDTO> productDTO = dao.allProd(count);
+		JSONObject json = new JSONObject();
+		
+		json.put("productDTO", productDTO);
+
 		response.getWriter().print(json);
 		
 	}

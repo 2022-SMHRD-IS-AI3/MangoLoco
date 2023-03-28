@@ -334,20 +334,10 @@
 	</article>
 
 	<!-- Work -->
-	<article id="work" class="wrapper style2">
+ 	<article id="work" class="wrapper style2">
 		<div class="container">
 			<div class="row aln-center">
-				<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a class="image featured">
-							<img src="images/pic00.jpg" alt="">
-							<i class="fa-solid fa-heart"></i>
-						</a>
-						<h3><a href="">aaaaaaa</a></h3>
-						<p>250000원</p>
-					</article>
-				</div>
-				
+			
 			</div>
 			<footer>
 				<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
@@ -355,8 +345,7 @@
 			</footer>
 		</div>
 	</article>
-
-	<!-- Portfolio -->
+<!--
 	<article id="portfolio" class="wrapper style3">
 		<div class="container">
 			<header>
@@ -421,7 +410,7 @@
 		</div>
 	</article>
 
-	<!-- Contact -->
+	Contact
 	<article id="contact" class="wrapper style4">
 		<div class="container medium">
 			<header>
@@ -463,7 +452,7 @@
 						<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 						<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
 						<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li> -->
 						<!--
 								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
 								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
@@ -499,32 +488,70 @@
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<script>
-	let product = "";
+	let count = 0;
+	const limit = 6;
+
+	// 스크롤 이벤트 발생 시
+	$(window).scroll(function() {
+	    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+	        count += limit;
+	        // AJAX 요청 보내기
+	        $.ajax({
+	            url: 'ReadProductCon',
+	            type: 'post',
+	            data: "count="+count+"&limit="+limit,
+	            dataType:'json',
+	            success: function(data) {
+	                // 받아온 데이터를 이용하여 화면에 렌더링
+	                console.log(data);
+	                for(let i = 0; i < data.productDTO.length; i++) {
+	                	console.log(`${data.productDTO[i].model}.jpg`)
+	                    const product = `
+	                        <div class="col-4 col-6-medium col-12-small">
+	                            <article class="box style2">
+	                                <a class="image featured">
+	                                    <img src="require(images/img/${data.productDTO[i].model}.jpg)" alt="">
+	                                    <i class="fa-solid fa-heart middle"></i>
+	                                    <i class="fa-solid fa-heart small dislike"></i>
+	                                </a>
+	                                <h3><a href="">${data.productDTO[i].model}</a></h3>
+	                                <p>${data.productDTO[i].price}</p>
+	                            </article>
+	                        </div>`;
+	                    $('.row.aln-center').append(product);
+	                }
+	            }
+	        });
+	    }
+	});
+	
+	/* let product = "";
 	$(function(){
 		$.ajax({
 			url:'ReadProductCon',
 			type:'post',
 			dataType:'json',
 			success:function(data){
-				for(var i=0; i<data.length; i++){
+				console.log(data.map.data[0].model);
+				for(var i=0; i<6; i++){
 					product = `
 						<div class="col-4 col-6-medium col-12-small">
 					<article class="box style2">
 						<a class="image featured">
-							<img src="images/productimg/컴퓨터${i}.jpg" alt="">
+							<img src="images/productimg/노트북${i+1}.jpg" alt="">
 							<i class="fa-solid fa-heart middle"></i>
 							<i class="fa-solid fa-heart small dislike"></i>
 						</a>
-						<h3><a href="">${data[i].model}</a></h3>
-						<p>${data[i].price}</p>
+						<h3><a href="">${data.map.data[i].model}</a></h3>
+						<p>${data.map.data[i].price}</p>
 					</article>
 					</div>`;
-					$('row.aln-center').append(product);
-				}
+					$('.row.aln-center').append(product);
+				} 
 				
 			}
 		})
-	})
+	}) */
 	
 	
 		$('.filterCate').on({ // 카테고리 hover 기능
@@ -684,7 +711,6 @@
 
 			}
 		})
-	
 		$('.image.featured').on({
 			'mousedown': function () {
 				$(this).clone().addClass('fadeIn');
@@ -710,42 +736,46 @@
 		let result = 0;
 		function priceResult() {
 			$('.titleText').each(function (index, item) {
-				var price = $(item).children('.price').text().slice(0, -1);
-				result += price * $(item).next().children('.cartCnt').val();
+				let price = $(item).children('.price').text().slice(0, -1);
+				
+				let val = parseInt($(item).next().children('.cartCnt').val())
+				console.log(price);
+				result += parseInt(price.replace(/,/g, "")) * val;
+
 			})
 			$('#result').text(result + '원');
 			result = 0;
 		}
-
+		
 		var imgSrc = "";
 		var titleVal = "";
 		var priceVal = 0;
-		$('.image.featured').on({
-			'dragstart': function (e) {
+		$(document).on('dragend','.image.featured',function(e){
 				$(this).css({
+					'cursor': 'pointer'
+				})
+				$(this).removeClass('animate__bounceIn');
+		})
+		$(document).on('dragstart','.image.featured',function(e){
+			$(this).css({
 					'cursor': 'grab'
 				})
 				$(this).addClass('animate__bounceIn');
 				imgSrc = $(this).children('img').attr('src');
 				titleVal = $(this).next().children('a').text();
-				priceVal = $(this).nextAll('p').text().slice(0, -1);
-			},
-			'dragend': function () {
-				$(this).css({
-					'cursor': 'pointer'
-				})
-				$(this).removeClass('animate__bounceIn');
-			}
+				priceVal = $(this).nextAll('p').text();
 		})
 		$('#cartList').on({
 			'dragover': function (e) {
 				e.preventDefault();
-			},
-			'drop': function (e) {
-				 e.preventDefault();
+			}
+		})
+		
+		$(document).on('drop','#cartList', function (e) {
+				e.preventDefault();
 				var str = "";
-				str += 
-				`<div class="cartItem">
+				str +=
+					`<div class="cartItem">
 					<div class="productImgDiv">
 						<img class="productImg" src="${imgSrc}" alt="">
 						<i class="fa-solid fa-circle-xmark"></i>
@@ -765,43 +795,46 @@
 					</div>
 				</div>`;
 				let b = true;
-				$('.titleText .title').each(function(index,item){
-					if($(item).text() == titleVal){
+				$('.titleText .title').each(function (index, item) {
+					if ($(item).text() == titleVal) {
 						let a = $(item).parent().next().children('.cartCnt').val();
 						$(item).parent().next().children('.cartCnt').val(++a);
 						b = false;
 						return b;
-					}else{
+					} else {
 						b = true;
 					}
 				})
-				if(b){
+				if (b) {
 					$(this).append(str);
 				}
 				priceResult();
-			}	
 		})
-		$(document).on('mouseover','.productImgDiv',function(){
-			$(this).children('i').css('display','block');
+		$(document).on('mouseover', '.productImgDiv', function () {
+			$(this).children('i').css('display', 'block');
 		})
-		$(document).on('mouseleave','.productImgDiv',function(){
-			$(this).children('i').css('display','none');
+		$(document).on('mouseleave', '.productImgDiv', function () {
+			$(this).children('i').css('display', 'none');
 		})
-		$(document).on('click','.productImgDiv i',function(){
+		$(document).on('click', '.productImgDiv i', function () {
 			$(this).closest('.cartItem').remove('');
 			priceResult();
 		})
 
-		$(document).on('dblclick', '.image.featured', function(){
-			
-			(async () => {
-				$(this).children('i').css({
-				'display':'block'
-			});
-				await sleep(1);
-
-				$(this).children('i').addClass('animate__fadeOutDown');
-			})();
+		$(document).on('dblclick', '.image.featured', function () {
+			if ($(this).children('.small').hasClass('dislike')) {
+				$(this).children('.small').removeClass('dislike');
+				$(this).children('.small').addClass('animate__bounce');
+				 $(this).children('.middle').css({
+					'visibility': 'visible'
+				 });
+				$(this).children('.middle').addClass('animate__fadeOutDown');
+			} else {
+				$(this).children('.small').addClass('dislike');
+			 	$(this).children('.middle').css({
+					'visibility': 'hidden'
+			 });
+			}
 		})
 		// $('#top').on('scroll touchmove mousewheel', function (event) {
 
