@@ -347,48 +347,7 @@
 						<p>250000원</p>
 					</article>
 				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a class="image featured">
-							<img src="images/pic01.jpg" alt=""></a>
-						<h3><a href="#">bbbbbbb</a></h3>
-						<p>712000원</p>
-					</article>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a class="image featured">
-							<img src="images/pic02.jpg" alt=""></a>
-						<h3><a href="#">cccccc</a></h3>
-						<p>620000원</p>
-					</article>
-				</div>
-			</div>
-			<div class="row aln-center">
-				<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a class="image featured">
-							<img src="images/pic03.jpg" alt=""></a>
-						<h3><a href="#">ddddddddd</a></h3>
-						<p>950000원</p>
-					</article>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a class="image featured">
-							<img src="images/pic04.jpg" alt=""></a>
-						<h3><a href="#">eeeeeeeeee</a></h3>
-						<p>450000원</p>
-					</article>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a class="image featured">
-							<img src="images/pic05.jpg" alt=""></a>
-						<h3><a href="#">fffffffff</a></h3>
-						<p>1150000원</p>
-					</article>
-				</div>
+				
 			</div>
 			<footer>
 				<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
@@ -540,7 +499,34 @@
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<script>
-
+	let product = "";
+	$(function(){
+		$.ajax({
+			url:'ReadProductCon',
+			type:'post',
+			dataType:'json',
+			success:function(data){
+				for(var i=0; i<data.length; i++){
+					product = `
+						<div class="col-4 col-6-medium col-12-small">
+					<article class="box style2">
+						<a class="image featured">
+							<img src="images/productimg/컴퓨터${i}.jpg" alt="">
+							<i class="fa-solid fa-heart middle"></i>
+							<i class="fa-solid fa-heart small dislike"></i>
+						</a>
+						<h3><a href="">${data[i].model}</a></h3>
+						<p>${data[i].price}</p>
+					</article>
+					</div>`;
+					$('row.aln-center').append(product);
+				}
+				
+			}
+		})
+	})
+	
+	
 		$('.filterCate').on({ // 카테고리 hover 기능
 			'mouseover': function () {
 
