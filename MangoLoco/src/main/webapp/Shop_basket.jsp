@@ -1,4 +1,3 @@
-<%@page import="org.codehaus.jackson.map.JsonMappingException"%>
 <%@page import="com.smhrd.model.CouponsDTO"%>
 <%@page import="com.smhrd.model.CouponsDAO"%>
 <%@page import="java.util.List"%>
@@ -78,7 +77,7 @@
 				for(let k = 0; k<user_coupons_List_size; k++){
 					case coupons_seq_arr[i]:
 						console.log(coupons_seq);
-						ceiling=user_coupons_List.get(k).getCeiling();
+						ceiling=ceiling[i];
 						[break;]
 					}
 				}
