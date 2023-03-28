@@ -20,4 +20,10 @@ public class MembersDAO {
 		int cnt = sqlSession.insert("join",dto);
 		return cnt;
 	}
+	public MembersDTO login(MembersDTO dto) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		MembersDTO login = null;
+		login = sqlSession.selectOne("login", dto);
+		return login;
+	}
 }

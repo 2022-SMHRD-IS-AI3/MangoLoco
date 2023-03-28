@@ -698,12 +698,7 @@
 
 			}
 		})
-		
-		window.onload = () => {
-			const $target = document.querySelector(".image.featured");
-
-			draggable($target);
-		}
+	
 		$('.image.featured').on({
 			'mousedown': function () {
 				$(this).clone().addClass('fadeIn');

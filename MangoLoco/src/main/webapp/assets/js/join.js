@@ -129,19 +129,14 @@ form.addEventListener('submit', function(e) {
 				+ $('#password2').val(),
 			dataType: "json",
 			success: function(data) {
-				console.log(data);
 				alert('회원가입 성공');
-				/* window.location.href = "Main.html?id=${data}"; */
+				window.location.href = `Login.html`;
 			},
 			error: function() {
-				console.log("뭐야");
+				alert('회원가입 실패');
 				$('input').val('');
 			}
 
-		}).done(function(data){
-			console.log(data);
-				console.log('sdasgaaaa');
-				alert('회원가입 성공');
 		})
 	}
 });
