@@ -26,7 +26,6 @@ public class ReadProductCon extends HttpServlet {
 		
 		List<ProductDTO> productDTO = dao.allProd(count);
 		
-		
 		JSONObject json = new JSONObject();
 		response.setContentType("application/x-json; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");

@@ -7,8 +7,8 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assetsBoard/css/main.css" />
-		<link rel="stylesheet" href="assetsBoard/css/board.css" />
+		<link rel="stylesheet" href="./assets/css/board/main.css" />
+		<link rel="stylesheet" href="./assets/css/board/board.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 </head>
@@ -17,6 +17,10 @@
 			<div id = "board">
 				<form action="BoardWriteCon.do" method="post" enctype="multipart/form-data">
 				<table id="list">
+					<tr>
+						<td><input type="radio" value="1" name="annc">공지</td>
+						<td><input type="radio" value="2" name="annc">일반</td>
+					</tr>
 					<tr>
 						<td>제목</td>
 						<td><input type="text" name="title"> </td>
