@@ -570,42 +570,35 @@
 		})
 	}) */
 	
-	
-		$('.filterCate').on({ // 카테고리 hover 기능
-			'mouseover': function () {
-				if ($(this).next('.filterList').css({
-					'display': 'none'
-				})) {
-				$(this).next('.filterList').css({
-					'display': 'block'
-				})
-				$('.filterList').on({
-					'mouseover' : function() {
-						$(this).css({
-							'display': 'block'
-						})
-					},
-					'mouseout' : function() {
-						$(this).css({
-							'display': 'none'
-						})
-					}
-				})
-				
-				
+
+	$('.filterCate').on({ // 카테고리 hover 기능
+		'mouseover': function () {
+			$('.filterList').on({
+				'mouseover':function(){
+					$(this).css({
+				'display': 'block'
+			})
 				}
-			},
+			})
+			$(this).next('.filterList').css({
+				'display': 'block'
+			})
+		},
 
-			'mouseout': function () {
-				if ($(this).next('.filterList').css({
-					'display': 'block'
-				})){
-				$(this).next('.filterList').css({
-					'display': 'none'
-				})}
+		'mouseout': function () {
+			$('.filterList').on({
+				'mouseout':function(){
+					$(this).css({
+				'display': 'none'
+			})
+				}
+			})
+			$(this).next('.filterList').css({
+				'display': 'none'
+			})
+		}
+	})
 
-			}
-		})
 		// $('div').not().on({
 		// 	'click':function(){
 		// 		$('.filterCate').css({
@@ -846,11 +839,11 @@
 				}
 				priceResult();
 				$.ajax({
-					url:'cartInCon',
+					url:'CartInCon',
 					data : 'id='+id+'&title='+titleVal,
 					datatype : 'json',
-					success:function(data){
-						
+					success:function(){
+						// 장바구니 담기 db insert
 					}
 				})
 		})
@@ -862,6 +855,17 @@
 		})
 		$(document).on('click', '.productImgDiv i', function () {
 			$(this).closest('.cartItem').remove('');
+			let rmtitle = $(this).parent().next().children('.title').text();
+			$.ajax({
+				url:'CartOutCon',
+				data: {
+					id: id,
+					title: rmtitle
+				},
+				success:function(){
+					
+				}
+			})
 			priceResult();
 		})
 

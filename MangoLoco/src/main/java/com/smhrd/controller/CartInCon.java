@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smhrd.model.Shop_BasketDAO;
+import com.smhrd.model.Shop_BasketDTO;
+
 /**
  * Servlet implementation class cartInCon
  */
@@ -18,7 +21,9 @@ public class CartInCon extends HttpServlet {
 		
 		String id = request.getParameter("id");
 		String title = request.getParameter("title");
-		
+		Shop_BasketDTO basketDTO = new Shop_BasketDTO(title, id);
+		Shop_BasketDAO basketDAO = new Shop_BasketDAO();
+		int cnt = basketDAO.cartIn(basketDTO);
 	}	
 
 }
