@@ -1750,7 +1750,7 @@ a img {
 }
 
 h4 {
-	font-size: 20px;
+	font-size: 16px;
 }
 
 /* Form */
@@ -2535,7 +2535,7 @@ body>article {
 	h4,
 	h5,
 	h6 {
-		font-size: 1.25em;
+		font-size: 1.05em;
 		margin: 0 0 0.2em 0;
 	}
 
@@ -2893,13 +2893,12 @@ display: none;
 .titleText {
 	float: right;
 	position: relative;
-	white-space: pre-line;
 	width: 200px;
 	max-height: 80px;
-	text-size-adjust: auto;
 	padding-left: 5px;
 	padding-right: 5px;
 	text-align: right;
+	padding-top: 10px;
 }
 
 .cartCntDiv {

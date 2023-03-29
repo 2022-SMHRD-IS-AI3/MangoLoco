@@ -3,7 +3,11 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.mapper.ProductMapper">
-	<select id="allread" resultType="ProductDTO">
-		select * from product order by seq
+	<select id="allread" resultType="ProductDTO" parameterType="int">
+		SELECT * 
+		FROM (SELECT ROWNUM AS RNUM, product.* FROM product ORDER BY seq)
+  		 WHERE RNUM >= #{count} AND <![CDATA[ROWNUM <=6]]>
 	</select>
+	
+	
 </mapper>
