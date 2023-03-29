@@ -14,7 +14,6 @@ public class ProductDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		java.util.List<ProductDTO> productList= null;
 		productList = sqlSession.selectList("allread",count);
-		
 		return productList;
 	}
 	public java.util.List<ProductDTO> User_ProductAll() {
