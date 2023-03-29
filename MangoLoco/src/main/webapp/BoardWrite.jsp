@@ -18,8 +18,13 @@
 				<form action="BoardWriteCon.do" method="post" enctype="multipart/form-data">
 				<table id="list">
 					<tr>
-						<td><input type="radio" value="1" name="annc">공지</td>
-						<td><input type="radio" value="2" name="annc">일반</td>
+						<td>
+							<select id="select_option" name="Writetype">
+								<option value="2" color="black">선택</option>
+								<option value="1" color="black">공지</option>
+								<option value="0" color="black">일반</option>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td>제목</td>
