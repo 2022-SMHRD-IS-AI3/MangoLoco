@@ -26,6 +26,7 @@ public class MemberJoinCon extends HttpServlet {
 		response.setContentType("application/x-json; charset=utf-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
+		
 		String id = request.getParameter("email");
 		String nick = request.getParameter("username");
 		String pw = request.getParameter("pw");
