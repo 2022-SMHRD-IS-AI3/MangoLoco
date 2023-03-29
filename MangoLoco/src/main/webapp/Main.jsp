@@ -643,7 +643,7 @@
 			}
 		})
 		let b = true;
-		$('.titleText .title').each(function (index, item) {
+		$('.titleText .title').each(function (index, item) { // 같은 제품이면 input값 증가
 			if ($(item).text() == titleVal) {
 				let a = $(item).parent().next().children('.cartCnt').val();
 				$(item).parent().next().children('.cartCnt').val(++a);
@@ -658,13 +658,13 @@
 		}
 		priceResult();
 	})
-	$(document).on('mouseover', '.productImgDiv', function () {
+	$(document).on('mouseover', '.productImgDiv', function () { 
 			$(this).children('i').css('display', 'block');
 		})
 		$(document).on('mouseleave', '.productImgDiv', function () {
 			$(this).children('i').css('display', 'none');
 		})
-		$(document).on('click', '.productImgDiv i', function () {
+		$(document).on('click', '.productImgDiv i', function () { // 장바구니에서 삭제 기능
 			$(this).closest('.cartItem').remove('');
 			let rmtitle = $(this).parent().next().children('.title').text();
 			$.ajax({
@@ -674,13 +674,12 @@
 					title: rmtitle
 				},
 				success:function(){
-					alert('adf');
 				}
 			})
 			priceResult();
 		})
 
-		$(document).on('dblclick', '.image.featured', function () {
+		$(document).on('dblclick', '.image.featured', function () { //더블클릭 좋아요 기능(미구현)
 			if ($(this).children('.small').hasClass('dislike')) {
 				$(this).children('.small').removeClass('dislike');
 				$(this).children('.small').addClass('animate__bounce');
@@ -696,17 +695,10 @@
 			}
 		})
 		
-		$('#board').on('click',function(e){
+		$('#board').on('click',function(e){ // 게시판 이동 기능
 			e.preventDefault();
 			window.location.href = "BoardMain.jsp";
 		})
-		// $('#top').on('scroll touchmove mousewheel', function (event) {
-
-		// 	event.preventDefault();
-		// 	event.stopPropagation();
-		// 	return false;
-
-		// });
 	</script>
 </body>
 
