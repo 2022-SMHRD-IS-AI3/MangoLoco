@@ -22,6 +22,13 @@ public class ReadProductCon extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		int count = Integer.parseInt(request.getParameter("count"));
+		String[] soft = request.getParameterValues("soft");
+		if(soft != null) {
+			for(int i=0; i<soft.length; i++) {
+				System.out.println(soft[i]);
+			}
+			
+		}
 		ProductDAO dao = new ProductDAO();
 		
 		

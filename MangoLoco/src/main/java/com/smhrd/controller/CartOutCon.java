@@ -24,7 +24,11 @@ public class CartOutCon extends HttpServlet {
 		Shop_BasketDTO dto = new Shop_BasketDTO(model, id);
 		Shop_BasketDAO dao = new Shop_BasketDAO();
 		int cnt = dao.cartOut(dto);
-		
+		if(cnt > 0) {
+			System.out.println("성공");
+		}else {
+			System.out.println("실패");
+		}
 	}
 
 }
