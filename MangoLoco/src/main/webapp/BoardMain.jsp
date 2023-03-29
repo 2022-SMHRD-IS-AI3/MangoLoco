@@ -21,16 +21,17 @@
 		BoardDAO dao = new BoardDAO();
 		List<BoardDTO> board_list = dao.BoardAll();
 	%>
-			<!-- Q17. 게시글 목록 조회 기능 -->
-			<!-- Q18. 게시글 목록 세부페이지 기능(제목을 클릭하면 세부페이지 BoardDetail.jsp로 이동)-->
 			<div id="board">
 				<table id = "list">
+					<thead>
 					<tr>
 						<td>번호</td>
 						<td>제목</td>
 						<td>작성자</td>
 						<td>시간</td>
 					</tr>
+					</thead>
+					<tbody>
 					<%for(int i=0; i<board_list.size(); i++){ %>
 					<tr>
 						<td><%=i+1 %></td>
@@ -42,7 +43,7 @@
 						<%} %>
 					</tr>
 					<%} %>
-				
+				</tbody>
 				</table>
 				
 				<a href="Main.jsp"><button id="writer">홈으로가기</button></a>
