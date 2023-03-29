@@ -18,6 +18,10 @@
 	ProductDAO pdao = new ProductDAO();
 	List<ProductDTO> Product_list = pdao.User_ProductAll();
 	%>
+	<from method="post" 
+		if(value=="구매하기"){
+		action="/kakaopay.html"
+		}else{action="./DelBusketCon.do"}>
 	<div id="basket">
 		<table id="Basket_list">
 			<tr>
@@ -35,7 +39,7 @@
 				<td><input type="checkbox" value=""></td>
 				<td><%=i + 1%></td>
 				<td><a href="#상품명주소"><%=basket_list.get(i).getModel()%></a></td>
-				<td></td>
+				<td><%-- <%=basket_list.get(i).get%> --%></td>
 				<td></td>
 				<td></td>
 			</tr>
@@ -44,6 +48,7 @@
 		<input type="submit" value="목록에서 제거">
 		<input type="submit" value="구매하기">
 	</div>
+	</from>
 
 </body>
 </html>

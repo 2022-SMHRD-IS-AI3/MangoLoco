@@ -15,5 +15,9 @@ public class ProductDAO {
 		sqlsession.close();
 		return Product_list;
 	}
+	public List<ProductDTO> allProd(int count) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

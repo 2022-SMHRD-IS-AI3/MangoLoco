@@ -31,6 +31,7 @@
 					<tr>
 						<td colspan="2">
 							<input name="filename" type="file" style="float: right;">
+							<br>
 							<textarea name="content" rows="10" style="resize: none;"></textarea>			
 						</td>
 					</tr>
