@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.smhrd.model.MembersDAO;
@@ -20,7 +21,7 @@ public class MemberLoginCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
+		HttpSession session = request.getSession();
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
@@ -29,7 +30,7 @@ public class MemberLoginCon extends HttpServlet {
 		MembersDAO dao = new MembersDAO();
 		MembersDTO info = dao.login(dto);
 		
-		
+		System.out.println(info.getNick());
 		
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("application/x-json; charset=utf-8");
@@ -38,10 +39,11 @@ public class MemberLoginCon extends HttpServlet {
 		json.put("id", info.getId());
 		json.put("pw", info.getPw());
 		json.put("nick", info.getNick());
-		System.out.println(json.toString());
+
+		session.setAttribute("id", info.getId());
+		session.setAttribute("nick", info.getNick());
 		
 		String gson = new Gson().toJson(info);
-		System.out.println(gson);
 		response.getWriter().write(gson);
 	}
 

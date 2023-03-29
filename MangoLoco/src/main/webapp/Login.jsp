@@ -54,10 +54,9 @@
 		dataType: 'json',
 		success: function(data) {
 			alert('로그인 성공');
-			window.location.href = `Main.html?id=${data.id}&username=${data.username}`;
+			window.location.href = 'Main.jsp';
 		},
 		error: function() {
-			$('input').val('');
 		}
 	})
 		}

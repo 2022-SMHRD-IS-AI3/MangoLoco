@@ -24,7 +24,10 @@
 </head>
 
 <body class="is-preload">
-
+	<%
+	String id = (String)session.getAttribute("id");
+	String nick = (String)session.getAttribute("nick");
+	%>
 
 	<!-- Nav -->
 	<nav id="nav">
@@ -490,15 +493,15 @@
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<script>
 	const params = new URLSearchParams(location.search);
-	let id =null;
-	let username = null;
 	let menu = "";
-	id= params.get("id");
-	username = params.get("username");
-	console.log(id);
+	
 	$(function(){
+		let id = <%=id%>;
+		let username = <%=nick%>;
+		console.log(id);
+		console.log(username);
 		if(id != null){
-			menu = `<li><span style="text-align: right; position: absolute; top :1px;right:95px; color: #fff;">${username}님 어서오세요</span></li>
+			menu = `<li><span style="text-align: right; position: absolute; top :1px;right:95px; color: #fff;">${nick}님 어서오세요</span></li>
 				<li style="position: absolute; top: 10px; right: 0px; ">
 				<a href="" class="logTap" id="logout">로그아웃</a></li>`;
 		}else{
@@ -509,7 +512,7 @@
 	})
 	$(document).on('click', '#logout', function(e){
 		e.preventDefault();
-		location.replace("Main.html");
+		location.href="LogoutCon";
 	})
 	let count = 0;
 	const limit = 6;
@@ -543,35 +546,6 @@
 	        });
 	    }
 	});
-	
-	/* let product = "";
-	$(function(){
-		$.ajax({
-			url:'ReadProductCon',
-			type:'post',
-			dataType:'json',
-			success:function(data){
-				console.log(data.map.data[0].model);
-				for(var i=0; i<6; i++){
-					product = `
-						<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a class="image featured">
-							<img src="images/productimg/노트북${i+1}.jpg" alt="">
-							<i class="fa-solid fa-heart middle"></i>
-							<i class="fa-solid fa-heart small dislike"></i>
-						</a>
-						<h3><a href="">${data.map.data[i].model}</a></h3>
-						<p>${data.map.data[i].price}</p>
-					</article>
-					</div>`;
-					$('.row.aln-center').append(product);
-				} 
-				
-			}
-		})
-	}) */
-	
 
 	$('.filterCate').on({ // 카테고리 hover 기능
 		'mouseover': function () {
@@ -600,53 +574,6 @@
 			})
 		}
 	})
-
-		// $('div').not().on({
-		// 	'click':function(){
-		// 		$('.filterCate').css({
-		// 			'background-color':'#fff',
-		// 			'color':'black'
-		// 		})
-		// 		$('.filterList').css({
-		// 			'display':'none'
-		// 		})
-		// 	}
-		// })
-		/* $('.filterCate').on({ // 카테고리 클릭 - 리스트창 고정 기능
-			'click': function (e) {
-
-				if ($(this).hasClass('select')) {
-					$(this).removeClass('select');
-					$(this).css({
-						'background-color': '#ffffff',
-						'color': 'black'
-					})
-					$(this).next('.filterList').css({
-						'display': 'none'
-					})
-
-				} else {
-					$(this).addClass('select');
-					$(this).css({
-						'background-color': '#2f3542',
-						'color': '#fafafa'
-					})
-					$(this).next('.filterList').css({
-						'display': 'block'
-					})
-					$('.filterList').not($(this).next('.filterList')).css({
-						'display': 'none'
-					})
-					$('.filterCate').not($(this)).css({
-						'background-color': '#ffffff',
-						'color': 'black'
-					})
-					$(this).on('mouseout', function () {
-						$(this).next('.filterList').css({ 'display': 'block' })
-					})
-				}
-			}
-		}) */
 		var softwareList = []
 		$('.filter a').on({
 			'click': function () { // 필터 체크 기능
