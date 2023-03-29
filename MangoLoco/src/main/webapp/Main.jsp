@@ -208,8 +208,8 @@
 						<div>모바비</div>
 					</a>
 					<a data-value="ActivePresenter"><img class="programs" src="images/mg/ActivePresenter.png"
-							alt="액티브프리젠터" />
-						<div>액티브프리젠터</div>
+							alt="액티브프레젠터" />
+						<div>액티브프레젠터</div>
 					</a>
 					<a data-value="Shotcut"><img class="programs" src="images/mg/Shotcut.png" alt="샷컷" />
 						<div>샷컷</div>
@@ -278,8 +278,8 @@
 					<a data-value="Eagle"><img class="programs" src="images/mg/Eagle.png" alt="Eagle" />
 						<div>Eagle</div>
 					</a>
-					<a data-value="Nuke"><img class="programs" src="images/mg/Nuke.png" alt="누크" />
-						<div>누크</div>
+					<a data-value="Nuke"><img class="programs" src="images/mg/Nuke.png" alt="뉴크" />
+						<div>뉴크</div>
 					</a>
 				</div>
 			</div>
