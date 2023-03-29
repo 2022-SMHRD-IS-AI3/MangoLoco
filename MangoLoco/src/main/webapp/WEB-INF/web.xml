@@ -61,8 +61,4 @@
   	<servlet-name>cartInCon</servlet-name>
   	<url-pattern>/cartInCon</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>PayCon</servlet-name>
-  	<url-pattern>*.do</url-pattern>
-  </servlet-mapping>
 </web-app>
