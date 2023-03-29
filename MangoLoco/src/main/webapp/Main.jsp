@@ -35,6 +35,14 @@
 			<li><a href="#top" style="display: flex; align-items: center;"><i class="fa-solid fa-filter"></i>&nbsp; 필터</a></li>
 			<li><a href="#work" style="display: flex; align-items: center;"><i class="fa-solid fa-laptop"></i>&nbsp; 제품</a></li>
 			<li><a href="" id="board" style="display: flex; align-items: center;"><i class="fa-solid fa-clipboard-list"></i>&nbsp; 게시판</a></li>
+			<%if(id != null){%>
+			<li><span style="text-align: right; position: absolute; top :1px;right:95px; color: #fff;"><%=nick %>님 어서오세요</span></li>
+			<li style="position: absolute; top: 10px; right: 0px; ">
+			<a href="LogoutCon" class="logTap" id="logout">로그아웃</a></li>
+		<%}else{%>
+			<li style="position: absolute; top: 10px; right: 0px; ">
+			<a href="Login.html" class="logTap">로그인</a></li>
+		<%}%>
 			
 		</ul>
 	</nav>
@@ -493,27 +501,7 @@
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<script>
 	const params = new URLSearchParams(location.search);
-	let menu = "";
 	
-	$(function(){
-		let id = <%=id%>;
-		let username = <%=nick%>;
-		console.log(id);
-		console.log(username);
-		if(id != null){
-			menu = `<li><span style="text-align: right; position: absolute; top :1px;right:95px; color: #fff;">${nick}님 어서오세요</span></li>
-				<li style="position: absolute; top: 10px; right: 0px; ">
-				<a href="" class="logTap" id="logout">로그아웃</a></li>`;
-		}else{
-			menu = `<li style="position: absolute; top: 10px; right: 0px; ">
-			<a href="Login.html" class="logTap">로그인</a></li>`;
-		}
-			$('#nav ul').append(menu);
-	})
-	$(document).on('click', '#logout', function(e){
-		e.preventDefault();
-		location.href="LogoutCon";
-	})
 	let count = 0;
 	const limit = 6;
 	// 스크롤 이벤트 발생 시
