@@ -18,4 +18,6 @@ public class ProductDTO {
 	private String price;
 	private String detail; 
 	private int score;
+	private int gpuscore;
+	private String inout;
 }
