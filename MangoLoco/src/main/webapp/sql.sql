@@ -80,7 +80,7 @@ create sequence basket_seq
 	increment by 1
 	start with 1
 
-
+select distinct model from shop_basket where id='qq@qq.qq'
 
 
 

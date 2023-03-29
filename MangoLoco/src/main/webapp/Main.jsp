@@ -353,11 +353,11 @@
 	<script>
 	let id= '<%=id%>';
 	let nick = '<%=nick%>';
-	let count = 0;
-	const limit = 6;
+	let count = 0; //현재 출력된 목록의 개수
+	const limit = 6; // 몇 개씩 로딩해서 출력할건지
 	// 스크롤 이벤트 발생 시
-	$(window).scroll(function() {
-	    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+	$(window).scroll(function() { 
+	    if($(window).scrollTop() + $(window).height() == $(document).height()) { // 스크롤을 끝까지 내리면
 	        count += limit;
 	        // AJAX 요청 보내기
 	        $.ajax({
@@ -369,75 +369,74 @@
 	                // 받아온 데이터를 이용하여 화면에 렌더링
 	                for(let i = 0; i < data.productDTO.length; i++) {
 	                    const product = `
-	                        <div class="col-4 col-6-medium col-12-small">
-	                            <article class="box style2">
-	                                <a class="image featured">
-	                                    <img src="img/${data.productDTO[i].model}.jpg" alt="">
-	                                    <i class="fa-solid fa-heart small dislike"></i>
-	                                </a>
-	                                <h3><a href="">${data.productDTO[i].model}</a></h3>
-	                                <p>${data.productDTO[i].price}</p>
-	                            </article>
-	                        </div>`;
+	                    <div class="col-4 col-6-medium col-12-small">
+	                    <article class="box style2">
+	                    <a class="image featured">
+	                    <img src="img/${data.productDTO[i].model}.jpg" alt="">
+	                    <i class="fa-solid fa-heart small dislike"></i>
+	                    </a>
+	                    <h3><a href="">${data.productDTO[i].model}</a></h3>
+	                    <p>${data.productDTO[i].price}</p>
+	                    </article>
+	                    </div>`;
 	                    $('.row.aln-center').append(product);
 	                }
 	            }
 	        });
 	    }
 	});
-	if(id != null){
-			$.ajax({
-				url:'CartReadCon',
-				type:'post',
-				data:"id="+'<%=id%>',
-				dataType:'json',
-				success:function(data){
-					for(let i = 0; i < data.mybasket.length; i++) {
-						const basket = `<div class="cartItem">
-						<div class="productImgDiv">
-						<img class="productImg" src="img/${data.mybasket[i].model}.jpg" alt="">
-						<i class="fa-solid fa-circle-xmark"></i>
-						</div>
-						<div class="titleText">
-						<h4 class="title">${data.mybasket[i].model}</h4>
-						<h4 class="price">${data.mybasket[i].price}</h4>
-						</div>
-						<div class="cartCntDiv">
-						<a class="downBtn but btnPush">
-						<i class="fa-solid fa-caret-down"></i>
-						</a>
-						<input type="text" class="cartCnt" value="1">
-						<a class="upBtn but btnPush">
-						<i class="fa-solid fa-caret-up"></i>
-						</a>
-						</div>
-						</div>`;
-						$('#cartList').append(basket);
-						priceResult();
-					}
+	if(id != null){ // 로그인한 id의 장바구니 목록 불러와서 담기
+		$.ajax({
+			url:'CartReadCon',
+			type:'post',
+			data:"id="+'<%=id%>',
+			dataType:'json',
+			success:function(data){
+				for(let i = 0; i < data.mybasket.length; i++) {
+					const basket = `<div class="cartItem">
+					<div class="productImgDiv">
+					<img class="productImg" src="img/${data.mybasket[i].model}.jpg" alt="">
+					<i class="fa-solid fa-circle-xmark"></i>
+					</div>
+					<div class="titleText">
+					<h4 class="title">${data.mybasket[i].model}</h4>
+					<h4 class="price">${data.mybasket[i].price}</h4>
+					</div>
+					<div class="cartCntDiv">
+					<a class="downBtn but btnPush">
+					<i class="fa-solid fa-caret-down"></i>
+					</a>
+					<input type="text" class="cartCnt" value="1">
+					<a class="upBtn but btnPush">
+					<i class="fa-solid fa-caret-up"></i>
+					</a>
+					</div>
+					</div>`;
+					$('#cartList').append(basket);
+					priceResult();
 				}
-			})
+			}
+		})
 	}
 	$('.filterCate').on({ // 카테고리 hover 기능
-		'mouseover': function () {
+		'mouseover': function () { // 마우스를 올렸을 때
 			$('.filterList').on({
 				'mouseover':function(){
 					$(this).css({
-				'display': 'block'
-			})
+					'display': 'block'
+					})
 				}
 			})
 			$(this).next('.filterList').css({
 				'display': 'block'
 			})
 		},
-
-		'mouseout': function () {
+		'mouseout': function () { // 마우스를 뗐을 때
 			$('.filterList').on({
 				'mouseout':function(){
 					$(this).css({
-				'display': 'none'
-			})
+					'display': 'none'
+					})
 				}
 			})
 			$(this).next('.filterList').css({
@@ -445,240 +444,221 @@
 			})
 		}
 	})
-		var softwareList = []
-		$('.filter a').on({
-			'click': function () { // 필터 체크 기능
-				let thisAttr = $(this).attr('data-value')
-				if ($(this).hasClass('checked')) { // 체크 되어있으면 해제
-					$(this).addClass('animate__bounceIn')
-					$(this).removeClass('checked animate__bounceIn');
-					$(this).children('.fa-check').remove();
-					for (let i = 0; i < softwareList.length; i++) {
-						if (softwareList[i] == $(this).attr('data-value')) {
-							softwareList.splice(i, 1);
-							i--;
-						}
-					}
-
-					(async () => {
-						$(`#filterResult a[data-value="${$(this).attr('data-value')}"]`).addClass('animate__bounceOut');
-						await sleep(0.7);
-						$('#filterResult a').each(function (index, item) { // 필터 목록에서 삭제
-							if ($(item).attr('data-value') === thisAttr) {
-								$(item).remove()
-							}
-						})
-					})();
-				} else { // 체크 설정, 필터 목록 설정
-					$(this).addClass('checked animate__bounceIn');
-					softwareList.push($(this).attr('data-value'));
-					$(this).clone().css({
-						'filter': 'brightness(100%)',
-						'width': '80px'
-					}).appendTo('#filterResult');
-					$(`#filterResult a[data-value="${$(this).attr('data-value')}"`).append('<i class="fa-solid fa-circle-xmark"></i>');
-					$('#filterResult i').css({
-						'color': 'red',
-						'right': '0px',
-						'top': '-15px',
-						'position': 'absolute',
-						'font-size': '20px'
-					})
-					$(this).append('<i class="fa-solid fa-check"></i>');
-				}
-			}
-		})
-
-
-
-		$('#filterBtn').on({ // 필터링 버튼 클릭
-			'click': function () {
-				console.log(softwareList) // 이쪽에 체크된 목록 데이터 있음
-				count = 0; 
-				count += limit;
-				        // AJAX 요청 보내기
-				        $.ajax({
-				            url: 'ReadProductCon',
-				            type: 'post',
-				            data: "count="+count+"&limit="+limit+"&soft="+softwareList,
-				            dataType:'json',
-				            success: function(data) {
-				                // 받아온 데이터를 이용하여 화면에 렌더링
-				                for(let i = 0; i < data.productDTO.length; i++) {
-				                    const product = `
-				                        <div class="col-4 col-6-medium col-12-small">
-				                            <article class="box style2">
-				                                <a class="image featured">
-				                                    <img src="img/${data.productDTO[i].model}.jpg" alt="">
-				                                    <i class="fa-solid fa-heart small dislike"></i>
-				                                </a>
-				                                <h3><a href="">${data.productDTO[i].model}</a></h3>
-				                                <p>${data.productDTO[i].price}</p>
-				                            </article>
-				                        </div>`;
-				                    $('.row.aln-center').append(product);
-				                }
-				    }
-				});
-				$('.checked').each(function (index, item) { // 체크된 목록 삭제
-					$(this).removeClass('checked animate__bounceIn')
-					$(this).children('.fa-check').remove();
-					$('#filterResult').empty()
-					/* softwareList = [] */
-				})
-			}
-		})
-		function sleep(sec) {
-			return new Promise(resolve => setTimeout(resolve, sec * 1000));
-		}
-		$(document).on('click', '#filterResult a', function () {
-
-			$(`.filter a[data-value="${$(this).attr('data-value')}"]`).removeClass('checked animate__bounceIn');
-			$(`.filter a[data-value="${$(this).attr('data-value')}"]`).children('.fa-check').remove();
-			(async () => {
-				// $.each(softwareList, function(item){
-				// if(item.attr('data-value') === this.attr('data-value')){
-				// 	
-				// }
-				// })
-
+	var softwareList = [] // 필터링할 소프트웨어 저장할 공간
+	$('.filter a').on({
+		'click': function () { // 필터 체크 기능
+			let thisAttr = $(this).attr('data-value')
+			if ($(this).hasClass('checked')) { // 체크 되어있으면 해제
+				$(this).addClass('animate__bounceIn')
+				$(this).removeClass('checked animate__bounceIn');
+				$(this).children('.fa-check').remove();
 				for (let i = 0; i < softwareList.length; i++) {
 					if (softwareList[i] == $(this).attr('data-value')) {
 						softwareList.splice(i, 1);
 						i--;
 					}
 				}
-				$(this).addClass('animate__bounceOut');
-				await sleep(0.7);
-				$(this).remove();
-			})();
-		})
-
-		$('#cartTap').on({
-			'click': function () {
-				if ($(this).hasClass('extend')) {
-					$(this).removeClass('extend');
-					$(this).parent().addClass('reduction');
-
-				} else {
-					$(this).addClass('extend');
-					$(this).parent().removeClass('reduction');
-				}
-
+				(async () => {
+					$(`#filterResult a[data-value="${$(this).attr('data-value')}"]`).addClass('animate__bounceOut');
+					await sleep(0.7);
+					$('#filterResult a').each(function (index, item) { // 필터 목록에서 삭제
+						if ($(item).attr('data-value') === thisAttr) {
+							$(item).remove()
+						}
+					})
+				})();
+			} else { // 체크 설정, 필터 목록 설정
+				$(this).addClass('checked animate__bounceIn');
+				softwareList.push($(this).attr('data-value'));
+				$(this).clone().css({
+					'filter': 'brightness(100%)',
+					'width': '80px'
+				}).appendTo('#filterResult');
+				$(`#filterResult a[data-value="${$(this).attr('data-value')}"`).append('<i class="fa-solid fa-circle-xmark"></i>');
+				$('#filterResult i').css({
+					'color': 'red',
+					'right': '0px',
+					'top': '-15px',
+					'position': 'absolute',
+					'font-size': '20px'
+				})
+				$(this).append('<i class="fa-solid fa-check"></i>');
 			}
-		})
-		$('.image.featured').on({
-			'mousedown': function () {
-				$(this).clone().addClass('fadeIn');
-			}
-		})
-		$(document).ready(function () {
-			priceResult();
-			$(document).on('click', '.upBtn', function () {
-				let upCnt = $(this).prev().val();
-				$(this).prev().val(++upCnt);
-
-				priceResult();
-			})
-			$(document).on('click', '.downBtn', function () {
-				let downCnt = $(this).next('.cartCnt').val();
-				if ($(this).next('.cartCnt').val() > 1) {
-					$(this).next('.cartCnt').val(--downCnt);
-				}
-				priceResult();
-			})
-			$(document).on('keyup', '.cartCnt', function () { priceResult(); })
-		})
-		let result = 0;
-		function priceResult() {
-			$('.titleText').each(function (index, item) {
-				let price = $(item).children('.price').text().slice(0, -1);
-				
-				let val = parseInt($(item).next().children('.cartCnt').val())
-				result += parseInt(price.replace(/,/g, "")) * val;
-
-			})
-			$('#result').text(result.toLocaleString() + '원');
-			result = 0;
 		}
+	})
+
+	$('#filterBtn').on({ // 필터링 버튼 클릭
+		'click': function () {
+			console.log(softwareList) // 이쪽에 체크된 목록 데이터 있음
+			count = 0; 
+			count += limit;
+	        // AJAX 요청 보내기
+		    $.ajax({ // 필터링된 제품 목록 6개씩 출력(미완성)
+	            url: 'ReadProductCon',
+	            type: 'post',
+	            data: "count="+count+"&limit="+limit+"&soft="+softwareList,
+	            dataType:'json',
+	            success: function(data) {
+	        // 받아온 데이터를 이용하여 화면에 렌더링
+		            for(let i = 0; i < data.productDTO.length; i++) {
+		            	const product = `
+				                       <div class="col-4 col-6-medium col-12-small">
+				                       <article class="box style2">
+				                       <a class="image featured">
+				                       <img src="img/${data.productDTO[i].model}.jpg" alt="">
+				                       <i class="fa-solid fa-heart small dislike"></i>
+				                       </a>
+				                       <h3><a href="">${data.productDTO[i].model}</a></h3>
+				                       <p>${data.productDTO[i].price}</p>
+				                       </article>
+				                       </div>`;
+				       	$('.row.aln-center').append(product);
+					}
+				}
+			});
+			$('.checked').each(function (index, item) { // 체크된 목록 삭제
+				$(this).removeClass('checked animate__bounceIn')
+				$(this).children('.fa-check').remove();
+				$('#filterResult').empty()
+				/* softwareList = [] */
+			})
+		}
+	})
+	function sleep(sec) { // 시간 지연 함수
+		return new Promise(resolve => setTimeout(resolve, sec * 1000));
+	}
+	$(document).on('click', '#filterResult a', function () { // 필터 체크 해제하면 밑의 것도 같이 해제
+		$(`.filter a[data-value="${$(this).attr('data-value')}"]`).removeClass('checked animate__bounceIn');
+		$(`.filter a[data-value="${$(this).attr('data-value')}"]`).children('.fa-check').remove();
+		(async () => {
+			for (let i = 0; i < softwareList.length; i++) { // 소프트웨어 리스트에 할당된 해당 데이터 삭제
+				if (softwareList[i] == $(this).attr('data-value')) {
+					softwareList.splice(i, 1);
+					i--;
+				}
+			}
+			$(this).addClass('animate__bounceOut');
+			await sleep(0.7);
+			$(this).remove();
+		})();
+	})
+
+	$('#cartTap').on({ // 장바구니 클릭하면 열렸다 닫혔다
+		'click': function () {
+			if ($(this).hasClass('extend')) {
+				$(this).removeClass('extend');
+				$(this).parent().addClass('reduction');
+			} else {
+				$(this).addClass('extend');
+				$(this).parent().removeClass('reduction');
+			}
+		}
+	})
+	$('.image.featured').on({
+		'mousedown': function () {
+			$(this).clone().addClass('fadeIn');
+		}
+	})
+	$(document).ready(function () {
+		priceResult();
+		$(document).on('click', '.upBtn', function () { // 장바구니 안의 제품에 up 버튼 클릭 시
+			let upCnt = $(this).prev().val();
+			$(this).prev().val(++upCnt);
+			priceResult();
+		})
+		$(document).on('click', '.downBtn', function () { // 장바구니 안의 제품에 down 버튼 클릭 시
+			let downCnt = $(this).next('.cartCnt').val();
+			if ($(this).next('.cartCnt').val() > 1) {
+				$(this).next('.cartCnt').val(--downCnt);
+			}
+			priceResult();
+		})
+		$(document).on('keyup', '.cartCnt', function () { priceResult(); }) // input에 값 직접 입력 시
+	})
+	let result = 0;
+	function priceResult() { // 장바구니 총 금액 계산 함수
+		$('.titleText').each(function (index, item) {
+			let price = $(item).children('.price').text().slice(0, -1);
+			
+			let val = parseInt($(item).next().children('.cartCnt').val())
+			result += parseInt(price.replace(/,/g, "")) * val;
+			})
+		$('#result').text(result.toLocaleString() + '원');
+		result = 0;
+	}
 		
-		var imgSrc = "";
-		var titleVal = "";
-		var priceVal = 0;
-		$(document).on('dragend','.image.featured',function(e){
-				$(this).css({
-					'cursor': 'pointer'
-				})
-				$(this).removeClass('animate__bounceIn');
+	var imgSrc = "";
+	var titleVal = "";
+	var priceVal = 0;
+	$(document).on('dragend','.image.featured',function(e){ // 드래그 끝
+		$(this).css({
+			'cursor': 'pointer'
 		})
-		$(document).on('dragstart','.image.featured',function(e){
-			$(this).css({
-					'cursor': 'grab'
-				})
-				$(this).addClass('animate__bounceIn');
-				imgSrc = $(this).children('img').attr('src');
-				titleVal = $(this).next().children('a').text();
-				priceVal = $(this).nextAll('p').text();
+		$(this).removeClass('animate__bounceIn');
+	})
+	$(document).on('dragstart','.image.featured',function(e){ // 드래그 시작
+		$(this).css({
+			'cursor': 'grab'
 		})
-		$('#cartList').on({
-			'dragover': function (e) {
-				e.preventDefault();
+		$(this).addClass('animate__bounceIn');
+		imgSrc = $(this).children('img').attr('src');
+		titleVal = $(this).next().children('a').text();
+		priceVal = $(this).nextAll('p').text();
+	})
+	$('#cartList').on({ 
+		'dragover': function (e) {
+			e.preventDefault();
+		}
+	})
+		
+	$(document).on('drop','#cartList', function (e) { // 상품을 장바구니에 넣었을 때
+		e.preventDefault();
+		var str = "";
+		str +=
+				`<div class="cartItem">
+				<div class="productImgDiv">
+				<img class="productImg" src="${imgSrc}" alt="">
+				<i class="fa-solid fa-circle-xmark"></i>
+				</div>
+				<div class="titleText">
+				<h4 class="title">${titleVal}</h4>
+				<h4 class="price">${priceVal}원</h4>
+				</div>
+				<div class="cartCntDiv">
+				<a class="downBtn but btnPush">
+				<i class="fa-solid fa-caret-down"></i>
+				</a>
+				<input type="text" class="cartCnt" value="1">
+				<a class="upBtn but btnPush">
+				<i class="fa-solid fa-caret-up"></i>
+				</a>
+				</div>
+				</div>`;		
+		$.ajax({ // 장바구니에 넣으면 데이터베이스에 저장
+			url:'CartInCon',
+			type:'post',
+			data : "id="+"<%=id%>"+"&title="+titleVal,
+			datatype : 'json',
+			success:function(){
 			}
 		})
-		
-		$(document).on('drop','#cartList', function (e) {
-				e.preventDefault();
-				var str = "";
-				str +=
-					`<div class="cartItem">
-					<div class="productImgDiv">
-						<img class="productImg" src="${imgSrc}" alt="">
-						<i class="fa-solid fa-circle-xmark"></i>
-					</div>
-					<div class="titleText">
-						<h4 class="title">${titleVal}</h4>
-						<h4 class="price">${priceVal}원</h4>
-					</div>
-					<div class="cartCntDiv">
-						<a class="downBtn but btnPush">
-							<i class="fa-solid fa-caret-down"></i>
-						</a>
-						<input type="text" class="cartCnt" value="1">
-						<a class="upBtn but btnPush">
-							<i class="fa-solid fa-caret-up"></i>
-						</a>
-					</div>
-				</div>`;
-				
-				$.ajax({
-				url:'CartInCon',
-				type:'post',
-				data : "id="+"<%=id%>"+"&title="+titleVal,
-				datatype : 'json',
-				success:function(){
-					alert('성공');
-				},error:function(){
-					alert('실패');
-				}
-			})
-				let b = true;
-				$('.titleText .title').each(function (index, item) {
-					if ($(item).text() == titleVal) {
-						let a = $(item).parent().next().children('.cartCnt').val();
-						$(item).parent().next().children('.cartCnt').val(++a);
-						b = false;
-						return b;
-					} else {
-						b = true;
-					}
-				})
-				if (b) {
-					$(this).append(str);
-				}
-				priceResult();
-				
+		let b = true;
+		$('.titleText .title').each(function (index, item) {
+			if ($(item).text() == titleVal) {
+				let a = $(item).parent().next().children('.cartCnt').val();
+				$(item).parent().next().children('.cartCnt').val(++a);
+				b = false;
+				return b;
+			} else {
+				b = true;
+			}
 		})
-		$(document).on('mouseover', '.productImgDiv', function () {
+		if (b) {
+			$(this).append(str);
+		}
+		priceResult();
+	})
+	$(document).on('mouseover', '.productImgDiv', function () {
 			$(this).children('i').css('display', 'block');
 		})
 		$(document).on('mouseleave', '.productImgDiv', function () {
