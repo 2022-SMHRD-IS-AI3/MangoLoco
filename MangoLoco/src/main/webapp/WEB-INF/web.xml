@@ -40,6 +40,12 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.ImageSaveCon</servlet-class>
   </servlet>
+<servlet>
+	<servlet-name>CartOutCon</servlet-name>
+	<display-name>CartOutCon</display-name>
+	<description></description>
+	<servlet-class>com.smhrd.controller.CartOutCon</servlet-class>
+</servlet>
   <servlet-mapping>
   	<servlet-name>CheckIdCon</servlet-name>
   	<url-pattern>/CheckIdCon</url-pattern>
@@ -59,5 +65,9 @@
   <servlet-mapping>
   	<servlet-name>ImageSaveCon</servlet-name>
   	<url-pattern>/ImageSaveCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CartOutCon</servlet-name>
+  	<url-pattern>/CartOutCon</url-pattern>
   </servlet-mapping>
 </web-app>

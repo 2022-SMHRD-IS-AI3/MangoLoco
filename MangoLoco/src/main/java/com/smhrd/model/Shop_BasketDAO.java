@@ -23,5 +23,12 @@ public class Shop_BasketDAO {
 		sqlSession.close();
 		return cnt;
 	}
+	
+	public int cartOut(Shop_BasketDTO dto) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt = sqlSession.delete("cartout", dto);
+		sqlSession.close();
+		return cnt;
+	}
 
 }
