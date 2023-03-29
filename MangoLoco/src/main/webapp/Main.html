@@ -22,16 +22,10 @@
 	<!-- Nav -->
 	<nav id="nav">
 		<ul class="container">
-			<li><a href="#top" style="display: flex; align-items: center;"><ion-icon name="filter-outline"
-						style="font-size: large;"></ion-icon>&nbsp; 필터</a></li>
-			<li><a href="#work" style="display: flex; align-items: center;"><ion-icon name="laptop-outline"
-						style="font-size: large;"></ion-icon>&nbsp; 제품</a></li>
-			<li><a href="#portfolio" style="display: flex; align-items: center;">뭐를 넣죠?</a></li>
-			<li><a href="#contact" style="display: flex; align-items: center;"><ion-icon name="clipboard-outline"
-						style="font-size: large;"></ion-icon>&nbsp; 게시판</a></li>
-			<li style="position: absolute; top: 10px; right: 0px; "><a href="Login.html"
-					style="display: flex; align-items: center;"><ion-icon name="log-in-outline"
-						style="font-size: 30px;"></ion-icon></a></li>
+			<li><a href="#top" style="display: flex; align-items: center;"><i class="fa-solid fa-filter"></i>&nbsp; 필터</a></li>
+			<li><a href="#work" style="display: flex; align-items: center;"><i class="fa-solid fa-laptop"></i>&nbsp; 제품</a></li>
+			<li><a href="" id="board" style="display: flex; align-items: center;"><i class="fa-solid fa-clipboard-list"></i>&nbsp; 게시판</a></li>
+			
 		</ul>
 	</nav>
 	<div id="cartMain" class="reduction">
@@ -340,8 +334,8 @@
 			
 			</div>
 			<footer>
-				<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-				<a href="#portfolio" class="button large scrolly">더보기</a>
+				<!-- <p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+				<a href="#portfolio" class="button large scrolly">더보기</a> -->
 			</footer>
 		</div>
 	</article>
@@ -488,9 +482,30 @@
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<script>
+	const params = new URLSearchParams(location.search);
+	let id =null;
+	let username = null;
+	let menu = "";
+	id= params.get("id");
+	username = params.get("username");
+	console.log(id);
+	$(function(){
+		if(id != null){
+			menu = `<li><span style="text-align: right; position: absolute; top :1px;right:95px; color: #fff;">${username}님 어서오세요</span></li>
+				<li style="position: absolute; top: 10px; right: 0px; ">
+				<a href="" class="logTap" id="logout">로그아웃</a></li>`;
+		}else{
+			menu = `<li style="position: absolute; top: 10px; right: 0px; ">
+			<a href="Login.html" class="logTap">로그인</a></li>`;
+		}
+			$('#nav ul').append(menu);
+	})
+	$(document).on('click', '#logout', function(e){
+		e.preventDefault();
+		location.replace("Main.html");
+	})
 	let count = 0;
 	const limit = 6;
-
 	// 스크롤 이벤트 발생 시
 	$(window).scroll(function() {
 	    if($(window).scrollTop() + $(window).height() == $(document).height()) {
@@ -503,15 +518,12 @@
 	            dataType:'json',
 	            success: function(data) {
 	                // 받아온 데이터를 이용하여 화면에 렌더링
-	                console.log(data);
 	                for(let i = 0; i < data.productDTO.length; i++) {
-	                	console.log(`${data.productDTO[i].model}.jpg`)
 	                    const product = `
 	                        <div class="col-4 col-6-medium col-12-small">
 	                            <article class="box style2">
 	                                <a class="image featured">
 	                                    <img src="img/${data.productDTO[i].model}.jpg" alt="">
-	                                    <i class="fa-solid fa-heart middle"></i>
 	                                    <i class="fa-solid fa-heart small dislike"></i>
 	                                </a>
 	                                <h3><a href="">${data.productDTO[i].model}</a></h3>
@@ -721,7 +733,7 @@
 			$(document).on('click', '.upBtn', function () {
 				let upCnt = $(this).prev().val();
 				$(this).prev().val(++upCnt);
-				console.log(upCnt);
+
 				priceResult();
 			})
 			$(document).on('click', '.downBtn', function () {
@@ -739,7 +751,6 @@
 				let price = $(item).children('.price').text().slice(0, -1);
 				
 				let val = parseInt($(item).next().children('.cartCnt').val())
-				console.log(price);
 				result += parseInt(price.replace(/,/g, "")) * val;
 
 			})
@@ -809,6 +820,14 @@
 					$(this).append(str);
 				}
 				priceResult();
+				$.ajax({
+					url:'cartInCon',
+					data : 'id='+id+'&title='+titleVal,
+					datatype : 'json',
+					success:function(data){
+						
+					}
+				})
 		})
 		$(document).on('mouseover', '.productImgDiv', function () {
 			$(this).children('i').css('display', 'block');
@@ -835,6 +854,11 @@
 					'visibility': 'hidden'
 			 });
 			}
+		})
+		
+		$('#board').on('click',function(e){
+			e.preventDefault();
+			window.location.href = "BoardMain.jsp";
 		})
 		// $('#top').on('scroll touchmove mousewheel', function (event) {
 

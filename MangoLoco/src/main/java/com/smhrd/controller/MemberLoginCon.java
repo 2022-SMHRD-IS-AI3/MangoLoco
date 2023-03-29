@@ -43,7 +43,7 @@ public class MemberLoginCon extends HttpServlet {
 		
 		String gson = new Gson().toJson(info);
 		System.out.println(gson);
-		response.getWriter().write(json.toString());
+		response.getWriter().write(gson);
 	}
 
 }

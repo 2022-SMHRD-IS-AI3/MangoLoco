@@ -349,12 +349,26 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-	background-color: #2f3542;
+	background-color: #FF6B6B;
 	border-radius: 5px;
 }
 
 body::-webkit-scrollbar-track {
 	background-color: rgb(196, 196, 196);
+}
+
+.image.featured .small{
+	font-size: 30px;
+	position: absolute;
+	right: 10px;
+	top: 15px;
+	color: #f00;
+	text-shadow: -2px 0 red, 0 2px red, 2px 0 red, 0 -2px red;
+	transition: all 0.3s ease-in;
+	z-index:1;
+}
+.image.featured .dislike{
+	color: #fff;
 }
 
 .filter {
@@ -378,7 +392,7 @@ body::-webkit-scrollbar-track {
 }
 
 .filter::-webkit-scrollbar-thumb {
-	background-color: #2f3542;
+	background-color: #FF6B6B;
 	border-radius: 10px;
 
 }
@@ -2012,6 +2026,12 @@ button.alt:active,
 	background-color: #3f3f3f;
 }
 
+.logTap{
+	display: flex; align-items: center; width: 80px;padding: 0;justify-content: center;
+}
+#nav .logTap{
+	padding:0px;
+}
 /* List */
 
 ul {
@@ -2308,7 +2328,7 @@ ul.actions li:first-child {
 /* Nav */
 
 #nav {
-	background-color: #2f3542;
+	background-color: #FF6B6B;
 	text-align: center;
 	position: fixed;
 	left: 0;
@@ -2845,7 +2865,7 @@ button.searchBtn {
 }
 
 #cartList::-webkit-scrollbar-thumb {
-	background-color: #2f3542;
+	background-color: #FF6B6B;
 	border-radius: 10px;
 }
 
