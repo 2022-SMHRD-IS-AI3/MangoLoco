@@ -4,9 +4,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.mapper.Shop_BasketMapper">
 	<insert id="cartin" parameterType="Shop_BasketDTO">
-		insert into shop_basket values(basket_seq.nextval, )
+		insert into shop_basket values(basket_seq.nextval, #{model}, #{id})
 	</insert>
 	<select id="basketAll" resultType="Shop_BasketDTO">
 		select * from SHOP_BASKET
 	</select>
+	
+	<delete id="cartout" parameterType="Shop_BasketDTO">
+		delete from shop_basket where id=#{id} and model=#{model}
+	</delete>
 </mapper>

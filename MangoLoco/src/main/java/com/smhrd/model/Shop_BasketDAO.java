@@ -17,9 +17,16 @@ public class Shop_BasketDAO {
 		return basket_list;
 	}
 	
-	public int cartIn(String id) {
+	public int cartIn(Shop_BasketDTO dto) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		int cnt = sqlSession.insert("cartin", id);
+		int cnt = sqlSession.insert("cartin", dto);
+		sqlSession.close();
+		return cnt;
+	}
+	
+	public int cartOut(Shop_BasketDTO dto) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt = sqlSession.delete("cartout", dto);
 		sqlSession.close();
 		return cnt;
 	}
