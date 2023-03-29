@@ -17,4 +17,10 @@ public class ProductDAO {
 		
 		return productList;
 	}
+	public java.util.List<ProductDTO> User_ProductAll() {
+		SqlSession sqlsession = sqlSessionFactory.openSession(true);
+		java.util.List<ProductDTO> Product_list = sqlsession.selectList("User_ProductAll");
+		sqlsession.close();
+		return Product_list;
+	}
 }
