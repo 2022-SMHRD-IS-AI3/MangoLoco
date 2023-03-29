@@ -11,8 +11,5 @@ import lombok.RequiredArgsConstructor;
 public class Shop_BasketDTO {
 	private int seq;
 	private String model;
-	private int classification;
 	private String id;
-	private String p_seq;
-	private String s_date;
 }
