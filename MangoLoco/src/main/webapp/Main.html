@@ -566,21 +566,34 @@
 	}) */
 	
 	
-		$('.filterCate').on({ // 카테고리 hover 기능
-			'mouseover': function () {
+	$('.filterCate').on({ // 카테고리 hover 기능
+		'mouseover': function () {
+			$('.filterList').on({
+				'mouseover':function(){
+					$(this).css({
+				'display': 'block'
+			})
+				}
+			})
+			$(this).next('.filterList').css({
+				'display': 'block'
+			})
+		},
 
-				$(this).next('.filterList').css({
-					'display': 'block'
-				})
-			},
 
-			'mouseout': function () {
-				$(this).next('.filterList').css({
-					'display': 'none'
-				})
-
-			}
-		})
+		'mouseout': function () {
+			$('.filterList').on({
+				'mouseout':function(){
+					$(this).css({
+				'display': 'none'
+			})
+				}
+			})
+			$(this).next('.filterList').css({
+				'display': 'none'
+			})
+		}
+	})
 		// $('div').not().on({
 		// 	'click':function(){
 		// 		$('.filterCate').css({
@@ -592,7 +605,7 @@
 		// 		})
 		// 	}
 		// })
-		$('.filterCate').on({ // 카테고리 클릭 - 리스트창 고정 기능
+		/* $('.filterCate').on({ // 카테고리 클릭 - 리스트창 고정 기능
 			'click': function (e) {
 
 				if ($(this).hasClass('select')) {
@@ -626,7 +639,7 @@
 					})
 				}
 			}
-		})
+		}) */
 		var softwareList = []
 		$('.filter a').on({
 			'click': function () { // 필터 체크 기능
@@ -821,11 +834,11 @@
 				}
 				priceResult();
 				$.ajax({
-					url:'cartInCon',
+					url:'CartInCon',
 					data : 'id='+id+'&title='+titleVal,
 					datatype : 'json',
-					success:function(data){
-						
+					success:function(){
+						// 장바구니 담기 db insert
 					}
 				})
 		})
@@ -837,6 +850,17 @@
 		})
 		$(document).on('click', '.productImgDiv i', function () {
 			$(this).closest('.cartItem').remove('');
+			let rmtitle = $(this).parent().next().children('.title').text();
+			$.ajax({
+				url:'CartOutCon',
+				data: {
+					id: id,
+					title: rmtitle
+				},
+				success:function(){
+					
+				}
+			})
 			priceResult();
 		})
 

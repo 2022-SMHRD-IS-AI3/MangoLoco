@@ -21,8 +21,9 @@ public class CartInCon extends HttpServlet {
 		
 		String id = request.getParameter("id");
 		String title = request.getParameter("title");
+		Shop_BasketDTO basketDTO = new Shop_BasketDTO(title, id);
 		Shop_BasketDAO basketDAO = new Shop_BasketDAO();
-		
+		int cnt = basketDAO.cartIn(basketDTO);
 	}	
 
 }
