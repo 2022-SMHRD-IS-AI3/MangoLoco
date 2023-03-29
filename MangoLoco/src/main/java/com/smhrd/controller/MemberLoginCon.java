@@ -24,12 +24,9 @@ public class MemberLoginCon extends HttpServlet {
 		HttpSession session = request.getSession();
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		System.out.println(id+pw);
 		MembersDTO dto = new MembersDTO(id, pw);
 		MembersDAO dao = new MembersDAO();
 		MembersDTO info = dao.login(dto);
-		
-		System.out.println(info.getNick());
 		
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("application/x-json; charset=utf-8");

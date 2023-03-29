@@ -501,13 +501,13 @@
 				<a href="" class="logTap" id="logout">로그아웃</a></li>`;
 		}else{
 			menu = `<li style="position: absolute; top: 10px; right: 0px; ">
-			<a href="Login.html" class="logTap">로그인</a></li>`;
+			<a href="Login.jsp" class="logTap">로그인</a></li>`;
 		}
 			$('#nav ul').append(menu);
 	})
 	$(document).on('click', '#logout', function(e){
 		e.preventDefault();
-		location.replace("Main.html");
+		location.replace("Main.jsp");
 	})
 	let count = 0;
 	const limit = 6;

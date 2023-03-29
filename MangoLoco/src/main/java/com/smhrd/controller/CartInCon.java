@@ -18,12 +18,13 @@ public class CartInCon extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("aplication/x-json; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		
+		System.out.println("fdgafggasg");
 		String id = request.getParameter("id");
 		String title = request.getParameter("title");
 		Shop_BasketDTO basketDTO = new Shop_BasketDTO(title, id);
 		Shop_BasketDAO basketDAO = new Shop_BasketDAO();
 		int cnt = basketDAO.cartIn(basketDTO);
+		System.out.println("sdgafgagadg");
 	}	
 
 }

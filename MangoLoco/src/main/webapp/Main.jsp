@@ -14,6 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="https://kit.fontawesome.com/527ad8f39b.js" crossorigin="anonymous"></script>
 	<style>
@@ -41,7 +42,7 @@
 			<a href="LogoutCon" class="logTap" id="logout">로그아웃</a></li>
 		<%}else{%>
 			<li style="position: absolute; top: 10px; right: 0px; ">
-			<a href="Login.html" class="logTap">로그인</a></li>
+			<a href="Login.jsp" class="logTap">로그인</a></li>
 		<%}%>
 			
 		</ul>
@@ -502,6 +503,8 @@
 	<script>
 	const params = new URLSearchParams(location.search);
 	
+	let id= '<%=id%>';
+	let nick = '<%=nick%>';
 	let count = 0;
 	const limit = 6;
 	// 스크롤 이벤트 발생 시
@@ -611,6 +614,29 @@
 		$('#filterBtn').on({ // 필터링 버튼 클릭
 			'click': function () {
 				console.log(softwareList) // 이쪽에 체크된 목록 데이터 있음
+				$.ajax({
+					url:'filterCon',
+					type:'post',
+					data:'software='+softwareList+ '&count='+count,
+					dataType:'json',
+					success: function(data) {
+		                // 받아온 데이터를 이용하여 화면에 렌더링
+		                for(let i = 0; i < data.productDTO.length; i++) {
+		                    const product = `
+		                        <div class="col-4 col-6-medium col-12-small">
+		                            <article class="box style2">
+		                                <a class="image featured">
+		                                    <img src="img/${data.productDTO[i].model}.jpg" alt="">
+		                                    <i class="fa-solid fa-heart small dislike"></i>
+		                                </a>
+		                                <h3><a href="">${data.productDTO[i].model}</a></h3>
+		                                <p>${data.productDTO[i].price}</p>
+		                            </article>
+		                        </div>`;
+		                    $('.row.aln-center').append(product);
+		                }
+		            }
+				})
 				$('.checked').each(function (index, item) { // 체크된 목록 삭제
 					$(this).removeClass('checked animate__bounceIn')
 					$(this).children('.fa-check').remove();
@@ -740,6 +766,18 @@
 						</a>
 					</div>
 				</div>`;
+				
+				$.ajax({
+				url:'CartInCon',
+				type:'get',
+				data : 'id='+id+'&title='+titleVal,
+				datatype : 'json',
+				success:function(){
+					alert('성공');
+				},error:function(){
+					alert('실패');
+				}
+			})
 				let b = true;
 				$('.titleText .title').each(function (index, item) {
 					if ($(item).text() == titleVal) {
@@ -755,14 +793,7 @@
 					$(this).append(str);
 				}
 				priceResult();
-				$.ajax({
-					url:'CartInCon',
-					data : 'id='+id+'&title='+titleVal,
-					datatype : 'json',
-					success:function(){
-						// 장바구니 담기 db insert
-					}
-				})
+				
 		})
 		$(document).on('mouseover', '.productImgDiv', function () {
 			$(this).children('i').css('display', 'block');
