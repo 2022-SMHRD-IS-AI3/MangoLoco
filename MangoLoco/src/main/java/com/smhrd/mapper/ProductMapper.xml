@@ -5,4 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.smhrd.mapper.ProductMapper">
 	<insert id="" parameterType="ProductDTO">
 	</insert>
+	<select id="User_ProductAll" resultType="ProductDTO">
+		select p.* from PRODUCT p, SHOP_BASKET sb where p.model = sb.model
+	</select>
 </mapper>
