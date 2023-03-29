@@ -6,10 +6,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smhrd.Commend.Command;
+import com.smhrd.Commend.Commend;
 import com.smhrd.model.BoardDAO;
 
-public class BoardDelCon implements Command {
+public class BoardDelCon implements Commend {
 	
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
