@@ -20,9 +20,9 @@ public class BoardDelCon implements Commend {
 		int cnt = dao.delete(nick);
 		
 		if(cnt>0){
-			System.out.println("삭제성공");
+			System.out.println("�����깃났");
 		}else{
-			System.out.println("삭제실패");
+			System.out.println("�����ㅽ��");
 		}
 		return "ShowMember.jsp";
 	}

@@ -34,6 +34,18 @@
 					<tbody>
 					<%for(int i=0; i<board_list.size(); i++){ %>
 					<tr>
+						<td>공지</td>
+						<td><a href="BoardDetail.jsp?num=<%=board_list.get(i).getSeq()%>"><%=board_list.get(i).getTitle() %></a></td>
+						<td><%=board_list.get(i).getNick() %></td>
+						<td><%=board_list.get(i).getB_date() %></td>
+						<%if(board_list.get(i).getId().equals("admin")){ %>
+							<td><a href="BoardDelCon.do">삭제하기</a></td>
+						<%} %>
+					</tr>
+					<%} %>
+					<%for(int i=0; i<board_list.size(); i++){ %>
+					<tr>
+						<td></td>
 						<td><%=i+1 %></td>
 						<td><a href="BoardDetail.jsp?num=<%=board_list.get(i).getSeq()%>"><%=board_list.get(i).getTitle() %></a></td>
 						<td><%=board_list.get(i).getNick() %></td>
