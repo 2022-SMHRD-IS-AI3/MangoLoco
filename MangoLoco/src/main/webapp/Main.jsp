@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE HTML>
 <!--
 	Miniport by HTML5 UP
@@ -27,34 +29,34 @@
 	<!-- Nav -->
 	<nav id="nav">
 		<ul class="container">
-			<li><a href="#top" style="display: flex; align-items: center;"><i class="fa-solid fa-filter"></i>&nbsp; í•„í„°</a></li>
-			<li><a href="#work" style="display: flex; align-items: center;"><i class="fa-solid fa-laptop"></i>&nbsp; ì œí’ˆ</a></li>
-			<li><a href="" id="board" style="display: flex; align-items: center;"><i class="fa-solid fa-clipboard-list"></i>&nbsp; ê²Œì‹œíŒ</a></li>
+			<li><a href="#top" style="display: flex; align-items: center;"><i class="fa-solid fa-filter"></i>&nbsp; ÇÊÅÍ</a></li>
+			<li><a href="#work" style="display: flex; align-items: center;"><i class="fa-solid fa-laptop"></i>&nbsp; Á¦Ç°</a></li>
+			<li><a href="" id="board" style="display: flex; align-items: center;"><i class="fa-solid fa-clipboard-list"></i>&nbsp; °Ô½ÃÆÇ</a></li>
 			
 		</ul>
 	</nav>
 	<div id="cartMain" class="reduction">
 		<div id="cartTap">
-			ì¥ë°”êµ¬ë‹ˆ
+			Àå¹Ù±¸´Ï
 			<ion-icon name="chevron-forward-outline" style="font-size: 25px;"></ion-icon>
 		</div>
 		<div style="position: absolute;width: 80%; height: 50px; left : 10px;top: 20px; font-size: 45px;">
-			&nbsp;&nbsp;&nbsp;ì¥ë°”êµ¬ë‹ˆ
+			&nbsp;&nbsp;&nbsp;Àå¹Ù±¸´Ï
 		</div>
 		<div id="cartList">
-			<!-- ëŒì–´ì˜¤ë©´ ë…¸íŠ¸ë¶ ì œí’ˆë“¤ ìƒì„± -->
+			<!-- ²ø¾î¿À¸é ³ëÆ®ºÏ Á¦Ç°µé »ı¼º -->
 		</div>
 		<div
 			style="position: absolute;width: 80%; height: 50px; left : 50%; bottom: 190px; transform: translateX(-50%);font-size: 45px;">
-			ì´ ê¸ˆì•¡
+			ÃÑ ±İ¾×
 		</div>
 		<div
 			style="position: absolute;width: 80%; height: 50px; background: none; left : 50%; bottom: 140px; transform: translateX(-50%); text-align: right;">
-			<span id="result" style=" font-size: 32px; ">000000000ì›</span>
+			<span id="result" style=" font-size: 32px; ">000000000¿ø</span>
 		</div>
 		<a href=""
 			style="border-radius: 10px; text-decoration: none; position: absolute;height: 70px;width: 200px; background: #fff;bottom: 30px; right: 10%; transform: translateY(-50%);display: flex;align-items: center;justify-content: center; color: black; font-size: 23px;">
-			ê²°ì œí•˜ê¸°
+			°áÁ¦ÇÏ±â
 		</a>
 	</div>
 	<!-- Home -->
@@ -63,104 +65,104 @@
 		<div
 			style="position: relative; left: 24%; top: 13%; width: 170px; height: 130px; background-color: #2f3542; margin-bottom: 50px;">
 			<img src="images/mango.png" alt="" style="width: 37%; margin-left: 10px; margin-top: 5px;">
-			<h1 style="font-size: 2rem; color: #ffffff;">ë¡œì½” ë¡œê³ </h1>
+			<h1 style="font-size: 2rem; color: #ffffff;">·ÎÄÚ ·Î°í</h1>
 		</div>
 		<div class="search" style="position: absolute; left: 50%;top:  24% ; transform: translate(-50%, -50%);">
-			<input class="inputSearch" type="text" placeholder="ê²€ìƒ‰ì–´ ì…ë ¥">
-			<button class="searchBtn">ê²€ìƒ‰</button>
+			<input class="inputSearch" type="text" placeholder="°Ë»ö¾î ÀÔ·Â">
+			<button class="searchBtn">°Ë»ö</button>
 		</div>
 		<div class="container" style=" background-color: yellow; height: 500px; width : 1600px; position: relative;">
 			<div
 				style="background: #2f3542; width:97%; position: absolute; height: 100%; transform: translate(-50%,-50%);top: 73%;left: 50%;">
 			</div>
 			<div class="filterCate" style = "background : bisque;">
-				ë˜ìŠ¤í„° ê·¸ë˜í”½
+				·¡½ºÅÍ ±×·¡ÇÈ
 			</div>
 			<div class="filterList" style = "position : absolute; transform: translate(1%, -5%); background : aqua; border: 10px solid transparent; width : 15%">
 				<div class="filter">
-					<a data-value="Photoshop"><img class="programs" src="images/rg/PhotoShop.png" alt="í¬í† ìƒµ"
+					<a data-value="Photoshop"><img class="programs" src="images/rg/PhotoShop.png" alt="Æ÷Åä¼¥"
 							style="border-radius: 20%;" />
-						<div style="text-align: center; margin-top: -5px;">í¬í† ìƒµ</div>
+						<div style="text-align: center; margin-top: -5px;">Æ÷Åä¼¥</div>
 					</a>
 					<a data-value="Affinity Photo"><img class="programs" src="images/rg/affinity photo.png"
-							style="border-radius: 24%; " alt="ì–´í”¼ë‹ˆí‹° í¬í† " />
-						<div style="text-align: center; margin-top: -5px;">ì–´í”¼ë‹ˆí‹° í¬í† </div>
+							style="border-radius: 24%; " alt="¾îÇÇ´ÏÆ¼ Æ÷Åä" />
+						<div style="text-align: center; margin-top: -5px;">¾îÇÇ´ÏÆ¼ Æ÷Åä</div>
 					</a>
-					<a data-value="Painter"><img class="programs" src="images/rg/painter.png" alt="í˜ì¸í„°" />
-						<div style="text-align: center; margin-top: -5px;">í˜ì¸í„°</div>
+					<a data-value="Painter"><img class="programs" src="images/rg/painter.png" alt="ÆäÀÎÅÍ" />
+						<div style="text-align: center; margin-top: -5px;">ÆäÀÎÅÍ</div>
 					</a>
 					<a data-value="Fresco"><img class="programs" src="images/rg/adobefresco.png"
-							style="border-radius: 20%;" alt="í”„ë¡œìŠ¤ì½”" />
-						<div style="text-align: center; margin-top: -5px;">í”„ë¡œìŠ¤ì½”</div>
+							style="border-radius: 20%;" alt="ÇÁ·Î½ºÄÚ" />
+						<div style="text-align: center; margin-top: -5px;">ÇÁ·Î½ºÄÚ</div>
 					</a>
 					<a data-value="Procreate"><img class="programs" src="images/rg/procreate.png"
-							style="border-radius: 20%; ;" alt="í”„ë¡œí¬ë¦¬ì—ì´íŠ¸" />
-						<div style="text-align: center; margin-top: -5px;">í”„ë¡œí¬ë¦¬ì—ì´íŠ¸</div>
+							style="border-radius: 20%; ;" alt="ÇÁ·ÎÅ©¸®¿¡ÀÌÆ®" />
+						<div style="text-align: center; margin-top: -5px;">ÇÁ·ÎÅ©¸®¿¡ÀÌÆ®</div>
 					</a>
-					<a data-value="Paintshop"><img class="programs" src="images/rg/paintshop.png" alt="í˜ì¸íŠ¸ìƒµ" />
-						<div style="text-align: center; margin-top: -5px;">í˜ì¸íŠ¸ìƒµ</div>
+					<a data-value="Paintshop"><img class="programs" src="images/rg/paintshop.png" alt="ÆäÀÎÆ®¼¥" />
+						<div style="text-align: center; margin-top: -5px;">ÆäÀÎÆ®¼¥</div>
 					</a>
-					<a data-value="Artweaver"><img class="programs" src="images/rg/artweaver.png" alt="ì•„íŠ¸ìœ„ë²„" />
-						<div style="text-align: center; margin-top: -5px;">ì•„íŠ¸ìœ„ë²„</div>
+					<a data-value="Artweaver"><img class="programs" src="images/rg/artweaver.png" alt="¾ÆÆ®À§¹ö" />
+						<div style="text-align: center; margin-top: -5px;">¾ÆÆ®À§¹ö</div>
 					</a>
 					<a data-value="Clip Studio Paint"><img class="programs" src="images/rg/clip studio paint.png"
-							alt="í´ë¦½ìŠ¤íŠœë””ì˜¤" />
-						<div style="text-align: center; margin-top: -5px;">í´ë¦½ìŠ¤íŠœë””ì˜¤</div>
+							alt="Å¬¸³½ºÆ©µğ¿À" />
+						<div style="text-align: center; margin-top: -5px;">Å¬¸³½ºÆ©µğ¿À</div>
 					</a>
-					<a data-value="PhotoScape"><img class="programs" src="images/rg/photoscape.png" alt="í¬í† ìŠ¤ì¼€ì´í”„" />
-						<div style="text-align: center; margin-top: -5px;">í¬í† ìŠ¤ì¼€ì´í”„</div>
+					<a data-value="PhotoScape"><img class="programs" src="images/rg/photoscape.png" alt="Æ÷Åä½ºÄÉÀÌÇÁ" />
+						<div style="text-align: center; margin-top: -5px;">Æ÷Åä½ºÄÉÀÌÇÁ</div>
 					</a>
-					<a data-value="PixelMator"><img class="programs" src="images/rg/pixelmator.png" alt="í”½ì…€ë©”ì´í„°" />
-						<div style="text-align: center; margin-top: -5px;">í”½ì…€ë©”ì´í„°</div>
+					<a data-value="PixelMator"><img class="programs" src="images/rg/pixelmator.png" alt="ÇÈ¼¿¸ŞÀÌÅÍ" />
+						<div style="text-align: center; margin-top: -5px;">ÇÈ¼¿¸ŞÀÌÅÍ</div>
 					</a>
 				</div>
 			</div>
 			<div class="line" style=" visibility: hidden"></div>
-			<div class="filterCate" style="left: 20.2%;">ë²¡í„° ê·¸ë˜í”½</div>
+			<div class="filterCate" style="left: 20.2%;">º¤ÅÍ ±×·¡ÇÈ</div>
 			<div class="filterList" style="left: 20%;">
 				<div class="filter">
-					<a data-value="Illustrator"><img class="programs" src="images/vg/Illustrator.png" alt="ì¼ëŸ¬ìŠ¤íŠ¸ë ˆì´í„°" />
-						<div style="text-align: center; margin-top: -5px;">ì¼ëŸ¬ìŠ¤íŠ¸ë ˆì´í„°</div>
+					<a data-value="Illustrator"><img class="programs" src="images/vg/Illustrator.png" alt="ÀÏ·¯½ºÆ®·¹ÀÌÅÍ" />
+						<div style="text-align: center; margin-top: -5px;">ÀÏ·¯½ºÆ®·¹ÀÌÅÍ</div>
 					</a>
-					<a data-value="Vectornator"><img class="programs" src="images/vg/vectornator.png" alt="ë²¡í„°ë„¤ì´í„°" />
-						<div style="text-align: center; margin-top: -5px;">ë²¡í„°ë„¤ì´í„°</div>
+					<a data-value="Vectornator"><img class="programs" src="images/vg/vectornator.png" alt="º¤ÅÍ³×ÀÌÅÍ" />
+						<div style="text-align: center; margin-top: -5px;">º¤ÅÍ³×ÀÌÅÍ</div>
 					</a>
 					<a data-value="Affinity Designer"><img class="programs" src="images/vg/affinitydesigner.png"
-							alt="ì–´í”¼ë‹ˆí‹° ë””ìì´ë„ˆ" />
-						<div style="text-align: center; margin-top: -5px;">ì–´í”¼ë‹ˆí‹° ë””ìì´ë„ˆ</div>
+							alt="¾îÇÇ´ÏÆ¼ µğÀÚÀÌ³Ê" />
+						<div style="text-align: center; margin-top: -5px;">¾îÇÇ´ÏÆ¼ µğÀÚÀÌ³Ê</div>
 					</a>
-					<a data-value="Gravit"><img class="programs" src="images/vg/Gravit.png" alt="ê·¸ë˜ë¹—" />
-						<div style="text-align: center; margin-top: -5px;">ê·¸ë˜ë¹—</div>
+					<a data-value="Gravit"><img class="programs" src="images/vg/Gravit.png" alt="±×·¡ºø" />
+						<div style="text-align: center; margin-top: -5px;">±×·¡ºø</div>
 					</a>
-					<a data-value="Figma"><img class="programs" src="images/vg/figma.png" alt="í”¼ê·¸ë§ˆ" />
-						<div style="text-align: center; margin-top: -5px;">í”¼ê·¸ë§ˆ</div>
+					<a data-value="Figma"><img class="programs" src="images/vg/figma.png" alt="ÇÇ±×¸¶" />
+						<div style="text-align: center; margin-top: -5px;">ÇÇ±×¸¶</div>
 					</a>
-					<a data-value="Sketch"><img class="programs" src="images/vg/sketch.png" alt="ìŠ¤ì¼€ì¹˜" />
-						<div style="text-align: center; margin-top: -5px;">ìŠ¤ì¼€ì¹˜</div>
+					<a data-value="Sketch"><img class="programs" src="images/vg/sketch.png" alt="½ºÄÉÄ¡" />
+						<div style="text-align: center; margin-top: -5px;">½ºÄÉÄ¡</div>
 					</a>
-					<a data-value="InkScape"><img class="programs" src="images/vg/inkcape.png" alt="ì‰í¬ìŠ¤ì¼€ì´í”„" />
-						<div style="text-align: center; margin-top: -5px;">ì‰í¬ìŠ¤ì¼€ì´í”„</div>
+					<a data-value="InkScape"><img class="programs" src="images/vg/inkcape.png" alt="À×Å©½ºÄÉÀÌÇÁ" />
+						<div style="text-align: center; margin-top: -5px;">À×Å©½ºÄÉÀÌÇÁ</div>
 					</a>
-					<a data-value="Animate"><img class="programs" src="images/vg/adobeanimate.png" alt="ì• ë‹ˆë©”ì´íŠ¸" />
-						<div style="text-align: center; margin-top: -5px;">ì• ë‹ˆë©”ì´íŠ¸</div>
+					<a data-value="Animate"><img class="programs" src="images/vg/adobeanimate.png" alt="¾Ö´Ï¸ŞÀÌÆ®" />
+						<div style="text-align: center; margin-top: -5px;">¾Ö´Ï¸ŞÀÌÆ®</div>
 					</a>
-					<a data-value="Corel DRAW"><img class="programs" src="images/vg/corel drow.png" alt="ì½”ë ë“œë¡œ" />
-						<div style="text-align: center; margin-top: -5px;">ì½”ë ë“œë¡œ</div>
+					<a data-value="Corel DRAW"><img class="programs" src="images/vg/corel drow.png" alt="ÄÚ·¼µå·Î" />
+						<div style="text-align: center; margin-top: -5px;">ÄÚ·¼µå·Î</div>
 					</a>
-					<a data-value="PaintShop"><img class="programs" src="images/vg/paintshop.png" alt="í˜ì¸íŠ¸ìƒµ" />
-						<div style="text-align: center; margin-top: -5px;">í˜ì¸íŠ¸ìƒµ</div>
+					<a data-value="PaintShop"><img class="programs" src="images/vg/paintshop.png" alt="ÆäÀÎÆ®¼¥" />
+						<div style="text-align: center; margin-top: -5px;">ÆäÀÎÆ®¼¥</div>
 					</a>
 				</div>
 			</div>
 			<div class="line" style="left: 37.9%; visibility: hidden"></div>
-			<div class="filterCate" style="left: 40.2%;">ë°ìŠ¤í¬íƒ‘ í¼ë¸”ë¦¬ì‹±</div>
+			<div class="filterCate" style="left: 40.2%;">µ¥½ºÅ©Å¾ ÆÛºí¸®½Ì</div>
 			<div class="filterList" style="left:40%;">
 				<div class="filter">
-					<a data-value="InDesign"><img class="programs" src="images/dp/Adobe InDesign.png" alt="ì¸ë””ìì¸" />
-						<div>ì¸ë””ìì¸</div>
+					<a data-value="InDesign"><img class="programs" src="images/dp/Adobe InDesign.png" alt="ÀÎµğÀÚÀÎ" />
+						<div>ÀÎµğÀÚÀÎ</div>
 					</a>
-					<a data-value="Canva"><img class="programs" src="images/dp/Canva.png" alt="ìº”ë°”" />
-						<div>ìº”ë°”</div>
+					<a data-value="Canva"><img class="programs" src="images/dp/Canva.png" alt="Äµ¹Ù" />
+						<div>Äµ¹Ù</div>
 					</a>
 					<a data-value="Snappa"><img class="programs" src="images/dp/Snappa.png" alt="Snappa" />
 						<div>Snappa</div>
@@ -175,89 +177,89 @@
 						<div>Visme</div>
 					</a>
 					<a data-value="Affinity Publisher"><img class="programs" src="images/dp/Affinity Publisher.png"
-							alt="ì–´í”¼ë‹ˆí‹° í¼ë¸”ë¦¬ì…”" />
-						<div>ì–´í”¼ë‹ˆí‹° í¼ë¸”ë¦¬ì…”</div>
+							alt="¾îÇÇ´ÏÆ¼ ÆÛºí¸®¼Å" />
+						<div>¾îÇÇ´ÏÆ¼ ÆÛºí¸®¼Å</div>
 					</a>
-					<a data-value="Lightroom"><img class="programs" src="images/dp/Adobe Lightroom.png" alt="ë¼ì´íŠ¸ë£¸" />
-						<div>ë¼ì´íŠ¸ë£¸</div>
+					<a data-value="Lightroom"><img class="programs" src="images/dp/Adobe Lightroom.png" alt="¶óÀÌÆ®·ë" />
+						<div>¶óÀÌÆ®·ë</div>
 					</a>
-					<a data-value="Snapseed"><img class="programs" src="images/dp/Snapseed.png" alt="ìŠ¤ëƒ…ì‹œë“œ" />
-						<div>ìŠ¤ëƒ…ì‹œë“œ</div>
+					<a data-value="Snapseed"><img class="programs" src="images/dp/Snapseed.png" alt="½º³À½Ãµå" />
+						<div>½º³À½Ãµå</div>
 					</a>
 				</div>
 			</div>
 			<div class="line" style="left: 57.9%; visibility: hidden"></div>
-			<div class="filterCate" style="left: 60.2%;">ëª¨ì…˜ ê·¸ë˜í”½</div>
+			<div class="filterCate" style="left: 60.2%;">¸ğ¼Ç ±×·¡ÇÈ</div>
 
 			<div class="filterList" style="left: 60%; ">
 				<div class="filter">
-					<a data-value="Movavi"><img class="programs" src="images/mg/Movavi.png" alt="ëª¨ë°”ë¹„" />
-						<div>ëª¨ë°”ë¹„</div>
+					<a data-value="Movavi"><img class="programs" src="images/mg/Movavi.png" alt="¸ğ¹Ùºñ" />
+						<div>¸ğ¹Ùºñ</div>
 					</a>
 					<a data-value="ActivePresenter"><img class="programs" src="images/mg/ActivePresenter.png"
-							alt="ì•¡í‹°ë¸Œí”„ë¦¬ì  í„°" />
-						<div>ì•¡í‹°ë¸Œí”„ë¦¬ì  í„°</div>
+							alt="¾×Æ¼ºêÇÁ¸®Á¨ÅÍ" />
+						<div>¾×Æ¼ºêÇÁ¸®Á¨ÅÍ</div>
 					</a>
-					<a data-value="Shotcut"><img class="programs" src="images/mg/Shotcut.png" alt="ìƒ·ì»·" />
-						<div>ìƒ·ì»·</div>
+					<a data-value="Shotcut"><img class="programs" src="images/mg/Shotcut.png" alt="¼¦ÄÆ" />
+						<div>¼¦ÄÆ</div>
 					</a>
-					<a data-value="OpenShot"><img class="programs" src="images/mg/OpenShot.png" alt="ì˜¤í”ˆìƒ·" />
-						<div>ì˜¤í”ˆìƒ·</div>
+					<a data-value="OpenShot"><img class="programs" src="images/mg/OpenShot.png" alt="¿ÀÇÂ¼¦" />
+						<div>¿ÀÇÂ¼¦</div>
 					</a>
 					<a data-value="DaVinci Resolve"><img class="programs" src="images/mg/DaVinci Resolve.jfif"
-							alt="ë‹¤ë¹ˆì¹˜ ë¦¬ì¡¸ë¸Œ" />
-						<div>ë‹¤ë¹ˆì¹˜ ë¦¬ì¡¸ë¸Œ</div>
+							alt="´ÙºóÄ¡ ¸®Á¹ºê" />
+						<div>´ÙºóÄ¡ ¸®Á¹ºê</div>
 					</a>
 					<a data-value="Video Grabber"><img class="programs" src="images/mg/Video Grabber.jfif"
 							alt="Video Grabber" />
 						<div>Video Grabber</div>
 					</a>
-					<a data-value="iMovie"><img class="programs" src="images/mg/iMovie.png" alt="ì•„ì´ë¬´ë¹„" />
-						<div>ì•„ì´ë¬´ë¹„</div>
+					<a data-value="iMovie"><img class="programs" src="images/mg/iMovie.png" alt="¾ÆÀÌ¹«ºñ" />
+						<div>¾ÆÀÌ¹«ºñ</div>
 					</a>
-					<a data-value="VideoProc"><img class="programs" src="images/mg/VideoProc.jfif" alt="ë¹„ë””ì˜¤ í”„ë¡" />
-						<div>ë¹„ë””ì˜¤ í”„ë¡</div>
+					<a data-value="VideoProc"><img class="programs" src="images/mg/VideoProc.jfif" alt="ºñµğ¿À ÇÁ·Ï" />
+						<div>ºñµğ¿À ÇÁ·Ï</div>
 					</a>
 					<a data-value="Icecream Video Editor"><img class="programs"
 							src="images/mg/Icecream Video Editor.png" alt="Icecream Video Editor" />
 						<div>Icecream Video Editor</div>
 					</a>
-					<a data-value="Lightworks"><img class="programs" src="images/mg/Lightworks.png" alt="ë¼ì´íŠ¸ì›ìŠ¤" />
-						<div>ë¼ì´íŠ¸ì›ìŠ¤</div>
+					<a data-value="Lightworks"><img class="programs" src="images/mg/Lightworks.png" alt="¶óÀÌÆ®¿÷½º" />
+						<div>¶óÀÌÆ®¿÷½º</div>
 					</a>
 					<a data-value="VideoPad Video Editor"><img class="programs"
-							src="images/mg/VideoPad Video Editor.jfif" alt="ë¹„ë””ì˜¤íŒ¨ë“œ" />
-						<div>ë¹„ë””ì˜¤íŒ¨ë“œ</div>
+							src="images/mg/VideoPad Video Editor.jfif" alt="ºñµğ¿ÀÆĞµå" />
+						<div>ºñµğ¿ÀÆĞµå</div>
 					</a>
 					<a data-value="HitFilm Express"><img class="programs" src="images/mg/HitFilm Express.png"
-							alt="íˆíŠ¸í•„ë¦„" />
-						<div>íˆíŠ¸í•„ë¦„</div>
+							alt="È÷Æ®ÇÊ¸§" />
+						<div>È÷Æ®ÇÊ¸§</div>
 					</a>
 					<a data-value="Premiere Pro"><img class="programs" src="images/mg/Adobe Premiere Pro.png"
-							alt="í”„ë¦¬ë¯¸ì–´í”„ë¡œ" />
-						<div>í”„ë¦¬ë¯¸ì–´í”„ë¡œ</div>
+							alt="ÇÁ¸®¹Ì¾îÇÁ·Î" />
+						<div>ÇÁ¸®¹Ì¾îÇÁ·Î</div>
 					</a>
 					<a data-value="Microsoft Photos"><img class="programs" src="images/mg/Microsoft Photos.png"
 							alt="Microsoft Photos" />
 						<div>Microsoft Photos</div>
 					</a>
 					<a data-value="VSDC Video Editor"><img class="programs" src="images/mg/VSDC Video Editor.jfif"
-							alt="VSDC ë¹„ë””ì˜¤ ì—ë””í„°" />
-						<div>VSDC ë¹„ë””ì˜¤ ì—ë””í„°</div>
+							alt="VSDC ºñµğ¿À ¿¡µğÅÍ" />
+						<div>VSDC ºñµğ¿À ¿¡µğÅÍ</div>
 					</a>
-					<a data-value="Final Cut"><img class="programs" src="images/mg/Final Cut.png" alt="íŒŒì´ë„ì»·" />
-						<div>íŒŒì´ë„ì»·</div>
+					<a data-value="Final Cut"><img class="programs" src="images/mg/Final Cut.png" alt="ÆÄÀÌ³ÎÄÆ" />
+						<div>ÆÄÀÌ³ÎÄÆ</div>
 					</a>
 					<a data-value="Avid Media Composer"><img class="programs" src="images/mg/Avid Media Composer.png"
-							alt="ë¯¸ë””ì–´ ì»´í¬ì €" />
-						<div>ë¯¸ë””ì–´ ì»´í¬ì €</div>
+							alt="¹Ìµğ¾î ÄÄÆ÷Àú" />
+						<div>¹Ìµğ¾î ÄÄÆ÷Àú</div>
 					</a>
-					<a data-value="EDIUS"><img class="programs" src="images/mg/EDIUS X.png" alt="ì—ë””ìš°ìŠ¤" />
-						<div>ì—ë””ìš°ìŠ¤</div>
+					<a data-value="EDIUS"><img class="programs" src="images/mg/EDIUS X.png" alt="¿¡µğ¿ì½º" />
+						<div>¿¡µğ¿ì½º</div>
 					</a>
 					<a data-value="After Effects"><img class="programs" src="images/mg/Adobe After Effects.png"
-							alt="ì• í”„í„° ì´í™íŠ¸" />
-						<div>ì• í”„í„° ì´í™íŠ¸</div>
+							alt="¾ÖÇÁÅÍ ÀÌÆåÆ®" />
+						<div>¾ÖÇÁÅÍ ÀÌÆåÆ®</div>
 					</a>
 					<a data-value="Mocha Pro"><img class="programs" src="images/mg/Mocha Pro.png" alt="Mocha Pro" />
 						<div>Mocha Pro</div>
@@ -265,46 +267,46 @@
 					<a data-value="Eagle"><img class="programs" src="images/mg/Eagle.png" alt="Eagle" />
 						<div>Eagle</div>
 					</a>
-					<a data-value="Nuke"><img class="programs" src="images/mg/Nuke.png" alt="ëˆ„í¬" />
-						<div>ëˆ„í¬</div>
+					<a data-value="Nuke"><img class="programs" src="images/mg/Nuke.png" alt="´©Å©" />
+						<div>´©Å©</div>
 					</a>
 				</div>
 			</div>
 			<div class="line" style="left: 77.8%; visibility: hidden"></div>
-			<div class="filterCate" style="left: 80.2%;">3D ê·¸ë˜í”½</div>
+			<div class="filterCate" style="left: 80.2%;">3D ±×·¡ÇÈ</div>
 			<div class="filterList" style="left: 80%;">
 				<div class="filter">
-					<a data-value="Autodesk"><img class="programs" src="images/rander/Autodesk.jpg" alt="ì˜¤í† ë°ìŠ¤í¬" />
-						<div>ì˜¤í† ë°ìŠ¤í¬</div>
+					<a data-value="Autodesk"><img class="programs" src="images/rander/Autodesk.jpg" alt="¿ÀÅäµ¥½ºÅ©" />
+						<div>¿ÀÅäµ¥½ºÅ©</div>
 					</a>
-					<a data-value="ZBrush"><img class="programs" src="images/rander/ZBrush.png" alt="Zë¸ŒëŸ¬ì‹œ" />
-						<div>Zë¸ŒëŸ¬ì‹œ</div>
+					<a data-value="ZBrush"><img class="programs" src="images/rander/ZBrush.png" alt="Zºê·¯½Ã" />
+						<div>Zºê·¯½Ã</div>
 					</a>
-					<a data-value="Artec"><img class="programs" src="images/rander/Artec.png" alt="ì•„í…" />
-						<div>ì•„í…</div>
+					<a data-value="Artec"><img class="programs" src="images/rander/Artec.png" alt="¾ÆÅØ" />
+						<div>¾ÆÅØ</div>
 					</a>
 					<a data-value="3DCoat"><img class="programs" src="images/rander/3DCoat.jpg" alt="3DCoat" />
 						<div>3DCoat</div>
 					</a>
 					<a data-value="Geomagic Freeform"><img class="programs" src="images/rander/Geomagic Freeform.jfif"
-							alt="ì§€ì˜¤ë§¤ì§ í”„ë¦¬í¼" />
-						<div>ì§€ì˜¤ë§¤ì§ í”„ë¦¬í¼</div>
+							alt="Áö¿À¸ÅÁ÷ ÇÁ¸®Æû" />
+						<div>Áö¿À¸ÅÁ÷ ÇÁ¸®Æû</div>
 					</a>
-					<a data-value="Blender"><img class="programs" src="images/rander/Blender.png" alt="ë¸”ë Œë”" />
-						<div>ë¸”ë Œë”</div>
+					<a data-value="Blender"><img class="programs" src="images/rander/Blender.png" alt="ºí·»´õ" />
+						<div>ºí·»´õ</div>
 					</a>
-					<a data-value="Wings 3D"><img class="programs" src="images/rander/Wings 3D.png" alt="ìœ™ì¦ˆ 3D" />
-						<div>ìœ™ì¦ˆ 3D</div>
+					<a data-value="Wings 3D"><img class="programs" src="images/rander/Wings 3D.png" alt="À®Áî 3D" />
+						<div>À®Áî 3D</div>
 					</a>
-					<a data-value="Houdini"><img class="programs" src="images/rander/Houdini.png" alt="í›„ë””ë‹ˆ" />
-						<div>í›„ë””ë‹ˆ</div>
+					<a data-value="Houdini"><img class="programs" src="images/rander/Houdini.png" alt="ÈÄµğ´Ï" />
+						<div>ÈÄµğ´Ï</div>
 					</a>
 					<a data-value="MotionBuilder"><img class="programs" src="images/rander/MotionBuilder.jpg"
-							alt="ëª¨ì…˜ë¹Œë”" />
-						<div>ëª¨ì…˜ë¹Œë”</div>
+							alt="¸ğ¼Çºô´õ" />
+						<div>¸ğ¼Çºô´õ</div>
 					</a>
-					<a data-value="Cinema 4D"><img class="programs" src="images/rander/Cinema 4D.jfif" alt="ì‹œë„¤ë§ˆ 4D" />
-						<div>ì‹œë„¤ë§ˆ 4D</div>
+					<a data-value="Cinema 4D"><img class="programs" src="images/rander/Cinema 4D.jfif" alt="½Ã³×¸¶ 4D" />
+						<div>½Ã³×¸¶ 4D</div>
 					</a>
 				</div>
 			</div>
@@ -328,7 +330,7 @@
 		<footer>
 			<a href="#work" id="filterBtn" class="button scrolly"
 				style="left: 50%; transform: translate(-50%, 0%);display: flex; align-items: center; justify-content: center; width: 170px;"><ion-icon
-					name="filter-outline" style="font-size: 20px; "></ion-icon>&nbsp í•„í„°ë§</a>
+					name="filter-outline" style="font-size: 20px; "></ion-icon>&nbsp ÇÊÅÍ¸µ</a>
 		</footer>
 	</article>
 
@@ -340,7 +342,7 @@
 			</div>
 			<footer>
 				<!-- <p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-				<a href="#portfolio" class="button large scrolly">ë”ë³´ê¸°</a> -->
+				<a href="#portfolio" class="button large scrolly">´õº¸±â</a> -->
 			</footer>
 		</div>
 	</article>
@@ -355,7 +357,7 @@
 					<input type="text" class="cartCnt" value="1">
 					<a href="" class="downBtn but btnPush"><i class="fa-solid fa-caret-down"></i></a>
 				</div>
-				<h2>Hereâ€™s some stuff I made recently.</h2>
+				<h2>Here¡¯s some stuff I made recently.</h2>
 				<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
 			</header>
 			<div class="row">
@@ -496,12 +498,12 @@
 	console.log(id);
 	$(function(){
 		if(id != null){
-			menu = `<li><span style="text-align: right; position: absolute; top :1px;right:95px; color: #fff;">${username}ë‹˜ ì–´ì„œì˜¤ì„¸ìš”</span></li>
+			menu = `<li><span style="text-align: right; position: absolute; top :1px;right:95px; color: #fff;">${username}´Ô ¾î¼­¿À¼¼¿ä</span></li>
 				<li style="position: absolute; top: 10px; right: 0px; ">
-				<a href="" class="logTap" id="logout">ë¡œê·¸ì•„ì›ƒ</a></li>`;
+				<a href="" class="logTap" id="logout">·Î±×¾Æ¿ô</a></li>`;
 		}else{
 			menu = `<li style="position: absolute; top: 10px; right: 0px; ">
-			<a href="Login.html" class="logTap">ë¡œê·¸ì¸</a></li>`;
+			<a href="Login.html" class="logTap">·Î±×ÀÎ</a></li>`;
 		}
 			$('#nav ul').append(menu);
 	})
@@ -511,18 +513,18 @@
 	})
 	let count = 0;
 	const limit = 6;
-	// ìŠ¤í¬ë¡¤ ì´ë²¤íŠ¸ ë°œìƒ ì‹œ
+	// ½ºÅ©·Ñ ÀÌº¥Æ® ¹ß»ı ½Ã
 	$(window).scroll(function() {
 	    if($(window).scrollTop() + $(window).height() == $(document).height()) {
 	        count += limit;
-	        // AJAX ìš”ì²­ ë³´ë‚´ê¸°
+	        // AJAX ¿äÃ» º¸³»±â
 	        $.ajax({
 	            url: 'ReadProductCon',
 	            type: 'post',
 	            data: "count="+count+"&limit="+limit,
 	            dataType:'json',
 	            success: function(data) {
-	                // ë°›ì•„ì˜¨ ë°ì´í„°ë¥¼ ì´ìš©í•˜ì—¬ í™”ë©´ì— ë Œë”ë§
+	                // ¹Ş¾Æ¿Â µ¥ÀÌÅÍ¸¦ ÀÌ¿ëÇÏ¿© È­¸é¿¡ ·»´õ¸µ
 	                for(let i = 0; i < data.productDTO.length; i++) {
 	                    const product = `
 	                        <div class="col-4 col-6-medium col-12-small">
@@ -555,7 +557,7 @@
 						<div class="col-4 col-6-medium col-12-small">
 					<article class="box style2">
 						<a class="image featured">
-							<img src="images/productimg/ë…¸íŠ¸ë¶${i+1}.jpg" alt="">
+							<img src="images/productimg/³ëÆ®ºÏ${i+1}.jpg" alt="">
 							<i class="fa-solid fa-heart middle"></i>
 							<i class="fa-solid fa-heart small dislike"></i>
 						</a>
@@ -571,7 +573,7 @@
 	}) */
 	
 
-	$('.filterCate').on({ // ì¹´í…Œê³ ë¦¬ hover ê¸°ëŠ¥
+	$('.filterCate').on({ // Ä«Å×°í¸® hover ±â´É
 		'mouseover': function () {
 			$('.filterList').on({
 				'mouseover':function(){
@@ -610,7 +612,7 @@
 		// 		})
 		// 	}
 		// })
-		/* $('.filterCate').on({ // ì¹´í…Œê³ ë¦¬ í´ë¦­ - ë¦¬ìŠ¤íŠ¸ì°½ ê³ ì • ê¸°ëŠ¥
+		/* $('.filterCate').on({ // Ä«Å×°í¸® Å¬¸¯ - ¸®½ºÆ®Ã¢ °íÁ¤ ±â´É
 			'click': function (e) {
 
 				if ($(this).hasClass('select')) {
@@ -647,9 +649,9 @@
 		}) */
 		var softwareList = []
 		$('.filter a').on({
-			'click': function () { // í•„í„° ì²´í¬ ê¸°ëŠ¥
+			'click': function () { // ÇÊÅÍ Ã¼Å© ±â´É
 				let thisAttr = $(this).attr('data-value')
-				if ($(this).hasClass('checked')) { // ì²´í¬ ë˜ì–´ìˆìœ¼ë©´ í•´ì œ
+				if ($(this).hasClass('checked')) { // Ã¼Å© µÇ¾îÀÖÀ¸¸é ÇØÁ¦
 					$(this).addClass('animate__bounceIn')
 					$(this).removeClass('checked animate__bounceIn');
 					$(this).children('.fa-check').remove();
@@ -663,13 +665,13 @@
 					(async () => {
 						$(`#filterResult a[data-value="${$(this).attr('data-value')}"]`).addClass('animate__bounceOut');
 						await sleep(0.7);
-						$('#filterResult a').each(function (index, item) { // í•„í„° ëª©ë¡ì—ì„œ ì‚­ì œ
+						$('#filterResult a').each(function (index, item) { // ÇÊÅÍ ¸ñ·Ï¿¡¼­ »èÁ¦
 							if ($(item).attr('data-value') === thisAttr) {
 								$(item).remove()
 							}
 						})
 					})();
-				} else { // ì²´í¬ ì„¤ì •, í•„í„° ëª©ë¡ ì„¤ì •
+				} else { // Ã¼Å© ¼³Á¤, ÇÊÅÍ ¸ñ·Ï ¼³Á¤
 					$(this).addClass('checked animate__bounceIn');
 					softwareList.push($(this).attr('data-value'));
 					$(this).clone().css({
@@ -691,10 +693,10 @@
 
 
 
-		$('#filterBtn').on({ // í•„í„°ë§ ë²„íŠ¼ í´ë¦­
+		$('#filterBtn').on({ // ÇÊÅÍ¸µ ¹öÆ° Å¬¸¯
 			'click': function () {
-				console.log(softwareList) // ì´ìª½ì— ì²´í¬ëœ ëª©ë¡ ë°ì´í„° ìˆìŒ
-				$('.checked').each(function (index, item) { // ì²´í¬ëœ ëª©ë¡ ì‚­ì œ
+				console.log(softwareList) // ÀÌÂÊ¿¡ Ã¼Å©µÈ ¸ñ·Ï µ¥ÀÌÅÍ ÀÖÀ½
+				$('.checked').each(function (index, item) { // Ã¼Å©µÈ ¸ñ·Ï »èÁ¦
 					$(this).removeClass('checked animate__bounceIn')
 					$(this).children('.fa-check').remove();
 					$('#filterResult').empty()
@@ -772,7 +774,7 @@
 				result += parseInt(price.replace(/,/g, "")) * val;
 
 			})
-			$('#result').text(result.toLocaleString() + 'ì›');
+			$('#result').text(result.toLocaleString() + '¿ø');
 			result = 0;
 		}
 		
@@ -811,7 +813,7 @@
 					</div>
 					<div class="titleText">
 						<h4 class="title">${titleVal}</h4>
-						<h4 class="price">${priceVal}ì›</h4>
+						<h4 class="price">${priceVal}¿ø</h4>
 					</div>
 					<div class="cartCntDiv">
 						<a class="downBtn but btnPush">
@@ -843,7 +845,7 @@
 					data : 'id='+id+'&title='+titleVal,
 					datatype : 'json',
 					success:function(){
-						// ì¥ë°”êµ¬ë‹ˆ ë‹´ê¸° db insert
+						// Àå¹Ù±¸´Ï ´ã±â db insert
 					}
 				})
 		})
