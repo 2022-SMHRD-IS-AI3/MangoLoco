@@ -30,5 +30,11 @@ public class Shop_BasketDAO {
 		sqlSession.close();
 		return cnt;
 	}
+	public List<String> idBasket(String id) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		List<String> myList = sqlSession.selectList("mylist", id);
+		sqlSession.close();
+		return myList;
+	}
 
 }

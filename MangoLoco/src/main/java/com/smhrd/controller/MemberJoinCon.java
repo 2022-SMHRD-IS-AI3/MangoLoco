@@ -38,10 +38,10 @@ public class MemberJoinCon extends HttpServlet {
 		int cnt = dao.join(dto);
 		String result;
 		if(cnt > 0) {
-			System.out.println("성공");
+			System.out.println("회원가입 성공");
 			result = "성공";
 		}else {
-			System.out.println("실패");
+			System.out.println("회원가입 실패");
 			result = "실패";
 		}
 		String gson = new Gson().toJson(result);

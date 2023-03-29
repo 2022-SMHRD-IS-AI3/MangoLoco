@@ -385,7 +385,39 @@
 	        });
 	    }
 	});
-
+	if(id != null){
+			$.ajax({
+				url:'CartReadCon',
+				type:'post',
+				data:"id="+'<%=id%>',
+				dataType:'json',
+				success:function(data){
+					for(let i = 0; i < data.mybasket.length; i++) {
+						const basket = `<div class="cartItem">
+						<div class="productImgDiv">
+						<img class="productImg" src="img/${data.mybasket[i].model}.jpg" alt="">
+						<i class="fa-solid fa-circle-xmark"></i>
+						</div>
+						<div class="titleText">
+						<h4 class="title">${data.mybasket[i].model}</h4>
+						<h4 class="price">${data.mybasket[i].price}</h4>
+						</div>
+						<div class="cartCntDiv">
+						<a class="downBtn but btnPush">
+						<i class="fa-solid fa-caret-down"></i>
+						</a>
+						<input type="text" class="cartCnt" value="1">
+						<a class="upBtn but btnPush">
+						<i class="fa-solid fa-caret-up"></i>
+						</a>
+						</div>
+						</div>`;
+						$('#cartList').append(basket);
+						priceResult();
+					}
+				}
+			})
+	}
 	$('.filterCate').on({ // 카테고리 hover 기능
 		'mouseover': function () {
 			$('.filterList').on({

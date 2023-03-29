@@ -13,4 +13,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="cartout" parameterType="Shop_BasketDTO">
 		delete from shop_basket where id=#{id} and model=#{model}
 	</delete>
+	
+	<select id="mylist" resultType="String" parameterType="String">
+		select model from shop_basket where id=#{id}
+	</select>
 </mapper>
