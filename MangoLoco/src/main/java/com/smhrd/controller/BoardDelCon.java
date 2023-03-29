@@ -6,10 +6,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smhrd.Commend.Commend;
+import com.smhrd.Commend.Command;
 import com.smhrd.model.BoardDAO;
 
-public class BoardDelCon implements Commend {
+public class BoardDelCon implements Command {
 	
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -20,9 +20,9 @@ public class BoardDelCon implements Commend {
 		int cnt = dao.delete(nick);
 		
 		if(cnt>0){
-			System.out.println("삭제성공");
+			System.out.println("�����깃났");
 		}else{
-			System.out.println("삭제실패");
+			System.out.println("�����ㅽ��");
 		}
 		return "ShowMember.jsp";
 	}
