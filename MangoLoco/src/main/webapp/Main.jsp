@@ -80,7 +80,7 @@
 			style="position: absolute; width: 80%; height: 50px; background: none; left: 50%; bottom: 140px; transform: translateX(-50%); text-align: right;">
 			<span id="result" style="font-size: 32px;">000000000원</span>
 		</div>
-		<a href=""
+		<a href="" id="payment"
 			style="border-radius: 10px; text-decoration: none; position: absolute; height: 70px; width: 200px; background: #fff; bottom: 30px; right: 10%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; color: black; font-size: 23px;">
 			결제하기 </a>
 	</div>
@@ -586,6 +586,10 @@
 		$('#result').text(result.toLocaleString() + '원');
 		result = 0;
 	}
+	$(document).on('click','#payment',function(){
+		$('')
+		window.location.href = "MovePaymentPageCon?"
+	})
 		
 	var imgSrc = "";
 	var titleVal = "";
