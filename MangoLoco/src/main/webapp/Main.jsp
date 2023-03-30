@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@page import="com.smhrd.model.MembersDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <!--
 	Miniport by HTML5 UP
@@ -29,33 +30,35 @@
 
 <body class="is-preload">
 	<%
+	MembersDTO user = (MembersDTO)session.getAttribute("user");
+	
 	String id = (String) session.getAttribute("id");
 	String nick = (String) session.getAttribute("nick");
 	%>
-
+	console.log(user);
 	<!-- Nav -->
 	<nav id="nav">
 		<ul class="container">
 			<li><a href="#top" style="display: flex; align-items: center;"><i
-					class="fa-solid fa-filter"></i>&nbsp; ÇÊÅÍ</a></li>
+					class="fa-solid fa-filter"></i>&nbsp; í•„í„°</a></li>
 			<li><a href="#work" style="display: flex; align-items: center;"><i
-					class="fa-solid fa-laptop"></i>&nbsp; Á¦Ç°</a></li>
+					class="fa-solid fa-laptop"></i>&nbsp; ì œí’ˆ</a></li>
 			<li><a href="" id="board"
 				style="display: flex; align-items: center;"><i
-					class="fa-solid fa-clipboard-list"></i>&nbsp; °Ô½ÃÆÇ</a></li>
+					class="fa-solid fa-clipboard-list"></i>&nbsp; ê²Œì‹œíŒ</a></li>
 			<%
 			if (id != null) {
 			%>
 			<li><span
-				style="text-align: right; position: absolute; top: 1px; right: 95px; color: #fff;"><%=nick%>´Ô
-					¾î¼­¿À¼¼¿ä</span></li>
+				style="text-align: right; position: absolute; top: 1px; right: 95px; color: #fff;"><%=nick%>ë‹˜
+					ì–´ì„œì˜¤ì„¸ìš”</span></li>
 			<li style="position: absolute; top: 10px; right: 0px;"><a
-				href="LogoutCon" class="logTap" id="logout">·Î±×¾Æ¿ô</a></li>
+				href="LogoutCon" class="logTap" id="logout">ë¡œê·¸ì•„ì›ƒ</a></li>
 			<%
 			} else {
 			%>
 			<li style="position: absolute; top: 10px; right: 0px;"><a
-				href="Login.jsp" class="logTap">·Î±×ÀÎ</a></li>
+				href="Login.jsp" class="logTap">ë¡œê·¸ì¸</a></li>
 			<%
 			}
 			%>
@@ -64,25 +67,25 @@
 	</nav>
 	<div id="cartMain" class="reduction">
 		<div id="cartTap">
-			Àå¹Ù±¸´Ï
+			ì¥ë°”êµ¬ë‹ˆ
 			<ion-icon name="chevron-forward-outline" style="font-size: 25px;"></ion-icon>
 		</div>
 		<div
 			style="position: absolute; width: 80%; height: 50px; left: 10px; top: 20px; font-size: 45px;">
-			&nbsp;&nbsp;&nbsp;Àå¹Ù±¸´Ï</div>
+			&nbsp;&nbsp;&nbsp;ì¥ë°”êµ¬ë‹ˆ</div>
 		<div id="cartList">
-			<!-- ²ø¾î¿À¸é ³ëÆ®ºÏ Á¦Ç°µé »ı¼º -->
+			<!-- ëŒì–´ì˜¤ë©´ ë…¸íŠ¸ë¶ ì œí’ˆë“¤ ìƒì„± -->
 		</div>
 		<div
 			style="position: absolute; width: 80%; height: 50px; left: 50%; bottom: 190px; transform: translateX(-50%); font-size: 45px;">
-			ÃÑ ±İ¾×</div>
+			ì´ ê¸ˆì•¡</div>
 		<div
 			style="position: absolute; width: 80%; height: 50px; background: none; left: 50%; bottom: 140px; transform: translateX(-50%); text-align: right;">
-			<span id="result" style="font-size: 32px;">000000000¿ø</span>
+			<span id="result" style="font-size: 32px;">000000000ì›</span>
 		</div>
 		<a href="" id="payment"
 			style="border-radius: 10px; text-decoration: none; position: absolute; height: 70px; width: 200px; background: #fff; bottom: 30px; right: 10%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; color: black; font-size: 23px;">
-			°áÁ¦ÇÏ±â </a>
+			ê²°ì œí•˜ê¸° </a>
 	</div>
 	<!-- Home -->
 	<article id="top" class="wrapper style1">
@@ -91,103 +94,103 @@
 			style="position: relative; left: 24%; top: 13%; width: 170px; height: 130px; background-color: #2f3542; margin-bottom: 50px;">
 			<img src="images/mango.png" alt=""
 				style="width: 37%; margin-left: 10px; margin-top: 5px;">
-			<h1 style="font-size: 2rem; color: #ffffff;">·ÎÄÚ ·Î°í</h1>
+			<h1 style="font-size: 2rem; color: #ffffff;">ë¡œì½” ë¡œê³ </h1>
 		</div>
 		<div class="search"
 			style="position: absolute; left: 50%; top: 24%; transform: translate(-50%, -50%);">
-			<input class="inputSearch" type="text" placeholder="°Ë»ö¾î ÀÔ·Â">
-			<button class="searchBtn">°Ë»ö</button>
+			<input class="inputSearch" type="text" placeholder="ê²€ìƒ‰ì–´ ì…ë ¥">
+			<button class="searchBtn">ê²€ìƒ‰</button>
 		</div>
 		<div class="container"
 			style="background-color: yellow; height: 500px; width: 1600px; position: relative;">
 			<div
 				style="background: #2f3542; width: 97%; position: absolute; height: 100%; transform: translate(-50%, -50%); top: 73%; left: 50%;">
 			</div>
-			<div class="filterCate" style="background: bisque;">·¡½ºÅÍ ±×·¡ÇÈ</div>
+			<div class="filterCate" style="background: bisque;">ë˜ìŠ¤í„° ê·¸ë˜í”½</div>
 			<div class="filterList"
 				style="position: absolute; transform: translate(1%, -5%); background: aqua; border: 10px solid transparent; width: 15%">
 				<div class="filter">
 					<a data-value="Photoshop"><img class="programs"
-						src="images/rg/PhotoShop.png" alt="Æ÷Åä¼¥"
+						src="images/rg/PhotoShop.png" alt="í¬í† ìƒµ"
 						style="border-radius: 20%;" />
-						<div style="text-align: center; margin-top: -5px;">Æ÷Åä¼¥</div> </a> <a
+						<div style="text-align: center; margin-top: -5px;">í¬í† ìƒµ</div> </a> <a
 						data-value="Affinity Photo"><img class="programs"
 						src="images/rg/affinity photo.png" style="border-radius: 24%;"
-						alt="¾îÇÇ´ÏÆ¼ Æ÷Åä" />
-						<div style="text-align: center; margin-top: -5px;">¾îÇÇ´ÏÆ¼ Æ÷Åä</div> </a>
+						alt="ì–´í”¼ë‹ˆí‹° í¬í† " />
+						<div style="text-align: center; margin-top: -5px;">ì–´í”¼ë‹ˆí‹° í¬í† </div> </a>
 					<a data-value="Painter"><img class="programs"
-						src="images/rg/painter.png" alt="ÆäÀÎÅÍ" />
-						<div style="text-align: center; margin-top: -5px;">ÆäÀÎÅÍ</div> </a> <a
+						src="images/rg/painter.png" alt="í˜ì¸í„°" />
+						<div style="text-align: center; margin-top: -5px;">í˜ì¸í„°</div> </a> <a
 						data-value="Fresco"><img class="programs"
 						src="images/rg/adobefresco.png" style="border-radius: 20%;"
-						alt="ÇÁ·Î½ºÄÚ" />
-						<div style="text-align: center; margin-top: -5px;">ÇÁ·Î½ºÄÚ</div> </a> <a
+						alt="í”„ë¡œìŠ¤ì½”" />
+						<div style="text-align: center; margin-top: -5px;">í”„ë¡œìŠ¤ì½”</div> </a> <a
 						data-value="Procreate"><img class="programs"
 						src="images/rg/procreate.png" style="border-radius: 20%;"
-						alt="ÇÁ·ÎÅ©¸®¿¡ÀÌÆ®" />
-						<div style="text-align: center; margin-top: -5px;">ÇÁ·ÎÅ©¸®¿¡ÀÌÆ®</div> </a>
+						alt="í”„ë¡œí¬ë¦¬ì—ì´íŠ¸" />
+						<div style="text-align: center; margin-top: -5px;">í”„ë¡œí¬ë¦¬ì—ì´íŠ¸</div> </a>
 					<a data-value="Paintshop"><img class="programs"
-						src="images/rg/paintshop.png" alt="ÆäÀÎÆ®¼¥" />
-						<div style="text-align: center; margin-top: -5px;">ÆäÀÎÆ®¼¥</div> </a> <a
+						src="images/rg/paintshop.png" alt="í˜ì¸íŠ¸ìƒµ" />
+						<div style="text-align: center; margin-top: -5px;">í˜ì¸íŠ¸ìƒµ</div> </a> <a
 						data-value="Artweaver"><img class="programs"
-						src="images/rg/artweaver.png" alt="¾ÆÆ®À§¹ö" />
-						<div style="text-align: center; margin-top: -5px;">¾ÆÆ®À§¹ö</div> </a> <a
+						src="images/rg/artweaver.png" alt="ì•„íŠ¸ìœ„ë²„" />
+						<div style="text-align: center; margin-top: -5px;">ì•„íŠ¸ìœ„ë²„</div> </a> <a
 						data-value="Clip Studio Paint"><img class="programs"
-						src="images/rg/clip studio paint.png" alt="Å¬¸³½ºÆ©µğ¿À" />
-						<div style="text-align: center; margin-top: -5px;">Å¬¸³½ºÆ©µğ¿À</div> </a> <a
+						src="images/rg/clip studio paint.png" alt="í´ë¦½ìŠ¤íŠœë””ì˜¤" />
+						<div style="text-align: center; margin-top: -5px;">í´ë¦½ìŠ¤íŠœë””ì˜¤</div> </a> <a
 						data-value="PhotoScape"><img class="programs"
-						src="images/rg/photoscape.png" alt="Æ÷Åä½ºÄÉÀÌÇÁ" />
-						<div style="text-align: center; margin-top: -5px;">Æ÷Åä½ºÄÉÀÌÇÁ</div> </a> <a
+						src="images/rg/photoscape.png" alt="í¬í† ìŠ¤ì¼€ì´í”„" />
+						<div style="text-align: center; margin-top: -5px;">í¬í† ìŠ¤ì¼€ì´í”„</div> </a> <a
 						data-value="PixelMator"><img class="programs"
-						src="images/rg/pixelmator.png" alt="ÇÈ¼¿¸ŞÀÌÅÍ" />
-						<div style="text-align: center; margin-top: -5px;">ÇÈ¼¿¸ŞÀÌÅÍ</div> </a>
+						src="images/rg/pixelmator.png" alt="í”½ì…€ë©”ì´í„°" />
+						<div style="text-align: center; margin-top: -5px;">í”½ì…€ë©”ì´í„°</div> </a>
 				</div>
 			</div>
 			<div class="line" style="visibility: hidden"></div>
-			<div class="filterCate" style="left: 20.2%;">º¤ÅÍ ±×·¡ÇÈ</div>
+			<div class="filterCate" style="left: 20.2%;">ë²¡í„° ê·¸ë˜í”½</div>
 			<div class="filterList" style="left: 20%;">
 				<div class="filter">
 					<a data-value="Illustrator"><img class="programs"
-						src="images/vg/Illustrator.png" alt="ÀÏ·¯½ºÆ®·¹ÀÌÅÍ" />
-						<div style="text-align: center; margin-top: -5px;">ÀÏ·¯½ºÆ®·¹ÀÌÅÍ</div> </a>
+						src="images/vg/Illustrator.png" alt="ì¼ëŸ¬ìŠ¤íŠ¸ë ˆì´í„°" />
+						<div style="text-align: center; margin-top: -5px;">ì¼ëŸ¬ìŠ¤íŠ¸ë ˆì´í„°</div> </a>
 					<a data-value="Vectornator"><img class="programs"
-						src="images/vg/vectornator.png" alt="º¤ÅÍ³×ÀÌÅÍ" />
-						<div style="text-align: center; margin-top: -5px;">º¤ÅÍ³×ÀÌÅÍ</div> </a> <a
+						src="images/vg/vectornator.png" alt="ë²¡í„°ë„¤ì´í„°" />
+						<div style="text-align: center; margin-top: -5px;">ë²¡í„°ë„¤ì´í„°</div> </a> <a
 						data-value="Affinity Designer"><img class="programs"
-						src="images/vg/affinitydesigner.png" alt="¾îÇÇ´ÏÆ¼ µğÀÚÀÌ³Ê" />
-						<div style="text-align: center; margin-top: -5px;">¾îÇÇ´ÏÆ¼ µğÀÚÀÌ³Ê</div>
+						src="images/vg/affinitydesigner.png" alt="ì–´í”¼ë‹ˆí‹° ë””ìì´ë„ˆ" />
+						<div style="text-align: center; margin-top: -5px;">ì–´í”¼ë‹ˆí‹° ë””ìì´ë„ˆ</div>
 					</a> <a data-value="Gravit"><img class="programs"
-						src="images/vg/Gravit.png" alt="±×·¡ºø" />
-						<div style="text-align: center; margin-top: -5px;">±×·¡ºø</div> </a> <a
+						src="images/vg/Gravit.png" alt="ê·¸ë˜ë¹—" />
+						<div style="text-align: center; margin-top: -5px;">ê·¸ë˜ë¹—</div> </a> <a
 						data-value="Figma"><img class="programs"
-						src="images/vg/figma.png" alt="ÇÇ±×¸¶" />
-						<div style="text-align: center; margin-top: -5px;">ÇÇ±×¸¶</div> </a> <a
+						src="images/vg/figma.png" alt="í”¼ê·¸ë§ˆ" />
+						<div style="text-align: center; margin-top: -5px;">í”¼ê·¸ë§ˆ</div> </a> <a
 						data-value="Sketch"><img class="programs"
-						src="images/vg/sketch.png" alt="½ºÄÉÄ¡" />
-						<div style="text-align: center; margin-top: -5px;">½ºÄÉÄ¡</div> </a> <a
+						src="images/vg/sketch.png" alt="ìŠ¤ì¼€ì¹˜" />
+						<div style="text-align: center; margin-top: -5px;">ìŠ¤ì¼€ì¹˜</div> </a> <a
 						data-value="InkScape"><img class="programs"
-						src="images/vg/inkcape.png" alt="À×Å©½ºÄÉÀÌÇÁ" />
-						<div style="text-align: center; margin-top: -5px;">À×Å©½ºÄÉÀÌÇÁ</div> </a> <a
+						src="images/vg/inkcape.png" alt="ì‰í¬ìŠ¤ì¼€ì´í”„" />
+						<div style="text-align: center; margin-top: -5px;">ì‰í¬ìŠ¤ì¼€ì´í”„</div> </a> <a
 						data-value="Animate"><img class="programs"
-						src="images/vg/adobeanimate.png" alt="¾Ö´Ï¸ŞÀÌÆ®" />
-						<div style="text-align: center; margin-top: -5px;">¾Ö´Ï¸ŞÀÌÆ®</div> </a> <a
+						src="images/vg/adobeanimate.png" alt="ì• ë‹ˆë©”ì´íŠ¸" />
+						<div style="text-align: center; margin-top: -5px;">ì• ë‹ˆë©”ì´íŠ¸</div> </a> <a
 						data-value="Corel DRAW"><img class="programs"
-						src="images/vg/corel drow.png" alt="ÄÚ·¼µå·Î" />
-						<div style="text-align: center; margin-top: -5px;">ÄÚ·¼µå·Î</div> </a> <a
+						src="images/vg/corel drow.png" alt="ì½”ë ë“œë¡œ" />
+						<div style="text-align: center; margin-top: -5px;">ì½”ë ë“œë¡œ</div> </a> <a
 						data-value="PaintShop"><img class="programs"
-						src="images/vg/paintshop.png" alt="ÆäÀÎÆ®¼¥" />
-						<div style="text-align: center; margin-top: -5px;">ÆäÀÎÆ®¼¥</div> </a>
+						src="images/vg/paintshop.png" alt="í˜ì¸íŠ¸ìƒµ" />
+						<div style="text-align: center; margin-top: -5px;">í˜ì¸íŠ¸ìƒµ</div> </a>
 				</div>
 			</div>
 			<div class="line" style="left: 37.9%; visibility: hidden"></div>
-			<div class="filterCate" style="left: 40.2%;">µ¥½ºÅ©Å¾ ÆÛºí¸®½Ì</div>
+			<div class="filterCate" style="left: 40.2%;">ë°ìŠ¤í¬íƒ‘ í¼ë¸”ë¦¬ì‹±</div>
 			<div class="filterList" style="left: 40%;">
 				<div class="filter">
 					<a data-value="InDesign"><img class="programs"
-						src="images/dp/Adobe InDesign.png" alt="ÀÎµğÀÚÀÎ" />
-						<div>ÀÎµğÀÚÀÎ</div> </a> <a data-value="Canva"><img class="programs"
-						src="images/dp/Canva.png" alt="Äµ¹Ù" />
-						<div>Äµ¹Ù</div> </a> <a data-value="Snappa"><img class="programs"
+						src="images/dp/Adobe InDesign.png" alt="ì¸ë””ìì¸" />
+						<div>ì¸ë””ìì¸</div> </a> <a data-value="Canva"><img class="programs"
+						src="images/dp/Canva.png" alt="ìº”ë°”" />
+						<div>ìº”ë°”</div> </a> <a data-value="Snappa"><img class="programs"
 						src="images/dp/Snappa.png" alt="Snappa" />
 						<div>Snappa</div> </a> <a data-value="Lucidpress"><img
 						class="programs" src="images/dp/Lucidpress.png" alt="Lucidpress" />
@@ -197,86 +200,86 @@
 						class="programs" src="images/dp/Visme.png" alt="Visme" />
 						<div>Visme</div> </a> <a data-value="Affinity Publisher"><img
 						class="programs" src="images/dp/Affinity Publisher.png"
-						alt="¾îÇÇ´ÏÆ¼ ÆÛºí¸®¼Å" />
-						<div>¾îÇÇ´ÏÆ¼ ÆÛºí¸®¼Å</div> </a> <a data-value="Lightroom"><img
-						class="programs" src="images/dp/Adobe Lightroom.png" alt="¶óÀÌÆ®·ë" />
-						<div>¶óÀÌÆ®·ë</div> </a> <a data-value="Snapseed"><img
-						class="programs" src="images/dp/Snapseed.png" alt="½º³À½Ãµå" />
-						<div>½º³À½Ãµå</div> </a>
+						alt="ì–´í”¼ë‹ˆí‹° í¼ë¸”ë¦¬ì…”" />
+						<div>ì–´í”¼ë‹ˆí‹° í¼ë¸”ë¦¬ì…”</div> </a> <a data-value="Lightroom"><img
+						class="programs" src="images/dp/Adobe Lightroom.png" alt="ë¼ì´íŠ¸ë£¸" />
+						<div>ë¼ì´íŠ¸ë£¸</div> </a> <a data-value="Snapseed"><img
+						class="programs" src="images/dp/Snapseed.png" alt="ìŠ¤ëƒ…ì‹œë“œ" />
+						<div>ìŠ¤ëƒ…ì‹œë“œ</div> </a>
 				</div>
 			</div>
 			<div class="line" style="left: 57.9%; visibility: hidden"></div>
-			<div class="filterCate" style="left: 60.2%;">¸ğ¼Ç ±×·¡ÇÈ</div>
+			<div class="filterCate" style="left: 60.2%;">ëª¨ì…˜ ê·¸ë˜í”½</div>
 
 			<div class="filterList" style="left: 60%;">
 				<div class="filter">
-					<a data-value="Movavi"><img class="programs" src="images/mg/Movavi.png" alt="¸ğ¹Ùºñ" />
-						<div>¸ğ¹Ùºñ</div>
+					<a data-value="Movavi"><img class="programs" src="images/mg/Movavi.png" alt="ëª¨ë°”ë¹„" />
+						<div>ëª¨ë°”ë¹„</div>
 					</a>
 					<a data-value="ActivePresenter"><img class="programs" src="images/mg/ActivePresenter.png"
-							alt="¾×Æ¼ºêÇÁ·¹Á¨ÅÍ" />
-						<div>¾×Æ¼ºêÇÁ·¹Á¨ÅÍ</div>
+							alt="ì•¡í‹°ë¸Œí”„ë ˆì  í„°" />
+						<div>ì•¡í‹°ë¸Œí”„ë ˆì  í„°</div>
 					</a>
-					<a data-value="Shotcut"><img class="programs" src="images/mg/Shotcut.png" alt="¼¦ÄÆ" />
-						<div>¼¦ÄÆ</div>
+					<a data-value="Shotcut"><img class="programs" src="images/mg/Shotcut.png" alt="ìƒ·ì»·" />
+						<div>ìƒ·ì»·</div>
 					</a>
-					<a data-value="OpenShot"><img class="programs" src="images/mg/OpenShot.png" alt="¿ÀÇÂ¼¦" />
-						<div>¿ÀÇÂ¼¦</div>
+					<a data-value="OpenShot"><img class="programs" src="images/mg/OpenShot.png" alt="ì˜¤í”ˆìƒ·" />
+						<div>ì˜¤í”ˆìƒ·</div>
 					</a>
 					<a data-value="DaVinci Resolve"><img class="programs" src="images/mg/DaVinci Resolve.jfif"
-							alt="´ÙºóÄ¡ ¸®Á¹ºê" />
-						<div>´ÙºóÄ¡ ¸®Á¹ºê</div>
+							alt="ë‹¤ë¹ˆì¹˜ ë¦¬ì¡¸ë¸Œ" />
+						<div>ë‹¤ë¹ˆì¹˜ ë¦¬ì¡¸ë¸Œ</div>
 					</a>
 					<a data-value="Video Grabber"><img class="programs" src="images/mg/Video Grabber.jfif"
 							alt="Video Grabber" />
 						<div>Video Grabber</div>
 					</a>
-					<a data-value="iMovie"><img class="programs" src="images/mg/iMovie.png" alt="¾ÆÀÌ¹«ºñ" />
-						<div>¾ÆÀÌ¹«ºñ</div>
+					<a data-value="iMovie"><img class="programs" src="images/mg/iMovie.png" alt="ì•„ì´ë¬´ë¹„" />
+						<div>ì•„ì´ë¬´ë¹„</div>
 					</a>
-					<a data-value="VideoProc"><img class="programs" src="images/mg/VideoProc.jfif" alt="ºñµğ¿À ÇÁ·Ï" />
-						<div>ºñµğ¿À ÇÁ·Ï</div>
+					<a data-value="VideoProc"><img class="programs" src="images/mg/VideoProc.jfif" alt="ë¹„ë””ì˜¤ í”„ë¡" />
+						<div>ë¹„ë””ì˜¤ í”„ë¡</div>
 					</a>
 					<a data-value="Icecream Video Editor"><img class="programs"
 							src="images/mg/Icecream Video Editor.png" alt="Icecream Video Editor" />
 						<div>Icecream Video Editor</div>
 					</a>
-					<a data-value="Lightworks"><img class="programs" src="images/mg/Lightworks.png" alt="¶óÀÌÆ®¿÷½º" />
-						<div>¶óÀÌÆ®¿÷½º</div>
+					<a data-value="Lightworks"><img class="programs" src="images/mg/Lightworks.png" alt="ë¼ì´íŠ¸ì›ìŠ¤" />
+						<div>ë¼ì´íŠ¸ì›ìŠ¤</div>
 					</a>
 					<a data-value="VideoPad Video Editor"><img class="programs"
-							src="images/mg/VideoPad Video Editor.jfif" alt="ºñµğ¿ÀÆĞµå" />
-						<div>ºñµğ¿ÀÆĞµå</div>
+							src="images/mg/VideoPad Video Editor.jfif" alt="ë¹„ë””ì˜¤íŒ¨ë“œ" />
+						<div>ë¹„ë””ì˜¤íŒ¨ë“œ</div>
 					</a>
 					<a data-value="HitFilm Express"><img class="programs" src="images/mg/HitFilm Express.png"
-							alt="È÷Æ®ÇÊ¸§" />
-						<div>È÷Æ®ÇÊ¸§</div>
+							alt="íˆíŠ¸í•„ë¦„" />
+						<div>íˆíŠ¸í•„ë¦„</div>
 					</a>
 					<a data-value="Premiere Pro"><img class="programs" src="images/mg/Adobe Premiere Pro.png"
-							alt="ÇÁ¸®¹Ì¾îÇÁ·Î" />
-						<div>ÇÁ¸®¹Ì¾îÇÁ·Î</div>
+							alt="í”„ë¦¬ë¯¸ì–´í”„ë¡œ" />
+						<div>í”„ë¦¬ë¯¸ì–´í”„ë¡œ</div>
 					</a>
 					<a data-value="Microsoft Photos"><img class="programs" src="images/mg/Microsoft Photos.png"
 							alt="Microsoft Photos" />
 						<div>Microsoft Photos</div>
 					</a>
 					<a data-value="VSDC Video Editor"><img class="programs" src="images/mg/VSDC Video Editor.jfif"
-							alt="VSDC ºñµğ¿À ¿¡µğÅÍ" />
-						<div>VSDC ºñµğ¿À ¿¡µğÅÍ</div>
+							alt="VSDC ë¹„ë””ì˜¤ ì—ë””í„°" />
+						<div>VSDC ë¹„ë””ì˜¤ ì—ë””í„°</div>
 					</a>
-					<a data-value="Final Cut"><img class="programs" src="images/mg/Final Cut.png" alt="ÆÄÀÌ³ÎÄÆ" />
-						<div>ÆÄÀÌ³ÎÄÆ</div>
+					<a data-value="Final Cut"><img class="programs" src="images/mg/Final Cut.png" alt="íŒŒì´ë„ì»·" />
+						<div>íŒŒì´ë„ì»·</div>
 					</a>
 					<a data-value="Avid Media Composer"><img class="programs" src="images/mg/Avid Media Composer.png"
-							alt="¹Ìµğ¾î ÄÄÆ÷Àú" />
-						<div>¹Ìµğ¾î ÄÄÆ÷Àú</div>
+							alt="ë¯¸ë””ì–´ ì»´í¬ì €" />
+						<div>ë¯¸ë””ì–´ ì»´í¬ì €</div>
 					</a>
-					<a data-value="EDIUS"><img class="programs" src="images/mg/EDIUS X.png" alt="¿¡µğ¿ì½º" />
-						<div>¿¡µğ¿ì½º</div>
+					<a data-value="EDIUS"><img class="programs" src="images/mg/EDIUS X.png" alt="ì—ë””ìš°ìŠ¤" />
+						<div>ì—ë””ìš°ìŠ¤</div>
 					</a>
 					<a data-value="After Effects"><img class="programs" src="images/mg/Adobe After Effects.png"
-							alt="¾ÖÇÁÅÍ ÀÌÆåÆ®" />
-						<div>¾ÖÇÁÅÍ ÀÌÆåÆ®</div>
+							alt="ì• í”„í„° ì´í™íŠ¸" />
+						<div>ì• í”„í„° ì´í™íŠ¸</div>
 					</a>
 					<a data-value="Mocha Pro"><img class="programs" src="images/mg/Mocha Pro.png" alt="Mocha Pro" />
 						<div>Mocha Pro</div>
@@ -284,37 +287,37 @@
 					<a data-value="Eagle"><img class="programs" src="images/mg/Eagle.png" alt="Eagle" />
 						<div>Eagle</div>
 					</a>
-					<a data-value="Nuke"><img class="programs" src="images/mg/Nuke.png" alt="´ºÅ©" />
-						<div>´ºÅ©</div>
+					<a data-value="Nuke"><img class="programs" src="images/mg/Nuke.png" alt="ë‰´í¬" />
+						<div>ë‰´í¬</div>
 					</a>
 				</div>
 			</div>
 			<div class="line" style="left: 77.8%; visibility: hidden"></div>
-			<div class="filterCate" style="left: 80.2%;">3D ±×·¡ÇÈ</div>
+			<div class="filterCate" style="left: 80.2%;">3D ê·¸ë˜í”½</div>
 			<div class="filterList" style="left: 80%;">
 				<div class="filter">
 					<a data-value="Autodesk"><img class="programs"
-						src="images/rander/Autodesk.jpg" alt="¿ÀÅäµ¥½ºÅ©" />
-						<div>¿ÀÅäµ¥½ºÅ©</div> </a> <a data-value="ZBrush"><img class="programs"
-						src="images/rander/ZBrush.png" alt="Zºê·¯½Ã" />
-						<div>Zºê·¯½Ã</div> </a> <a data-value="Artec"><img class="programs"
-						src="images/rander/Artec.png" alt="¾ÆÅØ" />
-						<div>¾ÆÅØ</div> </a> <a data-value="3DCoat"><img class="programs"
+						src="images/rander/Autodesk.jpg" alt="ì˜¤í† ë°ìŠ¤í¬" />
+						<div>ì˜¤í† ë°ìŠ¤í¬</div> </a> <a data-value="ZBrush"><img class="programs"
+						src="images/rander/ZBrush.png" alt="Zë¸ŒëŸ¬ì‹œ" />
+						<div>Zë¸ŒëŸ¬ì‹œ</div> </a> <a data-value="Artec"><img class="programs"
+						src="images/rander/Artec.png" alt="ì•„í…" />
+						<div>ì•„í…</div> </a> <a data-value="3DCoat"><img class="programs"
 						src="images/rander/3DCoat.jpg" alt="3DCoat" />
 						<div>3DCoat</div> </a> <a data-value="Geomagic Freeform"><img
 						class="programs" src="images/rander/Geomagic Freeform.jfif"
-						alt="Áö¿À¸ÅÁ÷ ÇÁ¸®Æû" />
-						<div>Áö¿À¸ÅÁ÷ ÇÁ¸®Æû</div> </a> <a data-value="Blender"><img
-						class="programs" src="images/rander/Blender.png" alt="ºí·»´õ" />
-						<div>ºí·»´õ</div> </a> <a data-value="Wings 3D"><img class="programs"
-						src="images/rander/Wings 3D.png" alt="À®Áî 3D" />
-						<div>À®Áî 3D</div> </a> <a data-value="Houdini"><img
-						class="programs" src="images/rander/Houdini.png" alt="ÈÄµğ´Ï" />
-						<div>ÈÄµğ´Ï</div> </a> <a data-value="MotionBuilder"><img
-						class="programs" src="images/rander/MotionBuilder.jpg" alt="¸ğ¼Çºô´õ" />
-						<div>¸ğ¼Çºô´õ</div> </a> <a data-value="Cinema 4D"><img
-						class="programs" src="images/rander/Cinema 4D.jfif" alt="½Ã³×¸¶ 4D" />
-						<div>½Ã³×¸¶ 4D</div> </a>
+						alt="ì§€ì˜¤ë§¤ì§ í”„ë¦¬í¼" />
+						<div>ì§€ì˜¤ë§¤ì§ í”„ë¦¬í¼</div> </a> <a data-value="Blender"><img
+						class="programs" src="images/rander/Blender.png" alt="ë¸”ë Œë”" />
+						<div>ë¸”ë Œë”</div> </a> <a data-value="Wings 3D"><img class="programs"
+						src="images/rander/Wings 3D.png" alt="ìœ™ì¦ˆ 3D" />
+						<div>ìœ™ì¦ˆ 3D</div> </a> <a data-value="Houdini"><img
+						class="programs" src="images/rander/Houdini.png" alt="í›„ë””ë‹ˆ" />
+						<div>í›„ë””ë‹ˆ</div> </a> <a data-value="MotionBuilder"><img
+						class="programs" src="images/rander/MotionBuilder.jpg" alt="ëª¨ì…˜ë¹Œë”" />
+						<div>ëª¨ì…˜ë¹Œë”</div> </a> <a data-value="Cinema 4D"><img
+						class="programs" src="images/rander/Cinema 4D.jfif" alt="ì‹œë„¤ë§ˆ 4D" />
+						<div>ì‹œë„¤ë§ˆ 4D</div> </a>
 				</div>
 			</div>
 			<!-- <div class="container">
@@ -338,7 +341,7 @@
 			<a href="#work" id="filterBtn" class="button scrolly"
 				style="left: 50%; transform: translate(-50%, 0%); display: flex; align-items: center; justify-content: center; width: 170px;"><ion-icon
 					name="filter-outline" style="font-size: 20px; "></ion-icon>&nbsp
-				ÇÊÅÍ¸µ</a>
+				í•„í„°ë§</a>
 		</footer>
 	</article>
 
@@ -348,7 +351,7 @@
 			<div class="row aln-center"></div>
 			<footer>
 				<!-- <p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-				<a href="#portfolio" class="button large scrolly">´õº¸±â</a> -->
+				<a href="#portfolio" class="button large scrolly">ë”ë³´ê¸°</a> -->
 			</footer>
 		</div>
 	</article>
@@ -376,20 +379,20 @@
 	<script>
 	let id= '<%=id%>';
 	let nick = '<%=nick%>';
-	let count = 0; //ÇöÀç Ãâ·ÂµÈ ¸ñ·ÏÀÇ °³¼ö
-	const limit = 6; // ¸î °³¾¿ ·ÎµùÇØ¼­ Ãâ·ÂÇÒ°ÇÁö
-	// ½ºÅ©·Ñ ÀÌº¥Æ® ¹ß»ı ½Ã
+	let count = 0; //í˜„ì¬ ì¶œë ¥ëœ ëª©ë¡ì˜ ê°œìˆ˜
+	const limit = 6; // ëª‡ ê°œì”© ë¡œë”©í•´ì„œ ì¶œë ¥í• ê±´ì§€
+	// ìŠ¤í¬ë¡¤ ì´ë²¤íŠ¸ ë°œìƒ ì‹œ
 	$(window).scroll(function() { 
-	    if($(window).scrollTop() + $(window).height() == $(document).height()) { // ½ºÅ©·ÑÀ» ³¡±îÁö ³»¸®¸é
+	    if($(window).scrollTop() + $(window).height() == $(document).height()) { // ìŠ¤í¬ë¡¤ì„ ëê¹Œì§€ ë‚´ë¦¬ë©´
 	        count += limit;
-	        // AJAX ¿äÃ» º¸³»±â
+	        // AJAX ìš”ì²­ ë³´ë‚´ê¸°
 	        $.ajax({
 	            url: 'ReadProductCon',
 	            type: 'post',
 	            data: "count="+count+"&limit="+limit,
 	            dataType:'json',
 	            success: function(data) {
-	                // ¹Ş¾Æ¿Â µ¥ÀÌÅÍ¸¦ ÀÌ¿ëÇÏ¿© È­¸é¿¡ ·»´õ¸µ
+	                // ë°›ì•„ì˜¨ ë°ì´í„°ë¥¼ ì´ìš©í•˜ì—¬ í™”ë©´ì— ë Œë”ë§
 	                for(let i = 0; i < data.productDTO.length; i++) {
 	                    const product = `
 	                    <div class="col-4 col-6-medium col-12-small">
@@ -408,7 +411,7 @@
 	        });
 	    }
 	});
-	if(id != null){ // ·Î±×ÀÎÇÑ idÀÇ Àå¹Ù±¸´Ï ¸ñ·Ï ºÒ·¯¿Í¼­ ´ã±â
+	if(id != null){ // ë¡œê·¸ì¸í•œ idì˜ ì¥ë°”êµ¬ë‹ˆ ëª©ë¡ ë¶ˆëŸ¬ì™€ì„œ ë‹´ê¸°
 		$.ajax({
 			url:'CartReadCon',
 			type:'post',
@@ -441,8 +444,8 @@
 			}
 		})
 	}
-	$('.filterCate').on({ // Ä«Å×°í¸® hover ±â´É
-		'mouseover': function () { // ¸¶¿ì½º¸¦ ¿Ã·ÈÀ» ¶§
+	$('.filterCate').on({ // ì¹´í…Œê³ ë¦¬ hover ê¸°ëŠ¥
+		'mouseover': function () { // ë§ˆìš°ìŠ¤ë¥¼ ì˜¬ë ¸ì„ ë•Œ
 			$('.filterList').on({
 				'mouseover':function(){
 					$(this).css({
@@ -454,7 +457,7 @@
 				'display': 'block'
 			})
 		},
-		'mouseout': function () { // ¸¶¿ì½º¸¦ ¶ÃÀ» ¶§
+		'mouseout': function () { // ë§ˆìš°ìŠ¤ë¥¼ ë—ì„ ë•Œ
 			$('.filterList').on({
 				'mouseout':function(){
 					$(this).css({
@@ -467,11 +470,11 @@
 			})
 		}
 	})
-	var softwareList = [] // ÇÊÅÍ¸µÇÒ ¼ÒÇÁÆ®¿ş¾î ÀúÀåÇÒ °ø°£
+	var softwareList = [] // í•„í„°ë§í•  ì†Œí”„íŠ¸ì›¨ì–´ ì €ì¥í•  ê³µê°„
 	$('.filter a').on({
-		'click': function () { // ÇÊÅÍ Ã¼Å© ±â´É
+		'click': function () { // í•„í„° ì²´í¬ ê¸°ëŠ¥
 			let thisAttr = $(this).attr('data-value')
-			if ($(this).hasClass('checked')) { // Ã¼Å© µÇ¾îÀÖÀ¸¸é ÇØÁ¦
+			if ($(this).hasClass('checked')) { // ì²´í¬ ë˜ì–´ìˆìœ¼ë©´ í•´ì œ
 				$(this).addClass('animate__bounceIn')
 				$(this).removeClass('checked animate__bounceIn');
 				$(this).children('.fa-check').remove();
@@ -484,13 +487,13 @@
 				(async () => {
 					$(`#filterResult a[data-value="${$(this).attr('data-value')}"]`).addClass('animate__bounceOut');
 					await sleep(0.7);
-					$('#filterResult a').each(function (index, item) { // ÇÊÅÍ ¸ñ·Ï¿¡¼­ »èÁ¦
+					$('#filterResult a').each(function (index, item) { // í•„í„° ëª©ë¡ì—ì„œ ì‚­ì œ
 						if ($(item).attr('data-value') === thisAttr) {
 							$(item).remove()
 						}
 					})
 				})();
-			} else { // Ã¼Å© ¼³Á¤, ÇÊÅÍ ¸ñ·Ï ¼³Á¤
+			} else { // ì²´í¬ ì„¤ì •, í•„í„° ëª©ë¡ ì„¤ì •
 				$(this).addClass('checked animate__bounceIn');
 				softwareList.push($(this).attr('data-value'));
 				$(this).clone().css({
@@ -510,19 +513,19 @@
 		}
 	})
 
-	$('#filterBtn').on({ // ÇÊÅÍ¸µ ¹öÆ° Å¬¸¯
+	$('#filterBtn').on({ // í•„í„°ë§ ë²„íŠ¼ í´ë¦­
 		'click': function () {
-			console.log(softwareList) // ÀÌÂÊ¿¡ Ã¼Å©µÈ ¸ñ·Ï µ¥ÀÌÅÍ ÀÖÀ½
+			console.log(softwareList) // ì´ìª½ì— ì²´í¬ëœ ëª©ë¡ ë°ì´í„° ìˆìŒ
 			count = 0; 
 			count += limit;
-	        // AJAX ¿äÃ» º¸³»±â
-		    $.ajax({ // ÇÊÅÍ¸µµÈ Á¦Ç° ¸ñ·Ï 6°³¾¿ Ãâ·Â(¹Ì¿Ï¼º)
+	        // AJAX ìš”ì²­ ë³´ë‚´ê¸°
+		    $.ajax({ // í•„í„°ë§ëœ ì œí’ˆ ëª©ë¡ 6ê°œì”© ì¶œë ¥(ë¯¸ì™„ì„±)
 	            url: 'ReadProductCon',
 	            type: 'post',
 	            data: "count="+count+"&limit="+limit+"&soft="+softwareList,
 	            dataType:'json',
 	            success: function(data) {
-	        // ¹Ş¾Æ¿Â µ¥ÀÌÅÍ¸¦ ÀÌ¿ëÇÏ¿© È­¸é¿¡ ·»´õ¸µ
+	        // ë°›ì•„ì˜¨ ë°ì´í„°ë¥¼ ì´ìš©í•˜ì—¬ í™”ë©´ì— ë Œë”ë§
 		            for(let i = 0; i < data.productDTO.length; i++) {
 		            	const product = `
 				                       <div class="col-4 col-6-medium col-12-small">
@@ -539,7 +542,7 @@
 					}
 				}
 			});
-			$('.checked').each(function (index, item) { // Ã¼Å©µÈ ¸ñ·Ï »èÁ¦
+			$('.checked').each(function (index, item) { // ì²´í¬ëœ ëª©ë¡ ì‚­ì œ
 				$(this).removeClass('checked animate__bounceIn')
 				$(this).children('.fa-check').remove();
 				$('#filterResult').empty()
@@ -547,14 +550,14 @@
 			})
 		}
 	})
-	function sleep(sec) { // ½Ã°£ Áö¿¬ ÇÔ¼ö
+	function sleep(sec) { // ì‹œê°„ ì§€ì—° í•¨ìˆ˜
 		return new Promise(resolve => setTimeout(resolve, sec * 1000));
 	}
-	$(document).on('click', '#filterResult a', function () { // ÇÊÅÍ Ã¼Å© ÇØÁ¦ÇÏ¸é ¹ØÀÇ °Íµµ °°ÀÌ ÇØÁ¦
+	$(document).on('click', '#filterResult a', function () { // í•„í„° ì²´í¬ í•´ì œí•˜ë©´ ë°‘ì˜ ê²ƒë„ ê°™ì´ í•´ì œ
 		$(`.filter a[data-value="${$(this).attr('data-value')}"]`).removeClass('checked animate__bounceIn');
 		$(`.filter a[data-value="${$(this).attr('data-value')}"]`).children('.fa-check').remove();
 		(async () => {
-			for (let i = 0; i < softwareList.length; i++) { // ¼ÒÇÁÆ®¿ş¾î ¸®½ºÆ®¿¡ ÇÒ´çµÈ ÇØ´ç µ¥ÀÌÅÍ »èÁ¦
+			for (let i = 0; i < softwareList.length; i++) { // ì†Œí”„íŠ¸ì›¨ì–´ ë¦¬ìŠ¤íŠ¸ì— í• ë‹¹ëœ í•´ë‹¹ ë°ì´í„° ì‚­ì œ
 				if (softwareList[i] == $(this).attr('data-value')) {
 					softwareList.splice(i, 1);
 					i--;
@@ -566,7 +569,7 @@
 		})();
 	})
 
-	$('#cartTap').on({ // Àå¹Ù±¸´Ï Å¬¸¯ÇÏ¸é ¿­·È´Ù ´İÇû´Ù
+	$('#cartTap').on({ // ì¥ë°”êµ¬ë‹ˆ í´ë¦­í•˜ë©´ ì—´ë ¸ë‹¤ ë‹«í˜”ë‹¤
 		'click': function () {
 			if ($(this).hasClass('extend')) {
 				$(this).removeClass('extend');
@@ -584,29 +587,29 @@
 	})
 	$(document).ready(function () {
 		priceResult();
-		$(document).on('click', '.upBtn', function () { // Àå¹Ù±¸´Ï ¾ÈÀÇ Á¦Ç°¿¡ up ¹öÆ° Å¬¸¯ ½Ã
+		$(document).on('click', '.upBtn', function () { // ì¥ë°”êµ¬ë‹ˆ ì•ˆì˜ ì œí’ˆì— up ë²„íŠ¼ í´ë¦­ ì‹œ
 			let upCnt = $(this).prev().val();
 			$(this).prev().val(++upCnt);
 			priceResult();
 		})
-		$(document).on('click', '.downBtn', function () { // Àå¹Ù±¸´Ï ¾ÈÀÇ Á¦Ç°¿¡ down ¹öÆ° Å¬¸¯ ½Ã
+		$(document).on('click', '.downBtn', function () { // ì¥ë°”êµ¬ë‹ˆ ì•ˆì˜ ì œí’ˆì— down ë²„íŠ¼ í´ë¦­ ì‹œ
 			let downCnt = $(this).next('.cartCnt').val();
 			if ($(this).next('.cartCnt').val() > 1) {
 				$(this).next('.cartCnt').val(--downCnt);
 			}
 			priceResult();
 		})
-		$(document).on('keyup', '.cartCnt', function () { priceResult(); }) // input¿¡ °ª Á÷Á¢ ÀÔ·Â ½Ã
+		$(document).on('keyup', '.cartCnt', function () { priceResult(); }) // inputì— ê°’ ì§ì ‘ ì…ë ¥ ì‹œ
 	})
 	let result = 0;
-	function priceResult() { // Àå¹Ù±¸´Ï ÃÑ ±İ¾× °è»ê ÇÔ¼ö
+	function priceResult() { // ì¥ë°”êµ¬ë‹ˆ ì´ ê¸ˆì•¡ ê³„ì‚° í•¨ìˆ˜
 		$('.titleText').each(function (index, item) {
 			let price = $(item).children('.price').text().slice(0, -1);
 			
 			let val = parseInt($(item).next().children('.cartCnt').val())
 			result += parseInt(price.replace(/,/g, "")) * val;
 			})
-		$('#result').text(result.toLocaleString() + '¿ø');
+		$('#result').text(result.toLocaleString() + 'ì›');
 		result = 0;
 	}
 	$(document).on('click','#payment',function(e){
@@ -628,13 +631,13 @@
 	var imgSrc = "";
 	var titleVal = "";
 	var priceVal = 0;
-	$(document).on('dragend','.image.featured',function(e){ // µå·¡±× ³¡
+	$(document).on('dragend','.image.featured',function(e){ // ë“œë˜ê·¸ ë
 		$(this).css({
 			'cursor': 'pointer'
 		})
 		$(this).removeClass('animate__bounceIn');
 	})
-	$(document).on('dragstart','.image.featured',function(e){ // µå·¡±× ½ÃÀÛ
+	$(document).on('dragstart','.image.featured',function(e){ // ë“œë˜ê·¸ ì‹œì‘
 		$(this).css({
 			'cursor': 'grab'
 		})
@@ -649,7 +652,7 @@
 		}
 	})
 		
-	$(document).on('drop','#cartList', function (e) { // »óÇ°À» Àå¹Ù±¸´Ï¿¡ ³Ö¾úÀ» ¶§
+	$(document).on('drop','#cartList', function (e) { // ìƒí’ˆì„ ì¥ë°”êµ¬ë‹ˆì— ë„£ì—ˆì„ ë•Œ
 		e.preventDefault();
 		var str = "";
 		str +=
@@ -660,7 +663,7 @@
 				</div>
 				<div class="titleText">
 				<h4 class="title">${titleVal}</h4>
-				<h4 class="price">${priceVal}¿ø</h4>
+				<h4 class="price">${priceVal}ì›</h4>
 				</div>
 				<div class="cartCntDiv">
 				<a class="downBtn but btnPush">
@@ -672,7 +675,7 @@
 				</a>
 				</div>
 				</div>`;		
-		$.ajax({ // Àå¹Ù±¸´Ï¿¡ ³ÖÀ¸¸é µ¥ÀÌÅÍº£ÀÌ½º¿¡ ÀúÀå
+		$.ajax({ // ì¥ë°”êµ¬ë‹ˆì— ë„£ìœ¼ë©´ ë°ì´í„°ë² ì´ìŠ¤ì— ì €ì¥
 			url:'CartInCon',
 			type:'post',
 			data : "id="+"<%=id%>"+"&title="+titleVal,
@@ -681,7 +684,7 @@
 			}
 		})
 		let b = true;
-		$('.titleText .title').each(function (index, item) { // °°Àº Á¦Ç°ÀÌ¸é input°ª Áõ°¡
+		$('.titleText .title').each(function (index, item) { // ê°™ì€ ì œí’ˆì´ë©´ inputê°’ ì¦ê°€
 			if ($(item).text() == titleVal) {
 				let a = $(item).parent().next().children('.cartCnt').val();
 				$(item).parent().next().children('.cartCnt').val(++a);
@@ -702,7 +705,7 @@
 		$(document).on('mouseleave', '.productImgDiv', function () {
 			$(this).children('i').css('display', 'none');
 		})
-		$(document).on('click', '.productImgDiv i', function () { // Àå¹Ù±¸´Ï¿¡¼­ »èÁ¦ ±â´É
+		$(document).on('click', '.productImgDiv i', function () { // ì¥ë°”êµ¬ë‹ˆì—ì„œ ì‚­ì œ ê¸°ëŠ¥
 			$(this).closest('.cartItem').remove('');
 			let rmtitle = $(this).parent().next().children('.title').text();
 			$.ajax({
@@ -717,7 +720,7 @@
 			priceResult();
 		})
 
-		$(document).on('dblclick', '.image.featured', function () { //´õºíÅ¬¸¯ ÁÁ¾Æ¿ä ±â´É(¹Ì±¸Çö)
+		$(document).on('dblclick', '.image.featured', function () { //ë”ë¸”í´ë¦­ ì¢‹ì•„ìš” ê¸°ëŠ¥(ë¯¸êµ¬í˜„)
 			if ($(this).children('.small').hasClass('dislike')) {
 				$(this).children('.small').removeClass('dislike');
 				$(this).children('.small').addClass('animate__bounce');
@@ -733,7 +736,7 @@
 			}
 		})
 		
-		$('#board').on('click',function(e){ // °Ô½ÃÆÇ ÀÌµ¿ ±â´É
+		$('#board').on('click',function(e){ // ê²Œì‹œíŒ ì´ë™ ê¸°ëŠ¥
 			e.preventDefault();
 			window.location.href = "BoardMain.jsp";
 		})

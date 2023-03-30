@@ -16,4 +16,5 @@ public class Shop_BasketDTO {
 	private String model;
 	@NonNull
 	private String id;
+	private int val;
 }

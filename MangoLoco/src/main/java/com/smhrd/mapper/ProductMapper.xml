@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="allread" resultType="ProductDTO" parameterType="int">
 		SELECT * 
 		FROM (SELECT ROWNUM AS RNUM, product.* FROM product ORDER BY seq)
-  		 WHERE seq >= #{count} AND <![CDATA[ROWNUM <=6]]>
+  		 WHERE rnum >= #{count} AND <![CDATA[ROWNUM <=6]]>
 	</select>
 
 	<select id="selectAll" resultType="ProductDTO" parameterType="String">
