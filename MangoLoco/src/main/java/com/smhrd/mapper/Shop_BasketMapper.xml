@@ -15,6 +15,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	
 	<select id="mylist" resultType="String" parameterType="String">
-		select distinct model from shop_basket where id=#{id}
+		select distinct model from shop_basket where id=#{id} order by seq
 	</select>
 </mapper>
