@@ -29,4 +29,11 @@ public BoardDTO BoardDetail(int num) {
 	BoardDTO board_detail = sqlsession.selectOne("boardDetail", num);
 	return board_detail;
 }
+
+public int delete(String nick) {
+	SqlSession sqlsession = sqlSessionFactory.openSession(true);
+	int cnt = sqlsession.delete("BoardDelete", nick);
+	sqlsession.close();
+	return cnt;
+}
 }

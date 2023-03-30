@@ -15,4 +15,6 @@ public class BoardDTO {
 	private String title;
 	private String content;
 	private String b_date;
+	private String category;
+	private String img;
 }

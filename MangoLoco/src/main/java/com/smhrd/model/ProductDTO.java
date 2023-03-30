@@ -1,7 +1,10 @@
 package com.smhrd.model;
 
+import java.math.BigDecimal;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Getter
@@ -10,9 +13,11 @@ import lombok.RequiredArgsConstructor;
 public class ProductDTO {
 	private int seq;
 	private String model;
-	private String company;
 	private String cpu;
 	private String graphic;
-	private int price;
-	private int count;
+	private String price;
+	private String detail; 
+	private int score;
+	private int gpuscore;
+	private String inout;
 }
