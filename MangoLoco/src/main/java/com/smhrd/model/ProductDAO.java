@@ -18,9 +18,9 @@ public class ProductDAO {
 		return productList;
 	}
 	
-	public ProductDTO basketProd(String model){
+	public ProductDTO selectAll(String model){
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		ProductDTO prodList = sqlSession.selectOne("mybasket", model);
+		ProductDTO prodList = sqlSession.selectOne("selectAll", model);
 		sqlSession.close();
 		return prodList;
 	}
