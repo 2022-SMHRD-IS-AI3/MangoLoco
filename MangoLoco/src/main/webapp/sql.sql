@@ -74,13 +74,13 @@ CREATE TABLE SHOP_BASKET (
 	FOREIGN KEY (ID) REFERENCES MEMBERS (ID),
 	FOREIGN KEY (P_SEQ) REFERENCES PRODUCT (SEQ)
 )
-
+select * from SHOP_BASKET
 DROP TABLE SHOP_BASKET
 create sequence basket_seq
 	increment by 1
 	start with 1
 
-
+select distinct model from shop_basket where id='qq@qq.qq'
 
 
 

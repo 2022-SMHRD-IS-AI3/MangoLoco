@@ -7,8 +7,8 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="./assets/css/board/main.css" />
-		<link rel="stylesheet" href="./assets/css/board/board.css" />
+		<link rel="stylesheet" href="./assets/css/boardmain.css"/>
+		<!-- <link rel="stylesheet" href="./assets/css/board/board.css"/> -->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 </head>
@@ -18,8 +18,8 @@
 				<form action="BoardWriteCon.do" method="post" enctype="multipart/form-data">
 				<table id="list">
 					<tr>
-						<td>
-							<select id="select_option" name="Writetype">
+						<td colspan="2" align="right" width=10% height=5%>
+							<select id="select_option" name="Writetype" >
 								<option value="2" color="black">선택</option>
 								<option value="1" color="black">공지</option>
 								<option value="0" color="black">일반</option>
@@ -28,11 +28,11 @@
 					</tr>
 					<tr>
 						<td>제목</td>
-						<td><input type="text" name="title"> </td>
+						<td><input type="text" name="title" id="writetext"></td>
 					</tr>
 					<tr>
 						<td>작성자</td>
-						<td><input  type="text" name="writer"> </td>
+						<td></td>
 					</tr>
 					<tr>
 						<td colspan="2">내용</td>
@@ -41,7 +41,7 @@
 						<td colspan="2">
 							<input name="filename" type="file" style="float: right;">
 							<br>
-							<textarea name="content" rows="10" style="resize: none;"></textarea>			
+							<textarea name="content" rows="50px" cols="200px" style="resize: none;"></textarea>			
 						</td>
 					</tr>
 					<tr>

@@ -17,6 +17,14 @@ public class ProductDAO {
 		sqlSession.close();
 		return productList;
 	}
+	
+	public ProductDTO basketProd(String model){
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		ProductDTO prodList = sqlSession.selectOne("mybasket", model);
+		sqlSession.close();
+		return prodList;
+	}
+	
 	public java.util.List<ProductDTO> User_ProductAll() {
 		SqlSession sqlsession = sqlSessionFactory.openSession(true);
 		java.util.List<ProductDTO> Product_list = sqlsession.selectList("User_ProductAll");

@@ -29,10 +29,10 @@
   	<servlet-class>com.smhrd.controller.ReadProductCon</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>cartInCon</servlet-name>
-  	<display-name>cartInCon</display-name>
+  	<servlet-name>CartInCon</servlet-name>
+  	<display-name>CartInCon</display-name>
   	<description></description>
-  	<servlet-class>com.smhrd.controller.cartInCon</servlet-class>
+  	<servlet-class>com.smhrd.controller.CartInCon</servlet-class>
 </servlet>
 <servlet>
   	<servlet-name>ImageSaveCon</servlet-name>
@@ -47,10 +47,16 @@
 	<servlet-class>com.smhrd.controller.CartOutCon</servlet-class>
 </servlet>
 <servlet>
-	<servlet-name>LogoutCon</servlet-name>
-	<display-name>LogoutCon</display-name>
+	<servlet-name>filterCon</servlet-name>
+	<display-name>filterCon</display-name>
 	<description></description>
-	<servlet-class>com.smhrd.controller.LogoutCon</servlet-class>
+	<servlet-class>com.smhrd.controller.filterCon</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>CartReadCon</servlet-name>
+	<display-name>CartReadCon</display-name>
+	<description></description>
+	<servlet-class>com.smhrd.controller.CartReadCon</servlet-class>
 </servlet>
   <servlet-mapping>
   	<servlet-name>CheckIdCon</servlet-name>
@@ -65,6 +71,10 @@
   	<url-pattern>/MemberLoginCon</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+  	<servlet-name>CartInCon</servlet-name>
+  	<url-pattern>/CartInCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
   	<servlet-name>ReadProductCon</servlet-name>
   	<url-pattern>/ReadProductCon</url-pattern>
   </servlet-mapping>
@@ -77,7 +87,11 @@
   	<url-pattern>/CartOutCon</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>LogoutCon</servlet-name>
-  	<url-pattern>/LogoutCon</url-pattern>
+  	<servlet-name>filterCon</servlet-name>
+  	<url-pattern>/filterCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CartReadCon</servlet-name>
+  	<url-pattern>/CartReadCon</url-pattern>
   </servlet-mapping>
 </web-app>
