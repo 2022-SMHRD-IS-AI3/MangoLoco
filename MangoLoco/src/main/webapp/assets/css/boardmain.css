@@ -1,13 +1,48 @@
 @charset "UTF-8";
-#board{
-	widh:"200px"
+* {
+	margin: 0 auto;
+	padding: 0;
+	font-family: 'Malgun gothic','Sans-Serif','Arial';
 }
-#list{
-	align:"center"; width:"200px"; height:"180px"
+a {
+	text-decoration: none;
+	color:#333;
 }
-#option{
-	align:"right"; width:10%; height:5%;
+ul li {
+	list-style:none;
 }
-#writetext{
-	width:"160px"; height:"20px"; align:"right";
+
+/* 공통 */
+.fl {
+	float:left;
+}
+.tc {
+	text-align:center;
+}
+
+/* 게시판 목록 */
+#board_area {
+	width: 900px;
+	position: relative;
+}
+.list-table {
+	margin-top: 40px;
+}
+.list-table thead th{
+	height:40px;
+	border-top:2px solid #09C;
+	border-bottom:1px solid #CCC;
+	font-weight: bold;
+	font-size: 17px;
+}
+.list-table tbody td{
+	text-align:center;
+	padding:10px 0;
+	border-bottom:1px solid #CCC; height:20px;
+	font-size: 14px 
+}
+#write_btn {
+	position: absolute;
+	margin-top:20px;
+	right: 0;
 }
