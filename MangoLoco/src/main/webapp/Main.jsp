@@ -373,7 +373,7 @@
 	                    <div class="col-4 col-6-medium col-12-small">
 		                    <article class="box style2">
 			                    <a class="image featured" href= "Detail.jsp?model=${data.productDTO[i].model}">
-				                    <img src="img/${data.productDTO[i].model}.jpg" alt="">
+				                    <img src="./img/${data.productDTO[i].model}.jpg" alt="노트북 이미지">
 				                    <i class="fa-solid fa-heart small dislike"></i>
 			                    </a>
 		                    <h3><a href= "Detail.jsp?model=${data.productDTO[i].model}">${data.productDTO[i].model}</a></h3>
