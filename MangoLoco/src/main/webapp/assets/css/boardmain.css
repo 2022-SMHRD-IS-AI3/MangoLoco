@@ -1,7 +1,13 @@
 @charset "UTF-8";
+#board{
+	widh:"200px"
+}
 #list{
 	align:"center"; width:"200px"; height:"180px"
 }
+#option{
+	align:"right"; width:10%; height:5%;
+}
 #writetext{
-	
+	width:"160px"; height:"20px"; align:"right";
 }
