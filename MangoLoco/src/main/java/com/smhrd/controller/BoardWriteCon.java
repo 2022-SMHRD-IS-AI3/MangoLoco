@@ -4,23 +4,21 @@ import java.io.IOException;
 import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.smhrd.Commend.Commend;
-import com.smhrd.model.BoardDAO;
-import com.smhrd.model.BoardDTO;
 import com.smhrd.model.BoardDAO;
 import com.smhrd.model.BoardDTO;
 
-public class BoardWriteCon implements Commend {
-
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+/**
+ * Servlet implementation class BoardWriteCon
+ */
+public class BoardWriteCon extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("[WriteBoradCon]");
 
 		//MultipartRequest 매개변수 정리
@@ -39,7 +37,7 @@ public class BoardWriteCon implements Commend {
 		DefaultFileRenamePolicy rename = new DefaultFileRenamePolicy();
 		
 		MultipartRequest multi = new MultipartRequest(request, path, maxSize, encoding, rename);
-		String Writetype = multi.getParameter("Writetype");
+		String category = multi.getParameter("Writetype");
 		String id = multi.getParameter("id");
 		String title = multi.getParameter("title");
 		String nick = multi.getParameter("nick");
@@ -53,7 +51,7 @@ public class BoardWriteCon implements Commend {
 		System.out.println("content : "+content);
 		
 		// DTO로 묶기
-		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, Writetype);
+		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, category, null);
 		int cnt = new BoardDAO().upload(dto);
 		
 		if(cnt>0) {
@@ -61,7 +59,7 @@ public class BoardWriteCon implements Commend {
 		}else {
 			System.out.println("업로드 실패");
 		}
-		return "BoardMain.jsp";
+		response.sendRedirect("BoardMain.jsp");
 	}
 
 }

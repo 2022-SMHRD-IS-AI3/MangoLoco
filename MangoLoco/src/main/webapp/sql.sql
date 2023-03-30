@@ -51,6 +51,8 @@ CREATE TABLE BOARD (
 	FOREIGN KEY (NICK) REFERENCES MEMBERS (NICK)
 )
 
+select*from BOARD
+
 CREATE TABLE REPLY (
 	SEQ NUMBER(10) PRIMARY KEY,
 	B_SEQ NUMBER(10),
@@ -82,11 +84,16 @@ create sequence basket_seq
 
 select distinct model from shop_basket where id='qq@qq.qq'
 
+SELECT * 
+		FROM (SELECT ROWNUM AS RNUM, product.* FROM product ORDER BY seq)
+  		 WHERE seq >= 10 AND ROWNUM <=6
+create sequence board_seq
+start with 1
+insert into board values(board_seq.nextval, 'qq@qq.qq', 'qqq','제목t54646est','내용56165ㅇㅇㅇㅇ', sysdate, '1', null)
+select * from board
 
 
-
-
-
+select * from members
 
 
 
