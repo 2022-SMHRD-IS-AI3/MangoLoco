@@ -13,9 +13,11 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.model.BoardDAO;
 import com.smhrd.model.BoardDTO;
 
+/**
+ * Servlet implementation class BoardWriteCon
+ */
 public class BoardWriteCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("[WriteBoradCon]");
 
@@ -49,7 +51,7 @@ public class BoardWriteCon extends HttpServlet {
 		System.out.println("content : "+content);
 		
 		// DTO로 묶기
-		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, category, filename_en);
+		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, category, null);
 		int cnt = new BoardDAO().upload(dto);
 		
 		if(cnt>0) {
@@ -57,6 +59,7 @@ public class BoardWriteCon extends HttpServlet {
 		}else {
 			System.out.println("업로드 실패");
 		}
+		response.sendRedirect("BoardMain.jsp");
 	}
 
 }

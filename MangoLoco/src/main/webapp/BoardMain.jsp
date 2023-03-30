@@ -35,19 +35,19 @@
 					</tr>
 					</thead>
 					<tbody>
-					<%for(int i=0; i<board_list.size(); i++){ %>
-					<%if(board_list.get(i).getCategory().equals("1")){ %>
+					<%if(board_list != null){%>
+						<%for(int i=0; i<board_list.size(); i++){ %>
+							<%if(board_list.get(i).getCategory().equals("1")){ %>
 					<tr>
 						<td width="70">공지</td>
 						<td width="500"><a href="BoardDetail.jsp?num=<%=board_list.get(i).getSeq()%>"><%=board_list.get(i).getTitle() %></a></td>
 						<td width="120"><%=board_list.get(i).getNick() %></td>
 						<td width="100"><%=board_list.get(i).getB_date() %></td>
-						<%if(board_list.get(i).getId().equals("admin")){ %>
+								<%if(board_list.get(i).getId().equals("admin")){ %>
 							<td><a href="BoardDelCon.do">삭제하기</a></td>
-						<%} %>
+								<%} %>
 					</tr>
-					<%}} %>
-					<%for(int i=0; i<board_list.size(); i++){ %>
+					<%}else{ %>
 					<tr>
 						<td width="70"><%=i+1 %></td>
 						<td width="500"><a href="BoardDetail.jsp?num=<%=board_list.get(i).getSeq()%>"><%=board_list.get(i).getTitle() %></a></td>
@@ -57,6 +57,8 @@
 							<td><a href="BoardDelCon.do">삭제하기</a></td>
 						<%} %>
 					</tr>
+					<%} %>
+					<%} %>
 					<%} %>
 				</tbody>
 				</table id="write_btn">
