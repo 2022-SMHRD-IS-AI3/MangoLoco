@@ -13,9 +13,7 @@ import com.smhrd.model.MembersDTO;
 
 import net.sf.json.JSONObject;
 
-/**
- * Servlet implementation class MemberLoginCon
- */
+
 public class MemberLoginCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
