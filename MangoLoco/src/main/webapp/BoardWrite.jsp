@@ -18,7 +18,7 @@
 				<form action="BoardWriteCon.do" method="post" enctype="multipart/form-data">
 				<table id="list">
 					<tr>
-						<td colspan="2" align="right" width=10% height=5%>
+						<td colspan="2" id = "option">
 							<select id="select_option" name="Writetype" >
 								<option value="2" color="black">선택</option>
 								<option value="1" color="black">공지</option>
