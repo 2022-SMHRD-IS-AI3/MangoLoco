@@ -15,5 +15,5 @@ public class BoardDTO {
 	private String title;
 	private String content;
 	private String b_date;
-	private String writetype;
+	private String category;
 }
