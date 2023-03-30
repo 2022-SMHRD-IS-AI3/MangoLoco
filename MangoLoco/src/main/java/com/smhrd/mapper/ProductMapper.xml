@@ -12,6 +12,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="mybasket" resultType="ProductDTO" parameterType="String">
 		select * from product where model=#{model} 
 	</select>
-	
-	
+
 </mapper>
