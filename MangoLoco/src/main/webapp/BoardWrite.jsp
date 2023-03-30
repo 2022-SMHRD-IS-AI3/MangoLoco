@@ -70,7 +70,7 @@
 	</nav> --%>
 	<div class="container" style="align:center;">
 		<div class="row">
-			<form method="post" action="BoardWriteCon.do">
+			<form method="post" action="./BoardWriteCon">
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 					<thead>
 						<tr>

@@ -49,7 +49,7 @@ public class BoardWriteCon extends HttpServlet {
 		System.out.println("content : "+content);
 		
 		// DTO로 묶기
-		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, Writetype);
+		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, Writetype, );
 		int cnt = new BoardDAO().upload(dto);
 		
 		if(cnt>0) {
