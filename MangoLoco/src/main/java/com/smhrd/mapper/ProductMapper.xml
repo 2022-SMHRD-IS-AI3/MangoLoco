@@ -9,9 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   		 WHERE RNUM >= #{count} AND <![CDATA[ROWNUM <=6]]>
 	</select>
 	
-	<select id="mybasket" resultType="ProductDTO" parameterType="String">
+	<select id="selectAll" resultType="ProductDTO" parameterType="String">
 		select * from product where model=#{model}
 	</select>
-	
-	
 </mapper>

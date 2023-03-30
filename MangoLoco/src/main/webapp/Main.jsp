@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR" %>
 <!DOCTYPE HTML>
 <!--
 	Miniport by HTML5 UP
@@ -31,6 +31,7 @@
 	<%
 	String id = (String) session.getAttribute("id");
 	String nick = (String) session.getAttribute("nick");
+	
 	%>
 
 	<!-- Nav -->
@@ -99,13 +100,12 @@
 			<button class="searchBtn">검색</button>
 		</div>
 		<div class="container"
-			style="background-color: yellow; height: 500px; width: 1600px; position: relative;">
+			style="height: 500px; width: 1600px; position: relative; padding: 15px;">
 			<div
 				style="background: #2f3542; width: 97%; position: absolute; height: 100%; transform: translate(-50%, -50%); top: 73%; left: 50%;">
 			</div>
-			<div class="filterCate" style="background: bisque;">래스터 그래픽</div>
-			<div class="filterList"
-				style="position: absolute; transform: translate(1%, -5%); background: aqua; border: 10px solid transparent; width: 15%">
+			<div class="filterCate">래스터 그래픽</div>
+			<div class="filterList" style="position: absolute;">
 				<div class="filter">
 					<a data-value="Photoshop"><img class="programs"
 						src="images/rg/PhotoShop.png" alt="포토샵"
@@ -210,83 +210,60 @@
 
 			<div class="filterList" style="left: 60%;">
 				<div class="filter">
-					<a data-value="Movavi"><img class="programs" src="images/mg/Movavi.png" alt="모바비" />
-						<div>모바비</div>
-					</a>
-					<a data-value="ActivePresenter"><img class="programs" src="images/mg/ActivePresenter.png"
-							alt="액티브프레젠터" />
-						<div>액티브프레젠터</div>
-					</a>
-					<a data-value="Shotcut"><img class="programs" src="images/mg/Shotcut.png" alt="샷컷" />
-						<div>샷컷</div>
-					</a>
-					<a data-value="OpenShot"><img class="programs" src="images/mg/OpenShot.png" alt="오픈샷" />
-						<div>오픈샷</div>
-					</a>
-					<a data-value="DaVinci Resolve"><img class="programs" src="images/mg/DaVinci Resolve.jfif"
-							alt="다빈치 리졸브" />
-						<div>다빈치 리졸브</div>
-					</a>
-					<a data-value="Video Grabber"><img class="programs" src="images/mg/Video Grabber.jfif"
-							alt="Video Grabber" />
-						<div>Video Grabber</div>
-					</a>
-					<a data-value="iMovie"><img class="programs" src="images/mg/iMovie.png" alt="아이무비" />
-						<div>아이무비</div>
-					</a>
-					<a data-value="VideoProc"><img class="programs" src="images/mg/VideoProc.jfif" alt="비디오 프록" />
-						<div>비디오 프록</div>
-					</a>
-					<a data-value="Icecream Video Editor"><img class="programs"
-							src="images/mg/Icecream Video Editor.png" alt="Icecream Video Editor" />
-						<div>Icecream Video Editor</div>
-					</a>
-					<a data-value="Lightworks"><img class="programs" src="images/mg/Lightworks.png" alt="라이트웍스" />
-						<div>라이트웍스</div>
-					</a>
-					<a data-value="VideoPad Video Editor"><img class="programs"
-							src="images/mg/VideoPad Video Editor.jfif" alt="비디오패드" />
-						<div>비디오패드</div>
-					</a>
-					<a data-value="HitFilm Express"><img class="programs" src="images/mg/HitFilm Express.png"
-							alt="히트필름" />
-						<div>히트필름</div>
-					</a>
-					<a data-value="Premiere Pro"><img class="programs" src="images/mg/Adobe Premiere Pro.png"
-							alt="프리미어프로" />
-						<div>프리미어프로</div>
-					</a>
-					<a data-value="Microsoft Photos"><img class="programs" src="images/mg/Microsoft Photos.png"
-							alt="Microsoft Photos" />
-						<div>Microsoft Photos</div>
-					</a>
-					<a data-value="VSDC Video Editor"><img class="programs" src="images/mg/VSDC Video Editor.jfif"
-							alt="VSDC 비디오 에디터" />
-						<div>VSDC 비디오 에디터</div>
-					</a>
-					<a data-value="Final Cut"><img class="programs" src="images/mg/Final Cut.png" alt="파이널컷" />
-						<div>파이널컷</div>
-					</a>
-					<a data-value="Avid Media Composer"><img class="programs" src="images/mg/Avid Media Composer.png"
-							alt="미디어 컴포저" />
-						<div>미디어 컴포저</div>
-					</a>
-					<a data-value="EDIUS"><img class="programs" src="images/mg/EDIUS X.png" alt="에디우스" />
-						<div>에디우스</div>
-					</a>
-					<a data-value="After Effects"><img class="programs" src="images/mg/Adobe After Effects.png"
-							alt="애프터 이펙트" />
-						<div>애프터 이펙트</div>
-					</a>
-					<a data-value="Mocha Pro"><img class="programs" src="images/mg/Mocha Pro.png" alt="Mocha Pro" />
-						<div>Mocha Pro</div>
-					</a>
-					<a data-value="Eagle"><img class="programs" src="images/mg/Eagle.png" alt="Eagle" />
-						<div>Eagle</div>
-					</a>
-					<a data-value="Nuke"><img class="programs" src="images/mg/Nuke.png" alt="뉴크" />
-						<div>뉴크</div>
-					</a>
+					<a data-value="Movavi"><img class="programs"
+						src="images/mg/Movavi.png" alt="모바비" />
+						<div>모바비</div> </a> <a data-value="ActivePresenter"><img
+						class="programs" src="images/mg/ActivePresenter.png" alt="액티브프레젠터" />
+						<div>액티브프레젠터</div> </a> <a data-value="Shotcut"><img
+						class="programs" src="images/mg/Shotcut.png" alt="샷컷" />
+						<div>샷컷</div> </a> <a data-value="OpenShot"><img class="programs"
+						src="images/mg/OpenShot.png" alt="오픈샷" />
+						<div>오픈샷</div> </a> <a data-value="DaVinci Resolve"><img
+						class="programs" src="images/mg/DaVinci Resolve.jfif"
+						alt="다빈치 리졸브" />
+						<div>다빈치 리졸브</div> </a> <a data-value="Video Grabber"><img
+						class="programs" src="images/mg/Video Grabber.jfif"
+						alt="Video Grabber" />
+						<div>Video Grabber</div> </a> <a data-value="iMovie"><img
+						class="programs" src="images/mg/iMovie.png" alt="아이무비" />
+						<div>아이무비</div> </a> <a data-value="VideoProc"><img
+						class="programs" src="images/mg/VideoProc.jfif" alt="비디오 프록" />
+						<div>비디오 프록</div> </a> <a data-value="Icecream Video Editor"><img
+						class="programs" src="images/mg/Icecream Video Editor.png"
+						alt="Icecream Video Editor" />
+						<div>Icecream Video Editor</div> </a> <a data-value="Lightworks"><img
+						class="programs" src="images/mg/Lightworks.png" alt="라이트웍스" />
+						<div>라이트웍스</div> </a> <a data-value="VideoPad Video Editor"><img
+						class="programs" src="images/mg/VideoPad Video Editor.jfif"
+						alt="비디오패드" />
+						<div>비디오패드</div> </a> <a data-value="HitFilm Express"><img
+						class="programs" src="images/mg/HitFilm Express.png" alt="히트필름" />
+						<div>히트필름</div> </a> <a data-value="Premiere Pro"><img
+						class="programs" src="images/mg/Adobe Premiere Pro.png"
+						alt="프리미어프로" />
+						<div>프리미어프로</div> </a> <a data-value="Microsoft Photos"><img
+						class="programs" src="images/mg/Microsoft Photos.png"
+						alt="Microsoft Photos" />
+						<div>Microsoft Photos</div> </a> <a data-value="VSDC Video Editor"><img
+						class="programs" src="images/mg/VSDC Video Editor.jfif"
+						alt="VSDC 비디오 에디터" />
+						<div>VSDC 비디오 에디터</div> </a> <a data-value="Final Cut"><img
+						class="programs" src="images/mg/Final Cut.png" alt="파이널컷" />
+						<div>파이널컷</div> </a> <a data-value="Avid Media Composer"><img
+						class="programs" src="images/mg/Avid Media Composer.png"
+						alt="미디어 컴포저" />
+						<div>미디어 컴포저</div> </a> <a data-value="EDIUS"><img
+						class="programs" src="images/mg/EDIUS X.png" alt="에디우스" />
+						<div>에디우스</div> </a> <a data-value="After Effects"><img
+						class="programs" src="images/mg/Adobe After Effects.png"
+						alt="애프터 이펙트" />
+						<div>애프터 이펙트</div> </a> <a data-value="Mocha Pro"><img
+						class="programs" src="images/mg/Mocha Pro.png" alt="Mocha Pro" />
+						<div>Mocha Pro</div> </a> <a data-value="Eagle"><img
+						class="programs" src="images/mg/Eagle.png" alt="Eagle" />
+						<div>Eagle</div> </a> <a data-value="Nuke"><img class="programs"
+						src="images/mg/Nuke.png" alt="뉴크" />
+						<div>뉴크</div> </a>
 				</div>
 			</div>
 			<div class="line" style="left: 77.8%; visibility: hidden"></div>
@@ -390,16 +367,17 @@
 	            dataType:'json',
 	            success: function(data) {
 	                // 받아온 데이터를 이용하여 화면에 렌더링
+	                console.log(data);
 	                for(let i = 0; i < data.productDTO.length; i++) {
 	                    const product = `
 	                    <div class="col-4 col-6-medium col-12-small">
-	                    <article class="box style2">
-	                    <a class="image featured">
-	                    <img src="img/${data.productDTO[i].model}.jpg" alt="">
-	                    <i class="fa-solid fa-heart small dislike"></i>
-	                    </a>
-	                    <h3><a href="">${data.productDTO[i].model}</a></h3>
-	                    <p>${data.productDTO[i].price}</p>
+		                    <article class="box style2">
+			                    <a class="image featured" href= "Detail.jsp?model=${data.productDTO[i].model}">
+				                    <img src="img/${data.productDTO[i].model}.jpg" alt="">
+				                    <i class="fa-solid fa-heart small dislike"></i>
+			                    </a>
+		                    <h3><a href= "Detail.jsp?model=${data.productDTO[i].model}">${data.productDTO[i].model}</a></h3>
+		                    <p>${data.productDTO[i].price}</p>
 	                    </article>
 	                    </div>`;
 	                    $('.row.aln-center').append(product);
