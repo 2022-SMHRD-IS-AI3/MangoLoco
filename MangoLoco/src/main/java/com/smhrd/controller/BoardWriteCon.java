@@ -39,7 +39,7 @@ public class BoardWriteCon implements Commend {
 		DefaultFileRenamePolicy rename = new DefaultFileRenamePolicy();
 		
 		MultipartRequest multi = new MultipartRequest(request, path, maxSize, encoding, rename);
-		String Writetype = multi.getParameter("Writetype");
+		String category = multi.getParameter("Writetype");
 		String id = multi.getParameter("id");
 		String title = multi.getParameter("title");
 		String nick = multi.getParameter("nick");
@@ -53,7 +53,7 @@ public class BoardWriteCon implements Commend {
 		System.out.println("content : "+content);
 		
 		// DTO로 묶기
-		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, Writetype);
+		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, category, filename_en);
 		int cnt = new BoardDAO().upload(dto);
 		
 		if(cnt>0) {

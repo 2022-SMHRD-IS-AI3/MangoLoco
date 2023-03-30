@@ -36,7 +36,7 @@
 					</thead>
 					<tbody>
 					<%for(int i=0; i<board_list.size(); i++){ %>
-					<%if(board_list.get(i).getCategory() == 1){ %>
+					<%if(board_list.get(i).getCategory().equals("1")){ %>
 					<tr>
 						<td width="70">공지</td>
 						<td width="500"><a href="BoardDetail.jsp?num=<%=board_list.get(i).getSeq()%>"><%=board_list.get(i).getTitle() %></a></td>

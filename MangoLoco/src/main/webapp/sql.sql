@@ -82,7 +82,9 @@ create sequence basket_seq
 
 select distinct model from shop_basket where id='qq@qq.qq'
 
-
+SELECT * 
+		FROM (SELECT ROWNUM AS RNUM, product.* FROM product ORDER BY seq)
+  		 WHERE seq >= 10 AND ROWNUM <=6
 
 
 
