@@ -4,7 +4,7 @@
 <!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login Form validation in HTML & CSS | CodingNepal</title>
 <link rel="stylesheet" href="assets/css/login.css">
