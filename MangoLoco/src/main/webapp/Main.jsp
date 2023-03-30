@@ -586,9 +586,20 @@
 		$('#result').text(result.toLocaleString() + '¿ø');
 		result = 0;
 	}
-	$(document).on('click','#payment',function(){
-		$('')
-		window.location.href = "MovePaymentPageCon?"
+	$(document).on('click','#payment',function(e){
+		e.preventDefualt();
+		titleList = [];
+		priceList = [];
+		inputval = [];
+		$('.titleText').each(function(index, input){
+			titleList.push($(item).children('.title').text());
+			priceList.push($(item).children('.price').text().slice(0, -1));
+			inputval.push($(item).next().children('.cartCnt').val());
+		})
+		console.log(titleList);
+		console.log(priceList);
+		console.log(inputval);
+		window.location.href = `MovePaymentPageCon?tList=${titleList}&pList=${priceList}&val=${inputval}`
 	})
 		
 	var imgSrc = "";

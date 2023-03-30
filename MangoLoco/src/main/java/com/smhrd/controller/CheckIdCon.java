@@ -18,7 +18,7 @@ public class CheckIdCon extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/x-json; charset=utf-8");
 		String id = request.getParameter("email");
-		System.out.println(id);
+
 		MembersDAO dao = new MembersDAO();
 		String idcheck = dao.idCheck(id);
 		String isIdCheck = "false";
