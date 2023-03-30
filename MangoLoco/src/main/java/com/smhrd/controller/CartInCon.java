@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smhrd.Commend.Commend;
 import com.smhrd.model.Shop_BasketDAO;
 import com.smhrd.model.Shop_BasketDTO;
 
