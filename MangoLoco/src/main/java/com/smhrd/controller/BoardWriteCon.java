@@ -4,23 +4,19 @@ import java.io.IOException;
 import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.smhrd.Commend.Commend;
-import com.smhrd.model.BoardDAO;
-import com.smhrd.model.BoardDTO;
 import com.smhrd.model.BoardDAO;
 import com.smhrd.model.BoardDTO;
 
-public class BoardWriteCon implements Commend {
+public class BoardWriteCon extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("[WriteBoradCon]");
 
 		//MultipartRequest 매개변수 정리
@@ -61,7 +57,6 @@ public class BoardWriteCon implements Commend {
 		}else {
 			System.out.println("업로드 실패");
 		}
-		return "BoardMain.jsp";
 	}
 
 }
