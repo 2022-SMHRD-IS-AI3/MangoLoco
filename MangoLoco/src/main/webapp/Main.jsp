@@ -210,7 +210,6 @@
 
 			<div class="filterList" style="left: 60%;">
 				<div class="filter">
-<<<<<<< HEAD
 					<a data-value="Movavi"><img class="programs" src="images/mg/Movavi.png" alt="모바비" />
 						<div>모바비</div>
 					</a>
@@ -288,62 +287,6 @@
 					<a data-value="Nuke"><img class="programs" src="images/mg/Nuke.png" alt="뉴크" />
 						<div>뉴크</div>
 					</a>
-=======
-					<a data-value="Movavi"><img class="programs"
-						src="images/mg/Movavi.png" alt="모바비" />
-						<div>모바비</div> </a> <a data-value="ActivePresenter"><img
-						class="programs" src="images/mg/ActivePresenter.png" alt="액티브프리젠터" />
-						<div>액티브프리젠터</div> </a> <a data-value="Shotcut"><img
-						class="programs" src="images/mg/Shotcut.png" alt="샷컷" />
-						<div>샷컷</div> </a> <a data-value="OpenShot"><img class="programs"
-						src="images/mg/OpenShot.png" alt="오픈샷" />
-						<div>오픈샷</div> </a> <a data-value="DaVinci Resolve"><img
-						class="programs" src="images/mg/DaVinci Resolve.jfif"
-						alt="다빈치 리졸브" />
-						<div>다빈치 리졸브</div> </a> <a data-value="Video Grabber"><img
-						class="programs" src="images/mg/Video Grabber.jfif"
-						alt="Video Grabber" />
-						<div>Video Grabber</div> </a> <a data-value="iMovie"><img
-						class="programs" src="images/mg/iMovie.png" alt="아이무비" />
-						<div>아이무비</div> </a> <a data-value="VideoProc"><img
-						class="programs" src="images/mg/VideoProc.jfif" alt="비디오 프록" />
-						<div>비디오 프록</div> </a> <a data-value="Icecream Video Editor"><img
-						class="programs" src="images/mg/Icecream Video Editor.png"
-						alt="Icecream Video Editor" />
-						<div>Icecream Video Editor</div> </a> <a data-value="Lightworks"><img
-						class="programs" src="images/mg/Lightworks.png" alt="라이트웍스" />
-						<div>라이트웍스</div> </a> <a data-value="VideoPad Video Editor"><img
-						class="programs" src="images/mg/VideoPad Video Editor.jfif"
-						alt="비디오패드" />
-						<div>비디오패드</div> </a> <a data-value="HitFilm Express"><img
-						class="programs" src="images/mg/HitFilm Express.png" alt="히트필름" />
-						<div>히트필름</div> </a> <a data-value="Premiere Pro"><img
-						class="programs" src="images/mg/Adobe Premiere Pro.png"
-						alt="프리미어프로" />
-						<div>프리미어프로</div> </a> <a data-value="Microsoft Photos"><img
-						class="programs" src="images/mg/Microsoft Photos.png"
-						alt="Microsoft Photos" />
-						<div>Microsoft Photos</div> </a> <a data-value="VSDC Video Editor"><img
-						class="programs" src="images/mg/VSDC Video Editor.jfif"
-						alt="VSDC 비디오 에디터" />
-						<div>VSDC 비디오 에디터</div> </a> <a data-value="Final Cut"><img
-						class="programs" src="images/mg/Final Cut.png" alt="파이널컷" />
-						<div>파이널컷</div> </a> <a data-value="Avid Media Composer"><img
-						class="programs" src="images/mg/Avid Media Composer.png"
-						alt="미디어 컴포저" />
-						<div>미디어 컴포저</div> </a> <a data-value="EDIUS"><img
-						class="programs" src="images/mg/EDIUS X.png" alt="에디우스" />
-						<div>에디우스</div> </a> <a data-value="After Effects"><img
-						class="programs" src="images/mg/Adobe After Effects.png"
-						alt="애프터 이펙트" />
-						<div>애프터 이펙트</div> </a> <a data-value="Mocha Pro"><img
-						class="programs" src="images/mg/Mocha Pro.png" alt="Mocha Pro" />
-						<div>Mocha Pro</div> </a> <a data-value="Eagle"><img
-						class="programs" src="images/mg/Eagle.png" alt="Eagle" />
-						<div>Eagle</div> </a> <a data-value="Nuke"><img class="programs"
-						src="images/mg/Nuke.png" alt="누크" />
-						<div>누크</div> </a>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-IS-AI3/MangoLoco.git
 				</div>
 			</div>
 			<div class="line" style="left: 77.8%; visibility: hidden"></div>
