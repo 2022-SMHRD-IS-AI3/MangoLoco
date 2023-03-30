@@ -29,9 +29,7 @@ public class CartReadCon extends HttpServlet {
 		
 		Shop_BasketDAO dao = new Shop_BasketDAO();
 		List<String> mylist = dao.idBasket(id);
-		for(int i=0; i<mylist.size(); i++) {
-			System.out.println(mylist.get(i));
-		}
+
 		ProductDAO prodDAO = new ProductDAO();
 		List<ProductDTO> mybasket = new ArrayList();
 		for(int i=0; i<mylist.size(); i++) {

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,10 +30,7 @@ public class ReadProductCon extends HttpServlet {
 			}
 		}
 		ProductDAO dao = new ProductDAO();
-		
-		
 		List<ProductDTO> productDTO = dao.allProd(count);
-		
 		
 		JSONObject json = new JSONObject();
 		json.put("productDTO", productDTO);
