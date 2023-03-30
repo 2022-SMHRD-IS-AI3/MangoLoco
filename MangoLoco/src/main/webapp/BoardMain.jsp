@@ -31,10 +31,12 @@
 						<th width="500">제목</td>
 						<th width="120">작성자</td>
 						<th width="100">시간</td>
+						<th width="70"></th>
 					</tr>
 					</thead>
 					<tbody>
 					<%for(int i=0; i<board_list.size(); i++){ %>
+					<%if(board_list.get(i).getCategory() == 1){ %>
 					<tr>
 						<td width="70">공지</td>
 						<td width="500"><a href="BoardDetail.jsp?num=<%=board_list.get(i).getSeq()%>"><%=board_list.get(i).getTitle() %></a></td>
@@ -44,10 +46,9 @@
 							<td><a href="BoardDelCon.do">삭제하기</a></td>
 						<%} %>
 					</tr>
-					<%} %>
+					<%}} %>
 					<%for(int i=0; i<board_list.size(); i++){ %>
 					<tr>
-						<td></td>
 						<td width="70"><%=i+1 %></td>
 						<td width="500"><a href="BoardDetail.jsp?num=<%=board_list.get(i).getSeq()%>"><%=board_list.get(i).getTitle() %></a></td>
 						<td width="120"><%=board_list.get(i).getNick() %></td>
