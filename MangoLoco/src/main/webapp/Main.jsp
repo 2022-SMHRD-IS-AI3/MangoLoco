@@ -658,7 +658,12 @@
 			priceList.push($(item).children('.price').text().replace(/[^0-9]/g, ""));
 			inputval.push($(item).next().children('.cartCnt').val());
 		})
-		window.location.href = `MovePaymentPageCon?tList=${titleList}&pList=${priceList}&val=${inputval}`
+		var url = `kakaoPay.jsp?tList=${titleList}&pList=${priceList}&val=${inputval}`;
+		var width = 500;
+		var height = 600;
+		var left = (screen.width / 2) - (width / 2);
+		var top = (screen.height / 2) - (height / 2);
+		window.open(url, '카카오 결제', 'width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
 	})
 		
 	var imgSrc = "";

@@ -14,11 +14,24 @@
 </head>
 <body>
 <%
+	String mList = request.getParameter("tList");
+	String pList = request.getParameter("pList");
+	String val = request.getParameter("val");
+
+	String[] modelList = mList.split(",");
+	String[] price = pList.split(",");
+	String[] vall = val.split(",");
+
+	int[] priceList = new int[modelList.length];
+	int[] valList = new int[modelList.length];
+
+	for(int i=0; i<modelList.length; i++) {
+		priceList[i] = Integer.parseInt(price[i]);
+		valList[i] = Integer.parseInt(vall[i]);
+	}
+
 	String id = (String)session.getAttribute("id");
 	String nick = (String)session.getAttribute("nick");
-	String[] modelList = (String[])request.getAttribute("modelList");
-	int[] priceList = (int[])request.getAttribute("priceList");
-	int[] valList = (int[])request.getAttribute("valList");
 	
 	int result =0;
 	for(int i=0; i<modelList.length; i++){
@@ -31,12 +44,8 @@
 	String name = Arrays.toString(modelList);
 	
 %>
-<p>카카오페이로 결제하기</p>
-	<button id="check_module" type="button">카카오페이로 결제하기</button>
-	</p>
-
 	<script>
-		$("#check_module").click(function() {
+		$(function() {
 			var IMP = window.IMP; // 생략가능
 			IMP.init('imp74313774');
 			// 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용

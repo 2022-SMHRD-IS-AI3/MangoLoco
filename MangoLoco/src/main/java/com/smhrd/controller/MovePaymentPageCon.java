@@ -26,7 +26,6 @@ public class MovePaymentPageCon extends HttpServlet {
 		for(int i=0; i<modelList.length; i++) {
 			priceList[i] = Integer.parseInt(price[i]);
 			inputval[i] = Integer.parseInt(vall[i]);
-
 		}
 	
 		
