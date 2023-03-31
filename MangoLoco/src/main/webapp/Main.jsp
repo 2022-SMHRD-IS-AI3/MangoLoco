@@ -396,6 +396,7 @@
 	$(window).scroll(function() { 
 	    if($(window).scrollTop() + $(window).height() == $(document).height()) { // 스크롤을 끝까지 내리면
 	        count += limit;
+	    	
 	        // AJAX 요청 보내기
 	        $.ajax({
 	            url: 'ReadProductCon',
@@ -530,6 +531,7 @@
 			console.log(softwareList) // 이쪽에 체크된 목록 데이터 있음
 			count = 0; 
 			count += limit;
+			$('.row.aln-center').empty();
 	        // AJAX 요청 보내기
 		    $.ajax({ // 필터링된 제품 목록 6개씩 출력(db 미완성)
 	            url: 'ReadProductCon',
