@@ -14,7 +14,7 @@
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
-<link rel="stylesheet" href="assets/css/main.css"/>
+<link rel="stylesheet" href="assets/css/main.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -25,13 +25,98 @@
 .filterCate {
 	margin: auto;
 }
+
+.slider-container {
+	position: absolute;
+	width: 1500px;
+	height: 500px;
+	margin: 0 auto;
+	overflow: hidden;
+	top: 420px;
+	transform: translateX(-50%);
+	left: 50%;
+}
+
+.slider-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.slider-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.slider-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 50px;
+	background-color: rgba(241, 238, 198, 0.8);
+	text-align: center;
+	line-height: 50px;
+	font-size: 24px;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.slider-container img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.slider-btn-prev {
+	left: 20px;
+}
+
+.slider-btn-next {
+	right: 20px;
+}
+
+.source {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	color: #fff;
+}
+
+.slide-container .slider-item.active {
+	display: block;
+}
+
+.slide-container .slider-item {
+	display: none;
+}
+
+.slider-wrapper .slider-item.active {
+	background-color: #bbb;
+}
+
+.slider-wrapper .slider-item{
+	background-color: #fff;
+}
 </style>
 </head>
 
 <body class="is-preload">
 	<%
-	MembersDTO user = (MembersDTO)session.getAttribute("user");
-	if(user!= null){
+	MembersDTO user = (MembersDTO) session.getAttribute("user");
+	if (user != null) {
 		String id = user.getId();
 		String nick = user.getNick();
 	}
@@ -41,12 +126,14 @@
 	<!-- Nav -->
 	<nav id="nav">
 		<ul class="container">
-			<li><a href="#top" style="display: flex; align-items: center; color:black;"><i
+			<li><a href="#top"
+				style="display: flex; align-items: center; color: black;"><i
 					class="fa-solid fa-filter"></i>&nbsp; 필터</a></li>
-			<li><a href="#work" style="display: flex; align-items: center; color:black;"><i
+			<li><a href="#work"
+				style="display: flex; align-items: center; color: black;"><i
 					class="fa-solid fa-laptop"></i>&nbsp; 제품</a></li>
 			<li><a href="" id="board"
-				style="display: flex; align-items: center; color:black;"><i
+				style="display: flex; align-items: center; color: black;"><i
 					class="fa-solid fa-clipboard-list"></i>&nbsp; 게시판</a></li>
 			<%
 			if (id != null) {
@@ -55,34 +142,38 @@
 				style="text-align: right; position: absolute; top: 1px; right: 95px; color: #000;"><%=nick%>님
 					어서오세요.</span></li>
 			<li style="position: absolute; top: 10px; right: 0px;"><a
-				href="LogoutCon" class="logTap" id="logout" style="color:black">로그아웃</a></li>
+				href="LogoutCon" class="logTap" id="logout" style="color: black">로그아웃</a></li>
 			<%
 			} else {
 			%>
-			<li style="position: absolute; top: 10px; right: 0px;color:black;"><a
-				href="Login.jsp" class="logTap" style="color:black">로그인</a></li>
+			<li style="position: absolute; top: 10px; right: 0px; color: black;"><a
+				href="Login.jsp" class="logTap" style="color: black">로그인</a></li>
 			<%
 			}
 			%>
 
 		</ul>
 	</nav>
+	<div id="scrollTop"
+		style="position: fixed; width: 50px; height: 50px; background: #f1eec6; bottom: 20px; right: 30px; display: flex; align-items: center; justify-content: center; border: 1px solid #d5d3a1; cursor: pointer;">
+		<i class="fa-solid fa-chevron-up" style="font-size: 30px;"></i>
+	</div>
 	<div id="cartMain" class="reduction">
 		<div id="cartTap">
 			장바구니
 			<ion-icon name="chevron-forward-outline" style="font-size: 25px;"></ion-icon>
 		</div>
 		<div
-			style="position: absolute; width: 80%; height: 50px; left: 10px; top: 30px; font-size: 30px; color:#000; font-family: 'Noto Sans KR', sans-serif;">
+			style="position: absolute; width: 80%; height: 50px; left: 10px; top: 30px; font-size: 30px; color: #000; font-family: 'Noto Sans KR', sans-serif;">
 			&nbsp;&nbsp;장바구니</div>
 		<div id="cartList">
 			<!-- 끌어오면 노트북 제품들 생성 -->
 		</div>
 		<div
-			style="position: absolute; color:#000; width: 80%; height: 50px; left: 50%; bottom: 150px; transform: translateX(-50%); font-size: 25px;">
+			style="position: absolute; color: #000; width: 80%; height: 50px; left: 50%; bottom: 150px; transform: translateX(-50%); font-size: 25px;">
 			총 금액</div>
 		<div
-			style="position: absolute;color:#000; width: 80%; height: 50px; background: none; left: 50%; bottom: 150px; transform: translateX(-50%); text-align: right;">
+			style="position: absolute; color: #000; width: 80%; height: 50px; background: none; left: 50%; bottom: 150px; transform: translateX(-50%); text-align: right;">
 			<span id="result" style="font-size: 30px;">000000000원</span>
 		</div>
 		<a id="payment"
@@ -91,26 +182,55 @@
 	</div>
 	<!-- Home -->
 	<article id="top" class="wrapper style1">
-		
+
 		<div
-			style="position: relative; left: 24%; top: 13%; width: 170px; height: 130px;  margin-bottom: 50px;">
+			style="position: relative; left: 24%; top: 13%; width: 170px; height: 130px; margin-bottom: 50px;">
 			<!-- <img src="images/mango.png" alt=""
 				style="width: 37%; margin-left: 10px; margin-top: 5px;">
 			<h1 style="font-size: 2rem; color: #ffffff;">로코 로고</h1> -->
-		</div> 
+		</div>
+		<!-- 검색창 -->
 		<div class="search"
 			style="position: absolute; left: 50%; top: 24%; transform: translate(-50%, -50%);">
 			<input class="inputSearch" type="text" placeholder="검색어 입력">
-			<button class="searchBtn"><i class="fa-solid fa-magnifying-glass" style="color:black"></i></button>
+			<button class="searchBtn">
+				<i class="fa-solid fa-magnifying-glass" style="color: black"></i>
+			</button>
 		</div>
+		<!-- 이미지 슬라이더 -->
+		<div class="slider-container">
+			<div class="slider-wrapper">
+				<div class="slider-item"
+					style="background-image: url('images/slider/img01.jpg');">
+					<!-- <a href="https://www.vecteezy.com/free-photos" class="source" style="">Free Stock photos by Vecteezy</a> -->
+				</div>
+				<div class="slider-item"
+					style="background-image: url('images/slider/img02.png');">
+					<!-- <a href="http://www.freepik.com" class="source">Designed by Freepik</a> -->
+				</div>
+				<!-- <div class="slider-item" style="background-image: url('images/slider/img03.png');"> -->
+				<!-- <a href="http://www.freepik.com" class="source">Designed by Aleksandr_Samochernyi / Freepik</a> -->
+			<!-- </div> -->
+		</div>
+		<div class="slider-btn slider-btn-prev">
+			<i class="fa-solid fa-chevron-left"></i>
+		</div>
+		<div class="slider-btn slider-btn-next">
+			<i class="fa-solid fa-chevron-right"></i>
+		</div>
+		</div>
+
 		<div class="container"
-			style="background-color:; height: 500px; width: 1600px; position: relative;">
-			<div style="position:absolute; background: #f1eec6; height: 100px; width:100%; left:-22px; border-radius: 20px;"></div>
+			style="background-color:; height: 500px; width: 1600px; position: relative; left: 20px">
+			<div
+				style="position: absolute; background: #f1eec6; height: 100px; width: 100%; left: -22px; border-radius: 20px;"></div>
 			<div
 				style="width: 97%; position: absolute; height: 100%; transform: translate(-50%, -50%); top: 73%; left: 50%;">
 			</div>
-			<div class="filterCate" style="background: #fff;">래스터 그래픽
-				<div style="position:absolute; top:50px; width: 100%; height: 30px; background: none; "></div>
+			<div class="filterCate" style="background: #fff;">
+				래스터 그래픽
+				<div
+					style="position: absolute; top: 50px; width: 100%; height: 30px; background: none;"></div>
 			</div>
 			<div class="filterList">
 				<div class="filter">
@@ -151,8 +271,10 @@
 				</div>
 			</div>
 			<div class="line" style="visibility: hidden"></div>
-			<div class="filterCate" style="left: 20.2%;">벡터 그래픽
-			<div style="position:absolute; top:50px; width: 100%; height: 30px; background: none; "></div>
+			<div class="filterCate" style="left: 20.2%;">
+				벡터 그래픽
+				<div
+					style="position: absolute; top: 50px; width: 100%; height: 30px; background: none;"></div>
 			</div>
 			<div class="filterList" style="left: 20%;">
 				<div class="filter">
@@ -189,8 +311,10 @@
 				</div>
 			</div>
 			<div class="line" style="left: 37.9%; visibility: hidden"></div>
-			<div class="filterCate" style="left: 40.2%;">데스크탑 퍼블리싱
-			<div style="position:absolute; top:50px; width: 100%; height: 30px; background: none; "></div>
+			<div class="filterCate" style="left: 40.2%;">
+				데스크탑 퍼블리싱
+				<div
+					style="position: absolute; top: 50px; width: 100%; height: 30px; background: none;"></div>
 			</div>
 			<div class="filterList" style="left: 40%;">
 				<div class="filter">
@@ -217,94 +341,75 @@
 				</div>
 			</div>
 			<div class="line" style="left: 57.9%; visibility: hidden"></div>
-			<div class="filterCate" style="left: 60.2%;">모션 그래픽
-			<div style="position:absolute; top:50px; width: 100%; height: 30px; background: none; "></div>
+			<div class="filterCate" style="left: 60.2%;">
+				모션 그래픽
+				<div
+					style="position: absolute; top: 50px; width: 100%; height: 30px; background: none;"></div>
 			</div>
 
 			<div class="filterList" style="left: 60%;">
 				<div class="filter">
-					<a data-value="Movavi"><img class="programs" src="images/mg/Movavi.png" alt="모바비" />
-						<div>모바비</div>
-					</a>
-					<a data-value="ActivePresenter"><img class="programs" src="images/mg/ActivePresenter.png"
-							alt="액티브프레젠터" />
-						<div>액티브프레젠터</div>
-					</a>
-					<a data-value="Shotcut"><img class="programs" src="images/mg/Shotcut.png" alt="샷컷" />
-						<div>샷컷</div>
-					</a>
-					<a data-value="OpenShot"><img class="programs" src="images/mg/OpenShot.png" alt="오픈샷" />
-						<div>오픈샷</div>
-					</a>
-					<a data-value="DaVinci Resolve"><img class="programs" src="images/mg/DaVinci Resolve.jfif"
-							alt="다빈치 리졸브" />
-						<div>다빈치 리졸브</div>
-					</a>
-					<a data-value="Video Grabber"><img class="programs" src="images/mg/Video Grabber.jfif"
-							alt="Video Grabber" />
-						<div>Video Grabber</div>
-					</a>
-					<a data-value="iMovie"><img class="programs" src="images/mg/iMovie.png" alt="아이무비" />
-						<div>아이무비</div>
-					</a>
-					<a data-value="VideoProc"><img class="programs" src="images/mg/VideoProc.jfif" alt="비디오 프록" />
-						<div>비디오 프록</div>
-					</a>
-					<a data-value="Icecream Video Editor"><img class="programs"
-							src="images/mg/Icecream Video Editor.png" alt="Icecream Video Editor" />
-						<div>Icecream Video Editor</div>
-					</a>
-					<a data-value="Lightworks"><img class="programs" src="images/mg/Lightworks.png" alt="라이트웍스" />
-						<div>라이트웍스</div>
-					</a>
-					<a data-value="VideoPad Video Editor"><img class="programs"
-							src="images/mg/VideoPad Video Editor.jfif" alt="비디오패드" />
-						<div>비디오패드</div>
-					</a>
-					<a data-value="HitFilm Express"><img class="programs" src="images/mg/HitFilm Express.png"
-							alt="히트필름" />
-						<div>히트필름</div>
-					</a>
-					<a data-value="Premiere Pro"><img class="programs" src="images/mg/Adobe Premiere Pro.png"
-							alt="프리미어프로" />
-						<div>프리미어프로</div>
-					</a>
-					<a data-value="Microsoft Photos"><img class="programs" src="images/mg/Microsoft Photos.png"
-							alt="Microsoft Photos" />
-						<div>Microsoft Photos</div>
-					</a>
-					<a data-value="VSDC Video Editor"><img class="programs" src="images/mg/VSDC Video Editor.jfif"
-							alt="VSDC 비디오 에디터" />
-						<div>VSDC 비디오 에디터</div>
-					</a>
-					<a data-value="Final Cut"><img class="programs" src="images/mg/Final Cut.png" alt="파이널컷" />
-						<div>파이널컷</div>
-					</a>
-					<a data-value="Avid Media Composer"><img class="programs" src="images/mg/Avid Media Composer.png"
-							alt="미디어 컴포저" />
-						<div>미디어 컴포저</div>
-					</a>
-					<a data-value="EDIUS"><img class="programs" src="images/mg/EDIUS X.png" alt="에디우스" />
-						<div>에디우스</div>
-					</a>
-					<a data-value="After Effects"><img class="programs" src="images/mg/Adobe After Effects.png"
-							alt="애프터 이펙트" />
-						<div>애프터 이펙트</div>
-					</a>
-					<a data-value="Mocha Pro"><img class="programs" src="images/mg/Mocha Pro.png" alt="Mocha Pro" />
-						<div>Mocha Pro</div>
-					</a>
-					<a data-value="Eagle"><img class="programs" src="images/mg/Eagle.png" alt="Eagle" />
-						<div>Eagle</div>
-					</a>
-					<a data-value="Nuke"><img class="programs" src="images/mg/Nuke.png" alt="뉴크" />
-						<div>뉴크</div>
-					</a>
+					<a data-value="Movavi"><img class="programs"
+						src="images/mg/Movavi.png" alt="모바비" />
+						<div>모바비</div> </a> <a data-value="ActivePresenter"><img
+						class="programs" src="images/mg/ActivePresenter.png" alt="액티브프레젠터" />
+						<div>액티브프레젠터</div> </a> <a data-value="Shotcut"><img
+						class="programs" src="images/mg/Shotcut.png" alt="샷컷" />
+						<div>샷컷</div> </a> <a data-value="OpenShot"><img class="programs"
+						src="images/mg/OpenShot.png" alt="오픈샷" />
+						<div>오픈샷</div> </a> <a data-value="DaVinci Resolve"><img
+						class="programs" src="images/mg/DaVinci Resolve.jfif"
+						alt="다빈치 리졸브" />
+						<div>다빈치 리졸브</div> </a> <a data-value="Video Grabber"><img
+						class="programs" src="images/mg/Video Grabber.jfif"
+						alt="Video Grabber" />
+						<div>Video Grabber</div> </a> <a data-value="iMovie"><img
+						class="programs" src="images/mg/iMovie.png" alt="아이무비" />
+						<div>아이무비</div> </a> <a data-value="VideoProc"><img
+						class="programs" src="images/mg/VideoProc.jfif" alt="비디오 프록" />
+						<div>비디오 프록</div> </a> <a data-value="Icecream Video Editor"><img
+						class="programs" src="images/mg/Icecream Video Editor.png"
+						alt="Icecream Video Editor" />
+						<div>Icecream Video Editor</div> </a> <a data-value="Lightworks"><img
+						class="programs" src="images/mg/Lightworks.png" alt="라이트웍스" />
+						<div>라이트웍스</div> </a> <a data-value="VideoPad Video Editor"><img
+						class="programs" src="images/mg/VideoPad Video Editor.jfif"
+						alt="비디오패드" />
+						<div>비디오패드</div> </a> <a data-value="HitFilm Express"><img
+						class="programs" src="images/mg/HitFilm Express.png" alt="히트필름" />
+						<div>히트필름</div> </a> <a data-value="Premiere Pro"><img
+						class="programs" src="images/mg/Adobe Premiere Pro.png"
+						alt="프리미어프로" />
+						<div>프리미어프로</div> </a> <a data-value="Microsoft Photos"><img
+						class="programs" src="images/mg/Microsoft Photos.png"
+						alt="Microsoft Photos" />
+						<div>Microsoft Photos</div> </a> <a data-value="VSDC Video Editor"><img
+						class="programs" src="images/mg/VSDC Video Editor.jfif"
+						alt="VSDC 비디오 에디터" />
+						<div>VSDC 비디오 에디터</div> </a> <a data-value="Final Cut"><img
+						class="programs" src="images/mg/Final Cut.png" alt="파이널컷" />
+						<div>파이널컷</div> </a> <a data-value="Avid Media Composer"><img
+						class="programs" src="images/mg/Avid Media Composer.png"
+						alt="미디어 컴포저" />
+						<div>미디어 컴포저</div> </a> <a data-value="EDIUS"><img
+						class="programs" src="images/mg/EDIUS X.png" alt="에디우스" />
+						<div>에디우스</div> </a> <a data-value="After Effects"><img
+						class="programs" src="images/mg/Adobe After Effects.png"
+						alt="애프터 이펙트" />
+						<div>애프터 이펙트</div> </a> <a data-value="Mocha Pro"><img
+						class="programs" src="images/mg/Mocha Pro.png" alt="Mocha Pro" />
+						<div>Mocha Pro</div> </a> <a data-value="Eagle"><img
+						class="programs" src="images/mg/Eagle.png" alt="Eagle" />
+						<div>Eagle</div> </a> <a data-value="Nuke"><img class="programs"
+						src="images/mg/Nuke.png" alt="뉴크" />
+						<div>뉴크</div> </a>
 				</div>
 			</div>
 			<div class="line" style="left: 77.8%; visibility: hidden"></div>
-			<div class="filterCate" style="left: 80.2%;">3D 그래픽
-			<div style="position:absolute; top:50px; width: 100%; height: 30px; background: none; "></div>
+			<div class="filterCate" style="left: 80.2%;">
+				3D 그래픽
+				<div
+					style="position: absolute; top: 50px; width: 100%; height: 30px; background: none;"></div>
 			</div>
 			<div class="filterList" style="left: 80%;">
 				<div class="filter">
@@ -351,7 +456,7 @@
 		<div class="container" id="filterResult"></div>
 		<footer>
 			<a href="#work" id="filterBtn" class="button scrolly"
-				style="left: 50%; transform: translate(-50%, 0%); display: flex; align-items: center; justify-content: center; width: 170px; background: #f1eec6; color:black;">
+				style="left: 50%; transform: translate(-50%, 0%); display: flex; align-items: center; justify-content: center; width: 170px; background: #f1eec6; color: black;">
 				검색</a>
 		</footer>
 	</article>
@@ -533,15 +638,17 @@
 			count += limit;
 			$('.row.aln-center').empty();
 	        // AJAX 요청 보내기
-		    $.ajax({ // 필터링된 제품 목록 6개씩 출력(db 미완성)
-	            url: 'ReadProductCon',
-	            type: 'post',
-	            data: "count="+count+"&limit="+limit+"&soft="+softwareList,
-	            dataType:'json',
-	            success: function(data) {
-	        // 받아온 데이터를 이용하여 화면에 렌더링
-		            for(let i = 0; i < data.productDTO.length; i++) {
-		            	const product = `
+	        $(window).scroll(function() { 
+	    		if($(window).scrollTop() + $(window).height() == $(document).height()) {
+					$.ajax({ // 필터링된 제품 목록 6개씩 출력(db 미완성)
+	 					url: 'ReadProductCon',
+		   				type: 'post',
+			            data: "count="+count+"&limit="+limit+"&soft="+softwareList,
+			            dataType:'json',
+			            success: function(data) {
+				        // 받아온 데이터를 이용하여 화면에 렌더링	        
+			     			for(let i = 0; i < data.productDTO.length; i++) {
+				            	const product = `
 				                       <div class="col-4 col-6-medium col-12-small">
 				                       <article class="box style2">
 				                       <a class="image featured">
@@ -552,10 +659,12 @@
 				                       <p>${data.productDTO[i].price}</p>
 				                       </article>
 				                       </div>`;
-				       	$('.row.aln-center').append(product);
-					}
-				}
-			});
+						       	$('.row.aln-center').append(product);
+							}
+						}
+					});
+	    		}
+	       })
 			$('.checked').each(function (index, item) { // 체크된 목록 삭제
 				$(this).removeClass('checked animate__bounceIn')
 				$(this).children('.fa-check').remove();
@@ -789,11 +898,67 @@
 			 });
 			}
 		})
+		var currentIndex = 0;
+		var maxIndex = $('.slider-item').length - 1;
+
+		function slideTo(index) {
+			if (index < 0) {
+				index = maxIndex;
+			} else if (index > maxIndex) {
+				index = 0;
+			}
+			$('.slider-item').removeClass('active');
+			$('.slider-item').eq(index).addClass('active');
+			currentIndex = index;
+		}
+
+		function slideNext() {
+			slideTo(currentIndex + 1);
+		}
+
+		function slidePrev() {
+			slideTo(currentIndex - 1);
+		}
+
+		$(function() {
+			$('.slider-item').first().addClass('active');
+			setInterval(slideNext, 1100);
+
+			$('.slider-btn-prev').on('click', function() {
+				slidePrev();
+			});
+
+			$('.slider-btn-next').on('click', function() {
+				slideNext();
+			});
+		});
 		
+		/* var slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+		  var i;
+		  var slides = document.getElementsByClassName("slide");
+		  for (i = 0; i < slides.length; i++) {
+		    slides[i].style.display = "none";  
+		  }
+		  slideIndex++;
+		  if (slideIndex > slides.length) {
+		    slideIndex = 1
+		  }    
+		  slides[slideIndex-1].style.display = "block";  
+		  setTimeout(showSlides, 5000); // 5초마다 슬라이드 이동
+		}
+		 */
 		$('#board').on('click',function(e){ // 게시판 이동 기능
 			e.preventDefault();
 			window.location.href = "BoardMain.jsp";
 		})
+	$(document).ready(function(){
+  		$('#scrollTop').click(function(){
+ 	   	$('html, body').animate({scrollTop : 0}, 400);
+		});
+	});
 	</script>
 </body>
 
