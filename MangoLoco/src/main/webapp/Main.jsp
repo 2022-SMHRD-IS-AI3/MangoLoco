@@ -31,11 +31,13 @@
 <body class="is-preload">
 	<%
 	MembersDTO user = (MembersDTO)session.getAttribute("user");
-	
+	if(user!= null){
+		String id = user.getId();
+		String nick = user.getNick();
+	}
 	String id = (String) session.getAttribute("id");
 	String nick = (String) session.getAttribute("nick");
 	%>
-	console.log(user);
 	<!-- Nav -->
 	<nav id="nav">
 		<ul class="container">
@@ -102,9 +104,9 @@
 			<button class="searchBtn">검색</button>
 		</div>
 		<div class="container"
-			style="background-color: yellow; height: 500px; width: 1600px; position: relative;">
+			style="background-color: #8ed9ff; height: 500px; width: 1600px; position: relative;">
 			<div
-				style="background: #2f3542; width: 97%; position: absolute; height: 100%; transform: translate(-50%, -50%); top: 73%; left: 50%;">
+				style=" width: 97%; position: absolute; height: 100%; transform: translate(-50%, -50%); top: 73%; left: 50%;">
 			</div>
 			<div class="filterCate" style="background: bisque;">래스터 그래픽</div>
 			<div class="filterList"
