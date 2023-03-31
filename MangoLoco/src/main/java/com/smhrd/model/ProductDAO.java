@@ -10,17 +10,17 @@ import com.smhrd.mybatis.SqlSessionManager;
 public class ProductDAO {
 	private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	
-	public java.util.List<ProductDTO> allProd(int count) {
+	public java.util.List<ProductDTO> allRead(int count) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		java.util.List<ProductDTO> productList= null;
-		productList = sqlSession.selectList("allread",count);
+		productList = sqlSession.selectList("allRead",count);
 		sqlSession.close();
 		return productList;
 	}
 	
-	public ProductDTO selectAll(String model){
+	public ProductDTO allProd(String model){
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		ProductDTO prodList = sqlSession.selectOne("selectAll", model);
+		ProductDTO prodList = sqlSession.selectOne("allProd", model);
 		sqlSession.close();
 		return prodList;
 	}

@@ -30,7 +30,7 @@ public class ReadProductCon extends HttpServlet {
 			}
 		}
 		ProductDAO dao = new ProductDAO();
-		List<ProductDTO> productDTO = dao.allProd(count);
+		List<ProductDTO> productDTO = dao.allRead(count);
 		
 		JSONObject json = new JSONObject();
 		json.put("productDTO", productDTO);

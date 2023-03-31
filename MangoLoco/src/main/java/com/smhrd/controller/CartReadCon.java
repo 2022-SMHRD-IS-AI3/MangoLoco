@@ -33,7 +33,7 @@ public class CartReadCon extends HttpServlet {
 		ProductDAO prodDAO = new ProductDAO();
 		List<ProductDTO> mybasket = new ArrayList();
 		for(int i=0; i<mylist.size(); i++) {
-			mybasket.add(prodDAO.selectAll(mylist.get(i)));
+			mybasket.add(prodDAO.allProd(mylist.get(i)));
 		}
 		JSONObject json = new JSONObject();
 		json.put("mybasket", mybasket);

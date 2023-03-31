@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ReviewDAO"%>
+<%@page import="com.smhrd.model.ReviewDTO"%>
 <%@page import="java.net.URLDecoder"%>
 <%@page import="com.smhrd.model.ProductDTO"%>
 <%@page import="com.smhrd.model.ProductDAO"%>
@@ -23,15 +25,39 @@
 <body>		
 	<%
 		String model = request.getParameter("model");
-		System.out.println(model);
 		ProductDAO dao = new ProductDAO();
-		ProductDTO productList = dao.selectAll(model);
+		ProductDTO productList = dao.allProd(model);
+		System.out.println(model);
+		ReviewDAO reviewDAO = new ReviewDAO();
+		List<ReviewDTO> list = reviewDAO.allReviews(model);
 	%>
 	
 	<h3><%=productList.getModel()%></h3>
 	<span id = "detail"><%=productList.getDetail() %></span>
 	<br>
 	<img src="img/<%=productList.getModel()%>.jpg" alt="">
+	<br>
+	
+	<%
+	System.out.println(list.size());
+	if (list.size() != 0) {
+		out.print("<table>");
+		out.print("<tr>");
+		out.print("<th>순번</th>");
+		out.print("<th>제목</th>");
+		out.print("<th>내용</th>");
+		out.print("</tr>");
+			for (int i = 0 ; i < list.size(); i++) {
+				out.print("<tr>");
+				out.print("<td>" + (list.get(i).getINDSEQ()+1) + "</td>");
+				out.print("<td>" + list.get(i).getTITLE() + "</td>");
+				out.print("<td>" + list.get(i).getCONTENT() + "</td>");
+				out.print("<tr>");
+			}		
+		out.print("</table>");
+	}
+	%>
+	
 				
 				<a href="Main.jsp"><button id="writer">홈으로가기</button></a>
 			</div>
