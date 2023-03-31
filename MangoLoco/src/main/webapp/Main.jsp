@@ -101,16 +101,16 @@
 		<div class="search"
 			style="position: absolute; left: 50%; top: 24%; transform: translate(-50%, -50%);">
 			<input class="inputSearch" type="text" placeholder="검색어 입력">
-			<button class="searchBtn">검색</button>
+			<button class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
 		</div>
 		<div class="container"
 			style="background-color:; height: 500px; width: 1600px; position: relative;">
-			<div style="position:absolute; background: #b3c6ff; height: 100px; width:100%; left:-25px;"></div>
+			<div style="position:absolute; background: #b3c6ff; height: 100px; width:100%; left:-22px;"></div>
 			<div
 				style="width: 97%; position: absolute; height: 100%; transform: translate(-50%, -50%); top: 73%; left: 50%;">
 			</div>
 			<div class="filterCate" style="background: #fff;">래스터 그래픽
-				<div style="position:absolute; top:50px; width: 100%; height: 300px; background: none; "></div>
+				<div style="position:absolute; top:50px; width: 100%; height: 100px; background: none; "></div>
 			</div>
 			<div class="filterList">
 				<div class="filter">
@@ -151,8 +151,10 @@
 				</div>
 			</div>
 			<div class="line" style="visibility: hidden"></div>
-			<div class="filterCate" style="left: 20.2%;">벡터 그래픽</div>
-			<div class="filterList" style="left: 22%;">
+			<div class="filterCate" style="left: 20.2%;">벡터 그래픽
+			<div style="position:absolute; top:50px; width: 100%; height: 100px; background: none; "></div>
+			</div>
+			<div class="filterList" style="left: 20%;">
 				<div class="filter">
 					<a data-value="Illustrator"><img class="programs"
 						src="images/vg/Illustrator.png" alt="일러스트레이터" />
@@ -187,8 +189,10 @@
 				</div>
 			</div>
 			<div class="line" style="left: 37.9%; visibility: hidden"></div>
-			<div class="filterCate" style="left: 40.2%;">데스크탑 퍼블리싱</div>
-			<div class="filterList" style="left: 42%;">
+			<div class="filterCate" style="left: 40.2%;">데스크탑 퍼블리싱
+			<div style="position:absolute; top:50px; width: 100%; height: 100px; background: none; "></div>
+			</div>
+			<div class="filterList" style="left: 40%;">
 				<div class="filter">
 					<a data-value="InDesign"><img class="programs"
 						src="images/dp/Adobe InDesign.png" alt="인디자인" />
@@ -213,9 +217,11 @@
 				</div>
 			</div>
 			<div class="line" style="left: 57.9%; visibility: hidden"></div>
-			<div class="filterCate" style="left: 60.2%;">모션 그래픽</div>
+			<div class="filterCate" style="left: 60.2%;">모션 그래픽
+			<div style="position:absolute; top:50px; width: 100%; height: 100px; background: none; "></div>
+			</div>
 
-			<div class="filterList" style="left: 62%;">
+			<div class="filterList" style="left: 60%;">
 				<div class="filter">
 					<a data-value="Movavi"><img class="programs" src="images/mg/Movavi.png" alt="모바비" />
 						<div>모바비</div>
@@ -297,7 +303,9 @@
 				</div>
 			</div>
 			<div class="line" style="left: 77.8%; visibility: hidden"></div>
-			<div class="filterCate" style="left: 80.2%;">3D 그래픽</div>
+			<div class="filterCate" style="left: 80.2%;">3D 그래픽
+			<div style="position:absolute; top:50px; width: 100%; height: 100px; background: none; "></div>
+			</div>
 			<div class="filterList" style="left: 80%;">
 				<div class="filter">
 					<a data-value="Autodesk"><img class="programs"
@@ -421,6 +429,7 @@
 			data:"id="+'<%=id%>',
 			dataType:'json',
 			success:function(data){
+				console.log(data);
 				for(let i = 0; i < data.mybasket.length; i++) {
 					const basket = `<div class="cartItem">
 					<div class="productImgDiv">
@@ -435,7 +444,7 @@
 					<a class="downBtn but btnPush">
 					<i class="fa-solid fa-caret-down"></i>
 					</a>
-					<input type="text" class="cartCnt" value="1">
+					<input type="text" class="cartCnt" value="${data.val[i]}">
 					<a class="upBtn but btnPush">
 					<i class="fa-solid fa-caret-up"></i>
 					</a>
@@ -688,19 +697,22 @@
 		})
 		
 		let b = true;
-		setTimeout(() => {
 			$('.titleText .title').each(function (index, item) { // 같은 제품이면 input값 증가
 				if ($(item).text() == titleVal) {
 					let a = $(item).parent().next().children('.cartCnt').val();
 					$(item).parent().next().children('.cartCnt').val(++a);
-					$.ajax({
-						url:"CartUpdateCon",
-						type:'post',
-						data: {
-							model:titleVal,
-							val: $(item).parent().next().children('.cartCnt').val()
-						}
-					})
+					let c = $(item).parent().next().children('.cartCnt').val()
+					setTimeout(() => {
+						$.ajax({
+							url:"CartUpdateCon",
+							type:'post',
+							data: {
+								model:titleVal,
+								val: c
+							}
+						})
+					}, 500);
+					
 					b = false;
 					return b;
 				} else {
@@ -711,7 +723,6 @@
 				$(this).append(str);
 			}
 			priceResult();
-		}, 1000);
 		
 	})
 	$(document).on('mouseover', '.productImgDiv', function () { 

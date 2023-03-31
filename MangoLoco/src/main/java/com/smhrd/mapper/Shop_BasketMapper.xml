@@ -14,10 +14,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from shop_basket where id=#{id} and model=#{model}
 	</delete>
 	
-	<select id="mylist" resultType="String" parameterType="String">
-		select distinct model from shop_basket where id=#{id}
+	<select id="mylist" resultType="Shop_BasketDTO" parameterType="String">
+		select distinct model, val from shop_basket where id=#{id}
 	</select>
-	<update id="samemodel" parameterType="String">
+	<update id="samemodel" parameterType="Shop_BasketDTO">
 		update shop_basket set val=#{val} where model=#{model} and id=#{id}
 	</update>
 </mapper>

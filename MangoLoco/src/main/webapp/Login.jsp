@@ -18,11 +18,11 @@
 
 <body>
 
-	<li onclick="kakaoLogout();">
+	<!-- <li onclick="kakaoLogout();">
       <a href="javascript:void(0)">
           <span>카카오 로그아웃</span>
       </a>
-	</li>
+	</li> -->
 
 	<div class="wrapper">
 		<header>로그인</header>

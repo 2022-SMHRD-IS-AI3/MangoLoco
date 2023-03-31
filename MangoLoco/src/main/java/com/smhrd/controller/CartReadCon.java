@@ -28,15 +28,18 @@ public class CartReadCon extends HttpServlet {
 		String id = request.getParameter("id");
 		
 		Shop_BasketDAO dao = new Shop_BasketDAO();
-		List<String> mylist = dao.idBasket(id);
-
+		List<Shop_BasketDTO> mylist = dao.idBasket(id);
+		List<Integer> mylistval = new ArrayList<Integer>();
 		ProductDAO prodDAO = new ProductDAO();
 		List<ProductDTO> mybasket = new ArrayList();
 		for(int i=0; i<mylist.size(); i++) {
-			mybasket.add(prodDAO.allProd(mylist.get(i)));
+			mybasket.add(prodDAO.allProd(mylist.get(i).getModel()));
+			mylistval.add(mylist.get(i).getVal());
 		}
 		JSONObject json = new JSONObject();
 		json.put("mybasket", mybasket);
+		json.put("val", mylistval);
+		
 
 		response.getWriter().print(json);
 		
