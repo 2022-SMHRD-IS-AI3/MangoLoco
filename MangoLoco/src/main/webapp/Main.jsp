@@ -41,26 +41,26 @@
 	<!-- Nav -->
 	<nav id="nav">
 		<ul class="container">
-			<li><a href="#top" style="display: flex; align-items: center;"><i
+			<li><a href="#top" style="display: flex; align-items: center; color:black;"><i
 					class="fa-solid fa-filter"></i>&nbsp; 필터</a></li>
-			<li><a href="#work" style="display: flex; align-items: center;"><i
+			<li><a href="#work" style="display: flex; align-items: center; color:black;"><i
 					class="fa-solid fa-laptop"></i>&nbsp; 제품</a></li>
 			<li><a href="" id="board"
-				style="display: flex; align-items: center;"><i
+				style="display: flex; align-items: center; color:black;"><i
 					class="fa-solid fa-clipboard-list"></i>&nbsp; 게시판</a></li>
 			<%
 			if (id != null) {
 			%>
 			<li><span
-				style="text-align: right; position: absolute; top: 1px; right: 95px; color: #fff;"><%=nick%>님
+				style="text-align: right; position: absolute; top: 1px; right: 95px; color: #000;"><%=nick%>님
 					어서오세요.</span></li>
 			<li style="position: absolute; top: 10px; right: 0px;"><a
-				href="LogoutCon" class="logTap" id="logout">로그아웃</a></li>
+				href="LogoutCon" class="logTap" id="logout" style="color:black">로그아웃</a></li>
 			<%
 			} else {
 			%>
-			<li style="position: absolute; top: 10px; right: 0px;"><a
-				href="Login.jsp" class="logTap">로그인</a></li>
+			<li style="position: absolute; top: 10px; right: 0px;color:black;"><a
+				href="Login.jsp" class="logTap" style="color:black">로그인</a></li>
 			<%
 			}
 			%>
@@ -73,20 +73,20 @@
 			<ion-icon name="chevron-forward-outline" style="font-size: 25px;"></ion-icon>
 		</div>
 		<div
-			style="position: absolute; width: 80%; height: 50px; left: 10px; top: 30px; font-size: 30px; color:#fff; font-family: 'Noto Sans KR', sans-serif;">
+			style="position: absolute; width: 80%; height: 50px; left: 10px; top: 30px; font-size: 30px; color:#000; font-family: 'Noto Sans KR', sans-serif;">
 			&nbsp;&nbsp;장바구니</div>
 		<div id="cartList">
 			<!-- 끌어오면 노트북 제품들 생성 -->
 		</div>
 		<div
-			style="position: absolute; color:#fff; width: 80%; height: 50px; left: 50%; bottom: 150px; transform: translateX(-50%); font-size: 25px;">
+			style="position: absolute; color:#000; width: 80%; height: 50px; left: 50%; bottom: 150px; transform: translateX(-50%); font-size: 25px;">
 			총 금액</div>
 		<div
-			style="position: absolute;color:#fff; width: 80%; height: 50px; background: none; left: 50%; bottom: 150px; transform: translateX(-50%); text-align: right;">
+			style="position: absolute;color:#000; width: 80%; height: 50px; background: none; left: 50%; bottom: 150px; transform: translateX(-50%); text-align: right;">
 			<span id="result" style="font-size: 30px;">000000000원</span>
 		</div>
 		<a id="payment"
-			style="border-radius: 10px; text-decoration: none; position: absolute; height: 70px; width: 200px; background: #fff; bottom: 30px; right: 10%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; color: black; font-size: 23px;">
+			style="border-radius: 10px; text-decoration: none; position: absolute; height: 70px; width: 200px; background: #fff; bottom: 30px; right: 10%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; color: black; font-size: 23px; cursor: pointer;">
 			결제하기 </a>
 	</div>
 	<!-- Home -->
@@ -101,11 +101,11 @@
 		<div class="search"
 			style="position: absolute; left: 50%; top: 24%; transform: translate(-50%, -50%);">
 			<input class="inputSearch" type="text" placeholder="검색어 입력">
-			<button class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+			<button class="searchBtn"><i class="fa-solid fa-magnifying-glass" style="color:black"></i></button>
 		</div>
 		<div class="container"
 			style="background-color:; height: 500px; width: 1600px; position: relative;">
-			<div style="position:absolute; background: #b3c6ff; height: 100px; width:100%; left:-22px; border-radius: 20px;"></div>
+			<div style="position:absolute; background: #f1eec6; height: 100px; width:100%; left:-22px; border-radius: 20px;"></div>
 			<div
 				style="width: 97%; position: absolute; height: 100%; transform: translate(-50%, -50%); top: 73%; left: 50%;">
 			</div>
@@ -351,8 +351,8 @@
 		<div class="container" id="filterResult"></div>
 		<footer>
 			<a href="#work" id="filterBtn" class="button scrolly"
-				style="left: 50%; transform: translate(-50%, 0%); display: flex; align-items: center; justify-content: center; width: 170px;">
-				필터링</a>
+				style="left: 50%; transform: translate(-50%, 0%); display: flex; align-items: center; justify-content: center; width: 170px; background: #f1eec6; color:black;">
+				검색</a>
 		</footer>
 	</article>
 
