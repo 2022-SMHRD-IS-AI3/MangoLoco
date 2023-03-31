@@ -12,6 +12,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.model.BoardDAO;
 import com.smhrd.model.BoardDTO;
+import com.smhrd.model.ImageSaveDAO;
 import com.smhrd.model.ImageSaveVO;
 
 /**
@@ -51,7 +52,9 @@ public class BoardWriteCon extends HttpServlet {
 		System.out.println("filename : "+filename);
 		System.out.println("content : "+content);
 		
-		ImageSaveVO imgvo = new ImageSaveVO((byte) filename);
+		ImageSaveVO imgvo = new ImageSaveVO((byte[]) filename);
+		String fileN = (String) filename;
+		ImageSaveDAO imgdao = new ImageSaveDAO(fileN, imgvo.getBlob());
 		
 		// DTO로 묶기
 		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, category, imgvo.getBlob());
