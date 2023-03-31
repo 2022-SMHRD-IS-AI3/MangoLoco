@@ -70,7 +70,7 @@
 			'&pw=' + $('input[name=pw]').val(),
 		dataType: 'json',
 		success: function(data) {
-			alert('�α��� ����');
+			alert('로그인에 성공하셨습니다.');
 			window.location.href = 'Main.jsp';
 		},
 		error: function() {

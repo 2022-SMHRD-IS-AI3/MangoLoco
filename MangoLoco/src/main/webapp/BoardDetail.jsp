@@ -25,7 +25,7 @@
 	%>
 			<!-- Q19. 게시글 세부내용 조회 기능 -->	
 			<div id = "board">
-				<table id="list" style="border: 1mm solid black;">
+				<table id="list">
 					<a href="BoardMain.jsp">자유게시판></a>
 					<tr>
 						<td>제목</td>

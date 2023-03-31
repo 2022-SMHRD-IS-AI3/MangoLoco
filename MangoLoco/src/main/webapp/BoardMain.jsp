@@ -65,9 +65,10 @@
 					<%} %>
 				</tbody>
 				</table id="write_btn">
-				<div>
-					<a href="Main.jsp"><button id="writer">홈으로가기</button></a>
-					<a href="BoardWrite.jsp"><button id="writer">작성하러가기</button></a>
+				<br>
+				<div style="text-align: center;">
+					<a href="Main.jsp"><button id="writer" style="width: 100px; height: 35px;">홈으로가기</button></a>
+					<a href="BoardWrite.jsp"><button id="writer"style="width: 100px; height: 35px;">작성하러가기</button></a>
 				</div>
 			</div>
 
