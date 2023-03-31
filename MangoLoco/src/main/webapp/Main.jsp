@@ -104,7 +104,7 @@
 			<button class="searchBtn">ê²€ìƒ‰</button>
 		</div>
 		<div class="container"
-			style="background-color: #8ed9ff; height: 500px; width: 1600px; position: relative;">
+			style="background-color: yellow; height: 500px; width: 1600px; position: relative;">
 			<div
 				style=" width: 97%; position: absolute; height: 100%; transform: translate(-50%, -50%); top: 73%; left: 50%;">
 			</div>
@@ -400,7 +400,7 @@
 	                    <div class="col-4 col-6-medium col-12-small">
 	                    <article class="box style2">
 	                    <a class="image featured" href = "Detail.jsp?model=${data.productDTO[i].model}">
-	                    <img src="img/${data.productDTO[i].model}.jpg" alt="³ëÆ®ºÏ ÀÌ¹ÌÁö">
+	                    <img src="img/${data.productDTO[i].model}.jpg" alt="ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½">
 	                    <i class="fa-solid fa-heart small dislike"></i>
 	                    </a>
 	                    <h3><a href="Detail.jsp?model=${data.productDTO[i].model}">${data.productDTO[i].model}</a></h3>

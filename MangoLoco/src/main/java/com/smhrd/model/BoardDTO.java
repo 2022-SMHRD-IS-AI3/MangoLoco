@@ -18,5 +18,4 @@ public class BoardDTO {
 	private String b_date;
 	private String category;
 //	private BLOB img;
-
 }
