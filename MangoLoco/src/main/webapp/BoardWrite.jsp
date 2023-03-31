@@ -72,13 +72,10 @@
 	<%if(id != null){%>
 	<div class="container" style="align:center;">
 		<div class="row">
-<<<<<<< HEAD
 			<form method="post" action="./BoardWriteCon">
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-=======
 			<form method="post" action="BoardWriteCon.do">
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; position: relative; left: 50%; transform: translateX(-50%);">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-IS-AI3/MangoLoco.git
 					<thead>
 						<tr>
 							<th colspan="2" style="background-color: #2e8b57; text-align:center;">게시판 글쓰기 양식</th>

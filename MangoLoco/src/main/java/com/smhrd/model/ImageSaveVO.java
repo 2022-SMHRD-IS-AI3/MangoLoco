@@ -9,16 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class ImageSaveVO{
-	    private byte blob;
-	 
-	    public byte getBlob() {
-	        return blob;
-	    }
-	    public void setBlob(byte blob) {
-	        this.blob = blob;
-	    }
-	
-
+	    private byte[] blob;
  }
 
 
