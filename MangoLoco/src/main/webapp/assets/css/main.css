@@ -1957,6 +1957,7 @@ ul.actions li:first-child {
 	cursor: default;
 	height: 3.5em;
 	line-height: 3.5em;
+	border-bottom: 1mm solid #386aff;
 }
 
 #nav ul {
@@ -2382,8 +2383,7 @@ button.searchBtn {
 	position: fixed;
 	width: 400px;
 	height: 100%;
-	background: #b3c6ff;
-	opacity:80%;
+	background: gray;
 	left: 0;
 	z-index: 10;
 	transition: all 0.3s ease;

@@ -73,19 +73,19 @@
 			<ion-icon name="chevron-forward-outline" style="font-size: 25px;"></ion-icon>
 		</div>
 		<div
-			style="position: absolute; width: 80%; height: 50px; left: 10px; top: 30px; font-size: 30px; color:#fff font-family: 'Noto Sans KR', sans-serif;">
+			style="position: absolute; width: 80%; height: 50px; left: 10px; top: 30px; font-size: 30px; color:#fff; font-family: 'Noto Sans KR', sans-serif;">
 			&nbsp;&nbsp;장바구니</div>
 		<div id="cartList">
 			<!-- 끌어오면 노트북 제품들 생성 -->
 		</div>
 		<div
-			style="position: absolute; color:#fff; width: 80%; height: 50px; left: 50%; bottom: 190px; transform: translateX(-50%); font-size: 25px;">
+			style="position: absolute; color:#fff; width: 80%; height: 50px; left: 50%; bottom: 150px; transform: translateX(-50%); font-size: 25px;">
 			총 금액</div>
 		<div
-			style="position: absolute;color:#fff; width: 80%; height: 50px; background: none; left: 50%; bottom: 140px; transform: translateX(-50%); text-align: right;">
+			style="position: absolute;color:#fff; width: 80%; height: 50px; background: none; left: 50%; bottom: 150px; transform: translateX(-50%); text-align: right;">
 			<span id="result" style="font-size: 30px;">000000000원</span>
 		</div>
-		<a href="" id="payment"
+		<a id="payment"
 			style="border-radius: 10px; text-decoration: none; position: absolute; height: 70px; width: 200px; background: #fff; bottom: 30px; right: 10%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; color: black; font-size: 23px;">
 			결제하기 </a>
 	</div>
@@ -105,12 +105,12 @@
 		</div>
 		<div class="container"
 			style="background-color:; height: 500px; width: 1600px; position: relative;">
-			<div style="position:absolute; background: #b3c6ff; height: 100px; width:100%; left:-22px;"></div>
+			<div style="position:absolute; background: #b3c6ff; height: 100px; width:100%; left:-22px; border-radius: 20px;"></div>
 			<div
 				style="width: 97%; position: absolute; height: 100%; transform: translate(-50%, -50%); top: 73%; left: 50%;">
 			</div>
 			<div class="filterCate" style="background: #fff;">래스터 그래픽
-				<div style="position:absolute; top:50px; width: 100%; height: 100px; background: none; "></div>
+				<div style="position:absolute; top:50px; width: 100%; height: 30px; background: none; "></div>
 			</div>
 			<div class="filterList">
 				<div class="filter">
@@ -152,7 +152,7 @@
 			</div>
 			<div class="line" style="visibility: hidden"></div>
 			<div class="filterCate" style="left: 20.2%;">벡터 그래픽
-			<div style="position:absolute; top:50px; width: 100%; height: 100px; background: none; "></div>
+			<div style="position:absolute; top:50px; width: 100%; height: 30px; background: none; "></div>
 			</div>
 			<div class="filterList" style="left: 20%;">
 				<div class="filter">
@@ -190,7 +190,7 @@
 			</div>
 			<div class="line" style="left: 37.9%; visibility: hidden"></div>
 			<div class="filterCate" style="left: 40.2%;">데스크탑 퍼블리싱
-			<div style="position:absolute; top:50px; width: 100%; height: 100px; background: none; "></div>
+			<div style="position:absolute; top:50px; width: 100%; height: 30px; background: none; "></div>
 			</div>
 			<div class="filterList" style="left: 40%;">
 				<div class="filter">
@@ -218,7 +218,7 @@
 			</div>
 			<div class="line" style="left: 57.9%; visibility: hidden"></div>
 			<div class="filterCate" style="left: 60.2%;">모션 그래픽
-			<div style="position:absolute; top:50px; width: 100%; height: 100px; background: none; "></div>
+			<div style="position:absolute; top:50px; width: 100%; height: 30px; background: none; "></div>
 			</div>
 
 			<div class="filterList" style="left: 60%;">
@@ -304,7 +304,7 @@
 			</div>
 			<div class="line" style="left: 77.8%; visibility: hidden"></div>
 			<div class="filterCate" style="left: 80.2%;">3D 그래픽
-			<div style="position:absolute; top:50px; width: 100%; height: 100px; background: none; "></div>
+			<div style="position:absolute; top:50px; width: 100%; height: 30px; background: none; "></div>
 			</div>
 			<div class="filterList" style="left: 80%;">
 				<div class="filter">
@@ -438,7 +438,7 @@
 					</div>
 					<div class="titleText">
 					<h4 class="title">${data.mybasket[i].model}</h4>
-					<h4 class="price">${data.mybasket[i].price}</h4>
+					<h4 class="price">${data.mybasket[i].price}원</h4>
 					</div>
 					<div class="cartCntDiv">
 					<a class="downBtn but btnPush">
@@ -649,19 +649,15 @@
 		$('#result').text(result.toLocaleString() + '원');
 		result = 0;
 	}
-	$(document).on('click','#payment',function(e){
-		e.preventDefualt();
+	$(document).on('click','#payment',function(e){ // 결제하기 버튼 클릭 시
 		titleList = [];
 		priceList = [];
 		inputval = [];        
-		$('.titleText').each(function(index, input){
+		$('.titleText').each(function(index, item){
 			titleList.push($(item).children('.title').text());
-			priceList.push($(item).children('.price').text().slice(0, -1));
+			priceList.push($(item).children('.price').text().replace(/[^0-9]/g, ""));
 			inputval.push($(item).next().children('.cartCnt').val());
 		})
-		console.log(titleList);
-		console.log(priceList);
-		console.log(inputval);
 		window.location.href = `MovePaymentPageCon?tList=${titleList}&pList=${priceList}&val=${inputval}`
 	})
 		
