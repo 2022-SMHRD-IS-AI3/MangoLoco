@@ -8,9 +8,11 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class ReviewDTO {
-	private int seq;
-	private int pro_seq;
-	private String r_date;
-	private String title;
-	private String content;
+	private int SEQ;
+	private int INDSEQ;
+	private String MODEL;
+	private String R_DATE;
+	private String TITLE;
+	private String CONTENT;
+	private int RATING;
 }

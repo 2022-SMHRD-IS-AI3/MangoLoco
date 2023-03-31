@@ -70,7 +70,18 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.BoardWriteCon</servlet-class>
 	</servlet>
-
+	<servlet>
+		<servlet-name>KakaoSessionSave</servlet-name>
+		<display-name>KakaoSessionSave</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.KakaoSessionSave</servlet-class>
+	</servlet>
+<servlet>
+		<servlet-name>LogoutCon</servlet-name>
+		<display-name>LogoutCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.LogoutCon</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>CheckIdCon</servlet-name>
 		<url-pattern>/CheckIdCon</url-pattern>
@@ -114,5 +125,13 @@
 	<servlet-mapping>
 		<servlet-name>BoardWriteCon</servlet-name>
 		<url-pattern>/BoardWriteCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>KakaoSessionSave</servlet-name>
+		<url-pattern>/KakaoSessionSave</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutCon</servlet-name>
+		<url-pattern>/LogoutCon</url-pattern>
 	</servlet-mapping>
 </web-app>

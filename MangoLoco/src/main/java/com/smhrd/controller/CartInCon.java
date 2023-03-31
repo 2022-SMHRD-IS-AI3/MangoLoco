@@ -24,9 +24,9 @@ public class CartInCon extends HttpServlet {
 		Shop_BasketDAO basketDAO = new Shop_BasketDAO();
 		int cnt = basketDAO.cartIn(basketDTO);
 		if(cnt > 0) {
-			System.out.println("성공");
+			System.out.println("�깃났");
 		}else {
-			System.out.println("실패");
+			System.out.println("�ㅽ��");
 		}
 	}	
 

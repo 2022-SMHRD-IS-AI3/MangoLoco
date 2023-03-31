@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="boardDetail" resultType="BoardDTO" parameterType="int">
-		select * from board where num=#{num}
+		select * from board where seq=#{num}
 	</select>
 	
 	<delete id="BoardDelete">

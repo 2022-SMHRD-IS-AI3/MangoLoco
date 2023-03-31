@@ -17,5 +17,5 @@ public class BoardDTO {
 	private String content;
 	private String b_date;
 	private String category;
-	private byte img;
+//	private BLOB img;
 }

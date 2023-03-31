@@ -68,6 +68,8 @@
 			
 		</div>
 	</nav> --%>
+	<%String id = (String)session.getAttribute("id"); %> 
+	<%if(id != null){%>
 	<div class="container" style="align:center;">
 		<div class="row">
 <<<<<<< HEAD
@@ -98,6 +100,12 @@
 		</form>
 		</div>
 	</div>
+	<%}else{%>
+	<script type="text/javascript">
+	alert('회원만 작성하실 수 있습니다');
+	window.location.href = "BoardMain.jsp";
+	</script>
+	<%}%>
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>
