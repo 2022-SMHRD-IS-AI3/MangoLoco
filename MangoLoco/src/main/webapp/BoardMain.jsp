@@ -20,6 +20,9 @@
 	<%
 		BoardDAO dao = new BoardDAO();
 		List<BoardDTO> board_list = dao.BoardAll();
+		String id = (String)session.getAttribute("id");
+		String nick = (String)session.getAttribute("nick");
+		
 	%>
 			<div id="board_area">
 			<h1>자유게시판</h1>

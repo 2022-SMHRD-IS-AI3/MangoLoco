@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -21,8 +22,11 @@ import com.smhrd.model.ImageSaveVO;
 public class BoardWriteCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
+		
+		
 		System.out.println("[WriteBoradCon]");
-
 		//MultipartRequest 매개변수 정리
 		//1. request 객체
 		//2. 업로드된 저장경로
@@ -39,13 +43,14 @@ public class BoardWriteCon extends HttpServlet {
 		DefaultFileRenamePolicy rename = new DefaultFileRenamePolicy();
 		
 		MultipartRequest multi = new MultipartRequest(request, path, maxSize, encoding, rename);
-		String category = multi.getParameter("Writetype");
+		String category = multi.getParameter("category");
 		String id = multi.getParameter("id");
 		String title = multi.getParameter("title");
 		String nick = multi.getParameter("nick");
 		Object filename = multi.getParameter("filename");
 		String filename_en = URLEncoder.encode("UTF-8");
 		String content = multi.getParameter("content");
+		
 		
 		System.out.println("title : "+title);
 		System.out.println("writer : "+nick);

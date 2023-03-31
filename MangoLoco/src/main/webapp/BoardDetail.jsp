@@ -13,7 +13,10 @@
 		<link rel="stylesheet" href="assetsBoard/css/board.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		
+
 </head>
+
 <body>
 	<%
 		int num = Integer.parseInt(request.getParameter("num"));
@@ -22,7 +25,7 @@
 	%>
 			<!-- Q19. 게시글 세부내용 조회 기능 -->	
 			<div id = "board">
-				<table id="list">
+				<table id="list" style="border: 1mm solid black;">
 					<a href="BoardMain.jsp">자유게시판></a>
 					<tr>
 						<td>제목</td>

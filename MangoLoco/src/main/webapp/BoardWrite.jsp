@@ -6,6 +6,7 @@
 		<title>Forty by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="assets/css/css.css">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<!-- <link rel="stylesheet" href="./assets/css/boardwrite.css"/> -->
 		<!-- <link rel="stylesheet" href="./assets/css/board/board.css"/> -->
@@ -13,90 +14,47 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 </head>
 <body>
-<%-- <%
-		String userID=null;
-		if(session.getAttribute("userID")!=null){
-			userID=(String)session.getAttribute("userID");
-		}
-	%>
-		<nav class="navbar navbar-inverse">
-		<div class ="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<span class ="icon-bar"></span>
-				<span class ="icon-bar"></span>
-				<span class ="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="main.jsp">JSP 게시판 웹 사이트</a>
-		</div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li><a href="main.jsp">메인</a></li>
-				<li class="active"><a href="bbs.jsp">게시판</a></li>
-			</ul>
-			<%
-				if(userID==null){//로그인이 되어 있지 않다면
-			%>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">접속하기<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="login.jsp">로그인</a></li>
-						<li><a href="join.jsp">회원가입</a></li>
-					</ul>
-				</li>
-			</ul>
-			<%
-				} else{//로그인이 되어있다면
-			%>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">회원관리<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="logoutAction.jsp">로그아웃</a></li>
-					</ul>
-				</li>
-			</ul>
-			<%
-				}
-			%>
-			
-		</div>
-	</nav> --%>
 	<%String id = (String)session.getAttribute("id"); %> 
 	<%if(id != null){%>
-	<div class="container" style="align:center;">
-		<div class="row">
-			<form method="post" action="./BoardWriteCon">
-				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-			<form method="post" action="BoardWriteCon.do">
-				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; position: relative; left: 50%; transform: translateX(-50%);">
-					<thead>
-						<tr>
-							<th colspan="2" style="background-color: #2e8b57; text-align:center;">게시판 글쓰기 양식</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><input type="text" id="title" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" style="width:600px; height: 40px; font-size: 20px"></td>
-						</tr>
-						<tr>
-							<td align="right"><input type="file" class="form-control" name="filename" maxlength="50"></td>
-						</tr>
-						<tr>
-							<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" rows="45" cols="100" style="font-size: 17px;"></textarea></td>
-						</tr>
-					</tbody>
-				</table>
-				<input type="submit" class="btn btn-success pull-right" style="position:relative; left : 50%; transgorm: translateX(-50%); width: 100px; height: 30px;" value="글쓰기">
-		</form>
-		</div>
-	</div>
+	<div class="board_wrap">
+        <div class="board_title">
+            <strong>자유게시판</strong>
+        </div>
+        <form action="BoardWriteCon" method="post">
+        <div class="board_write_wrap">
+            <div class="board_write">
+                <div class="title">
+                    <dl>
+                        <dt>제목</dt>
+                        <dd><input type="text" name="title" placeholder="제목 입력"></dd>
+                    </dl>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>카테고리</dt>
+                        <dd>
+                            <select name="category" id="">
+                                <option value="1">공지</option>
+                                <option value="0">일반</option>
+                            </select>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt></dt>
+                        <dd><input type="file" name="file"></dd>
+                    </dl>
+                </div>
+                <div class="cont">
+                    <textarea placeholder="내용 입력" name="contents"></textarea>
+                </div>
+            </div>
+            <div class="bt_wrap">
+                <a href="view.html" class="on">등록</a>
+                <a href="BoardMain.jsp">취소</a>
+            </div>
+        </div>
+    </div>
+    </form>
 	<%}else{%>
 	<script type="text/javascript">
 	alert('회원만 작성하실 수 있습니다');
