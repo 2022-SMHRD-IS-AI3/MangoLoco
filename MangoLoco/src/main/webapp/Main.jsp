@@ -53,7 +53,7 @@
 			%>
 			<li><span
 				style="text-align: right; position: absolute; top: 1px; right: 95px; color: #fff;"><%=nick%>님
-					어서오세요</span></li>
+					어서오세요.</span></li>
 			<li style="position: absolute; top: 10px; right: 0px;"><a
 				href="LogoutCon" class="logTap" id="logout">로그아웃</a></li>
 			<%
@@ -92,7 +92,7 @@
 	<!-- Home -->
 	<article id="top" class="wrapper style1">
 
-		<div
+		<!-- <div
 			style="position: relative; left: 24%; top: 13%; width: 170px; height: 130px; background-color: #2f3542; margin-bottom: 50px;">
 			<img src="images/mango.png" alt=""
 				style="width: 37%; margin-left: 10px; margin-top: 5px;">
@@ -102,9 +102,9 @@
 			style="position: absolute; left: 50%; top: 24%; transform: translate(-50%, -50%);">
 			<input class="inputSearch" type="text" placeholder="검색어 입력">
 			<button class="searchBtn">검색</button>
-		</div>
+		</div> -->
 		<div class="container"
-			style="background-color: yellow; height: 500px; width: 1600px; position: relative;">
+			style="background-color:; height: 500px; width: 1600px; position: relative;">
 			<div
 				style=" width: 97%; position: absolute; height: 100%; transform: translate(-50%, -50%); top: 73%; left: 50%;">
 			</div>
@@ -341,8 +341,7 @@
 		<div class="container" id="filterResult"></div>
 		<footer>
 			<a href="#work" id="filterBtn" class="button scrolly"
-				style="left: 50%; transform: translate(-50%, 0%); display: flex; align-items: center; justify-content: center; width: 170px;"><ion-icon
-					name="filter-outline" style="font-size: 20px; "></ion-icon>&nbsp
+				style="left: 50%; transform: translate(-50%, 0%); display: flex; align-items: center; justify-content: center; width: 170px;">
 				필터링</a>
 		</footer>
 	</article>
@@ -685,21 +684,33 @@
 			success:function(){
 			}
 		})
+		
 		let b = true;
-		$('.titleText .title').each(function (index, item) { // 같은 제품이면 input값 증가
-			if ($(item).text() == titleVal) {
-				let a = $(item).parent().next().children('.cartCnt').val();
-				$(item).parent().next().children('.cartCnt').val(++a);
-				b = false;
-				return b;
-			} else {
-				b = true;
+		setTimeout(() => {
+			$('.titleText .title').each(function (index, item) { // 같은 제품이면 input값 증가
+				if ($(item).text() == titleVal) {
+					let a = $(item).parent().next().children('.cartCnt').val();
+					$(item).parent().next().children('.cartCnt').val(++a);
+					$.ajax({
+						url:"CartUpdateCon",
+						type:'post',
+						data: {
+							model:titleVal,
+							val: $(item).parent().next().children('.cartCnt').val()
+						}
+					})
+					b = false;
+					return b;
+				} else {
+					b = true;
+				}
+			})
+			if (b) {
+				$(this).append(str);
 			}
-		})
-		if (b) {
-			$(this).append(str);
-		}
-		priceResult();
+			priceResult();
+		}, 1000);
+		
 	})
 	$(document).on('mouseover', '.productImgDiv', function () { 
 			$(this).children('i').css('display', 'block');
