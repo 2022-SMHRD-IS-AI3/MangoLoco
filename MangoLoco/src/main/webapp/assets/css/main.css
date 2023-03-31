@@ -349,7 +349,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-	background-color: #09C;
+	background-color: #b3c6ff;
 	border-radius: 5px;
 }
 
@@ -392,7 +392,7 @@ body::-webkit-scrollbar-track {
 }
 
 .filter::-webkit-scrollbar-thumb {
-	background-color: #09C;
+	background-color: #b3c6ff;
 	border-radius: 10px;
 
 }
@@ -449,14 +449,15 @@ a img {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-radius: 10px;
 }
 
 .filterList {
-	width: 200px;
+	width: 275px;
 	height: 100%;
 	background-color: #ffffff;
 	position: absolute;
-	top: 13%;
+	top: 15%;
 	display: none;
 	border-radius: 10px;
 }
@@ -2328,7 +2329,7 @@ ul.actions li:first-child {
 /* Nav */
 
 #nav {
-	background-color: #09C;
+	background-color: #b3c6ff;
 	text-align: center;
 	position: fixed;
 	left: 0;
@@ -2371,7 +2372,7 @@ ul.actions li:first-child {
 
 #nav a:hover {
 	color: #fff !important;
-	background: #383e4b;
+	background: #2ac6fa;
 }
 
 #nav a.active {
@@ -2750,9 +2751,10 @@ body>article {
 .search {
 	height: 40px;
 	width: 500px;
-	border: 1px solid #383e4b;
+	border: 1px solid #b3c6ff;
 	background-color: #ffffff;
-
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 .inputSearch {
@@ -2766,16 +2768,17 @@ body>article {
 }
 
 button.searchBtn {
-	border-radius: 0%;
+	border-radius: 10px;
 	width: 50px;
 	height: 100%;
 	border: 0px;
-	background: #383e4b;
+	background: #b3c6ff;
 	outline: none;
 	float: right;
 	color: #ffffff;
 	font-weight: normal;
 	padding: 0px
+	
 }
 
 .fa-check {
@@ -2865,7 +2868,7 @@ button.searchBtn {
 }
 
 #cartList::-webkit-scrollbar-thumb {
-	background-color: #09C;
+	background-color: #b3c6ff;
 	border-radius: 10px;
 }
 

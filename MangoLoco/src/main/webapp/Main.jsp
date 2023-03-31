@@ -91,26 +91,28 @@
 	</div>
 	<!-- Home -->
 	<article id="top" class="wrapper style1">
-
-		<!-- <div
-			style="position: relative; left: 24%; top: 13%; width: 170px; height: 130px; background-color: #2f3542; margin-bottom: 50px;">
-			<img src="images/mango.png" alt=""
+		
+		<div
+			style="position: relative; left: 24%; top: 13%; width: 170px; height: 130px;  margin-bottom: 50px;">
+			<!-- <img src="images/mango.png" alt=""
 				style="width: 37%; margin-left: 10px; margin-top: 5px;">
-			<h1 style="font-size: 2rem; color: #ffffff;">로코 로고</h1>
-		</div>
+			<h1 style="font-size: 2rem; color: #ffffff;">로코 로고</h1> -->
+		</div> 
 		<div class="search"
 			style="position: absolute; left: 50%; top: 24%; transform: translate(-50%, -50%);">
 			<input class="inputSearch" type="text" placeholder="검색어 입력">
 			<button class="searchBtn">검색</button>
-		</div> -->
+		</div>
 		<div class="container"
 			style="background-color:; height: 500px; width: 1600px; position: relative;">
+			<div style="position:absolute; background: #b3c6ff; height: 100px; width:100%; left:-25px;"></div>
 			<div
-				style=" width: 97%; position: absolute; height: 100%; transform: translate(-50%, -50%); top: 73%; left: 50%;">
+				style="width: 97%; position: absolute; height: 100%; transform: translate(-50%, -50%); top: 73%; left: 50%;">
 			</div>
-			<div class="filterCate" style="background: bisque;">래스터 그래픽</div>
-			<div class="filterList"
-				style="position: absolute; transform: translate(1%, -5%); background: aqua; border: 10px solid transparent; width: 15%">
+			<div class="filterCate" style="background: #fff;">래스터 그래픽
+				<div style="position:absolute; top:50px; width: 100%; height: 300px; background: none; "></div>
+			</div>
+			<div class="filterList">
 				<div class="filter">
 					<a data-value="Photoshop"><img class="programs"
 						src="images/rg/PhotoShop.png" alt="포토샵"
@@ -150,7 +152,7 @@
 			</div>
 			<div class="line" style="visibility: hidden"></div>
 			<div class="filterCate" style="left: 20.2%;">벡터 그래픽</div>
-			<div class="filterList" style="left: 20%;">
+			<div class="filterList" style="left: 22%;">
 				<div class="filter">
 					<a data-value="Illustrator"><img class="programs"
 						src="images/vg/Illustrator.png" alt="일러스트레이터" />
@@ -186,7 +188,7 @@
 			</div>
 			<div class="line" style="left: 37.9%; visibility: hidden"></div>
 			<div class="filterCate" style="left: 40.2%;">데스크탑 퍼블리싱</div>
-			<div class="filterList" style="left: 40%;">
+			<div class="filterList" style="left: 42%;">
 				<div class="filter">
 					<a data-value="InDesign"><img class="programs"
 						src="images/dp/Adobe InDesign.png" alt="인디자인" />
@@ -213,7 +215,7 @@
 			<div class="line" style="left: 57.9%; visibility: hidden"></div>
 			<div class="filterCate" style="left: 60.2%;">모션 그래픽</div>
 
-			<div class="filterList" style="left: 60%;">
+			<div class="filterList" style="left: 62%;">
 				<div class="filter">
 					<a data-value="Movavi"><img class="programs" src="images/mg/Movavi.png" alt="모바비" />
 						<div>모바비</div>
