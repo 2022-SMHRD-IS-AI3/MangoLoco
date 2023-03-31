@@ -12,6 +12,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.model.BoardDAO;
 import com.smhrd.model.BoardDTO;
+import com.smhrd.model.ImageSaveVO;
 
 /**
  * Servlet implementation class BoardWriteCon
@@ -41,8 +42,8 @@ public class BoardWriteCon extends HttpServlet {
 		String id = multi.getParameter("id");
 		String title = multi.getParameter("title");
 		String nick = multi.getParameter("nick");
-		String filename = multi.getFilesystemName("filename");
-		String filename_en = URLEncoder.encode(filename,"UTF-8");
+		Object filename = multi.getParameter("filename");
+		String filename_en = URLEncoder.encode("UTF-8");
 		String content = multi.getParameter("content");
 		
 		System.out.println("title : "+title);
@@ -50,8 +51,10 @@ public class BoardWriteCon extends HttpServlet {
 		System.out.println("filename : "+filename);
 		System.out.println("content : "+content);
 		
+		ImageSaveVO imgvo = new ImageSaveVO((byte) filename);
+		
 		// DTO로 묶기
-		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, category);
+		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, category, imgvo.getBlob());
 		int cnt = new BoardDAO().upload(dto);
 		
 		if(cnt>0) {
