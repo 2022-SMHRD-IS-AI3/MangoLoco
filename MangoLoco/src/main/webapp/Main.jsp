@@ -73,17 +73,17 @@
 			<ion-icon name="chevron-forward-outline" style="font-size: 25px;"></ion-icon>
 		</div>
 		<div
-			style="position: absolute; width: 80%; height: 50px; left: 10px; top: 20px; font-size: 45px;">
-			&nbsp;&nbsp;&nbsp;장바구니</div>
+			style="position: absolute; width: 80%; height: 50px; left: 10px; top: 30px; font-size: 30px; color:#fff font-family: 'Noto Sans KR', sans-serif;">
+			&nbsp;&nbsp;장바구니</div>
 		<div id="cartList">
 			<!-- 끌어오면 노트북 제품들 생성 -->
 		</div>
 		<div
-			style="position: absolute; width: 80%; height: 50px; left: 50%; bottom: 190px; transform: translateX(-50%); font-size: 45px;">
+			style="position: absolute; color:#fff; width: 80%; height: 50px; left: 50%; bottom: 190px; transform: translateX(-50%); font-size: 25px;">
 			총 금액</div>
 		<div
-			style="position: absolute; width: 80%; height: 50px; background: none; left: 50%; bottom: 140px; transform: translateX(-50%); text-align: right;">
-			<span id="result" style="font-size: 32px;">000000000원</span>
+			style="position: absolute;color:#fff; width: 80%; height: 50px; background: none; left: 50%; bottom: 140px; transform: translateX(-50%); text-align: right;">
+			<span id="result" style="font-size: 30px;">000000000원</span>
 		</div>
 		<a href="" id="payment"
 			style="border-radius: 10px; text-decoration: none; position: absolute; height: 70px; width: 200px; background: #fff; bottom: 30px; right: 10%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; color: black; font-size: 23px;">
