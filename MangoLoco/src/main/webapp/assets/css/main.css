@@ -236,7 +236,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-	background-color: #b3c6ff;
+	background-color: #3a6af9;
 	border-radius: 5px;
 }
 
@@ -299,6 +299,9 @@ body::-webkit-scrollbar-track {
 	text-decoration: none;
 	color: #2f3542;
 }
+.filter a div{
+	text-align: center;
+}
 
 #filterResult {
 	padding-left: 5px;
@@ -320,6 +323,7 @@ body::-webkit-scrollbar-track {
 	cursor: pointer;
 	text-decoration: none;
 	color: black;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 a img {
@@ -2359,7 +2363,7 @@ button.searchBtn {
 
 #cartTap.extend {
 	left: 100%;
-	opacity:80%;
+	opacity:99%;
 	width: 15px;
 }
 

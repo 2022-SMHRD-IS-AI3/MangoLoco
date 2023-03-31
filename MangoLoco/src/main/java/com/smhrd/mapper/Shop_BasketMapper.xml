@@ -20,4 +20,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="samemodel" parameterType="Shop_BasketDTO">
 		update shop_basket set val=#{val} where model=#{model} and id=#{id}
 	</update>
+	
+	<update id="updown" parameterType="Shop_BasketDTO">
+		update shop_basket set val=#{val} where model=#{model} and id=#{id}
+	</update>
 </mapper>

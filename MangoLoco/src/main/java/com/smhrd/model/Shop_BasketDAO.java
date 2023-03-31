@@ -43,5 +43,12 @@ public class Shop_BasketDAO {
 		sqlSession.close();
 		return cnt;
 	}
+	
+	public int updown(Shop_BasketDTO dto) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt = sqlSession.update("updown", dto);
+		sqlSession.close();
+		return cnt;
+	}
 
 }

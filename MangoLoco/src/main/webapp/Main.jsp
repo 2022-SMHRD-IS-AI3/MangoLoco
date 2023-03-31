@@ -531,7 +531,7 @@
 			count = 0; 
 			count += limit;
 	        // AJAX 요청 보내기
-		    $.ajax({ // 필터링된 제품 목록 6개씩 출력(미완성)
+		    $.ajax({ // 필터링된 제품 목록 6개씩 출력(db 미완성)
 	            url: 'ReadProductCon',
 	            type: 'post',
 	            data: "count="+count+"&limit="+limit+"&soft="+softwareList,
@@ -603,15 +603,40 @@
 			let upCnt = $(this).prev().val();
 			$(this).prev().val(++upCnt);
 			priceResult();
+			$.ajax({
+				url:'CartUpdateCon',
+				type:'post',
+				data:{
+					model: $(this).parent().prev().children('.title').text(),
+					val:$(this).prev().val()
+				}
+			})
 		})
 		$(document).on('click', '.downBtn', function () { // 장바구니 안의 제품에 down 버튼 클릭 시
 			let downCnt = $(this).next('.cartCnt').val();
 			if ($(this).next('.cartCnt').val() > 1) {
 				$(this).next('.cartCnt').val(--downCnt);
+				$.ajax({
+					url:'CartUpdateCon',
+					type:'post',
+					data:{
+						model: $(this).parent().prev().children('.title').text(),
+						val:$(this).next().val()
+					}
+				})
 			}
 			priceResult();
 		})
-		$(document).on('keyup', '.cartCnt', function () { priceResult(); }) // input에 값 직접 입력 시
+		$(document).on('keyup', '.cartCnt', function () { 
+			$.ajax({
+				url:'CartUpdateCon',
+				type:'post',
+				data:{
+					model: $(this).parent().prev().children('.title').text(),
+					val:$(this).val()
+				}
+			})
+			priceResult(); }) // input에 값 직접 입력 시
 	})
 	let result = 0;
 	function priceResult() { // 장바구니 총 금액 계산 함수
@@ -628,7 +653,7 @@
 		e.preventDefualt();
 		titleList = [];
 		priceList = [];
-		inputval = [];
+		inputval = [];        
 		$('.titleText').each(function(index, input){
 			titleList.push($(item).children('.title').text());
 			priceList.push($(item).children('.price').text().slice(0, -1));
