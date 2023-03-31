@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.MembersDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -68,13 +69,12 @@
 			
 		</div>
 	</nav> --%>
+	<%MembersDTO user = (MembersDTO)session.getAttribute("user"); %>
 	<%String id = (String)session.getAttribute("id"); %> 
 	<%if(id != null){%>
 	<div class="container" style="align:center;">
 		<div class="row">
 			<form method="post" action="./BoardWriteCon">
-				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-			<form method="post" action="BoardWriteCon.do">
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd; position: relative; left: 50%; transform: translateX(-50%);">
 					<thead>
 						<tr>
@@ -83,7 +83,7 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><input type="text" id="title" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" style="width:600px; height: 40px; font-size: 20px"></td>
+							<td><input type="text" name="title" id="title" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" style="width:600px; height: 40px; font-size: 20px"></td>
 						</tr>
 						<tr>
 							<td align="right"><input type="file" class="form-control" name="filename" maxlength="50"></td>
