@@ -2,7 +2,7 @@ select * from USER_tables;
 select * from members
 insert into members values('aa@aa.aa','aaa','aaa',0)
 delete from members
-
+insert into members values('admin', '1234', 'admin', 0)
 CREATE TABLE MEMBERS (
 	ID VARCHAR2(100) PRIMARY KEY,
 	PW VARCHAR2(100),
@@ -81,7 +81,7 @@ DROP TABLE SHOP_BASKET
 create sequence basket_seq
 	increment by 1
 	start with 1
-
+select distinct model, id, val from shop_basket where id='aa@aa.aa'
 select distinct model from shop_basket where id='qq@qq.qq'
 
 SELECT * 

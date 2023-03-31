@@ -349,7 +349,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-	background-color: #FF6B6B;
+	background-color: #09C;
 	border-radius: 5px;
 }
 
@@ -392,7 +392,7 @@ body::-webkit-scrollbar-track {
 }
 
 .filter::-webkit-scrollbar-thumb {
-	background-color: #FF6B6B;
+	background-color: #09C;
 	border-radius: 10px;
 
 }
@@ -2328,7 +2328,7 @@ ul.actions li:first-child {
 /* Nav */
 
 #nav {
-	background-color: #FF6B6B;
+	background-color: #09C;
 	text-align: center;
 	position: fixed;
 	left: 0;
@@ -2865,7 +2865,7 @@ button.searchBtn {
 }
 
 #cartList::-webkit-scrollbar-thumb {
-	background-color: #FF6B6B;
+	background-color: #09C;
 	border-radius: 10px;
 }
 

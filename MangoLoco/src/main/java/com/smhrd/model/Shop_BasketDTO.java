@@ -17,4 +17,10 @@ public class Shop_BasketDTO {
 	@NonNull
 	private String id;
 	private int val;
+	
+	public Shop_BasketDTO(String model, String id, int val) {
+		this.model = model;
+		this.id = id;
+		this.val = val;
+	}
 }

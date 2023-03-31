@@ -36,5 +36,12 @@ public class Shop_BasketDAO {
 		sqlSession.close();
 		return myList;
 	}
+	
+	public int samemodel(Shop_BasketDTO dto) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt = sqlSession.update("samemodel", dto);
+		sqlSession.close();
+		return cnt;
+	}
 
 }
