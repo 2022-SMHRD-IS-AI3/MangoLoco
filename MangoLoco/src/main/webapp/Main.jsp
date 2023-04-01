@@ -506,7 +506,7 @@
 	const limit = 6; // 몇 개씩 로딩해서 출력할건지
 	// 스크롤 이벤트 발생 시
 	$(window).scroll(function() { 
-	    if($(window).scrollTop() + $(window).height() == $(document).height()) { // 스크롤을 끝까지 내리면
+		if($(window).scrollTop() + $(window).height() >= $(document).height()) { // 스크롤을 끝까지 내리면
 	        count += limit;
 	    	
 	        // AJAX 요청 보내기
@@ -522,7 +522,7 @@
 	                    <div class="col-4 col-6-medium col-12-small">
 	                    <article class="box style2">
 	                    <a class="image featured" href = "Detail.jsp?model=${data.productDTO[i].model}">
-	                    <img src="img/${data.productDTO[i].model}.jpg" alt="��Ʈ�� �̹���">
+	                    <img src="img/${data.productDTO[i].model}.jpg" alt="">
 	                    <i class="fa-solid fa-heart small dislike"></i>
 	                    </a>
 	                    <h3><a href="Detail.jsp?model=${data.productDTO[i].model}">${data.productDTO[i].model}</a></h3>

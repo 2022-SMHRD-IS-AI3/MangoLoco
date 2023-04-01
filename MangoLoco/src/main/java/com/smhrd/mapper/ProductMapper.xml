@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.smhrd.mapper.ProductMapper">
 	<select id="allRead" resultType="ProductDTO" parameterType="int">
 		SELECT * 
-		FROM (SELECT ROWNUM AS RNUM, product.* FROM product ORDER BY seq)
+		FROM (SELECT ROWNUM AS RNUM, product.* FROM product ORDER BY dbms_random.value)
   		 WHERE seq >= #{count} AND <![CDATA[ROWNUM <=6]]>
 	</select>
 

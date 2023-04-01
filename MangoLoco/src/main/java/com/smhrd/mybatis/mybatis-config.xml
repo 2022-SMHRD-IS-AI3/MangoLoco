@@ -12,7 +12,6 @@
 		<typeAlias type="com.smhrd.model.ProductDTO" alias="ProductDTO"/>
 		<typeAlias type="com.smhrd.model.ReviewDTO" alias="ReviewDTO"/>
 		<typeAlias type="com.smhrd.model.BoardDTO" alias="BoardDTO"/>
-		<typeAlias type="com.smhrd.model.ReplyDTO" alias="ReplyDTO"/>
 		<typeAlias type="com.smhrd.model.Shop_BasketDTO" alias="Shop_BasketDTO"/>
 		
 	</typeAliases>
@@ -32,7 +31,6 @@
   	<mapper resource="com/smhrd/mapper/ProductMapper.xml"/>
   	<mapper resource="com/smhrd/mapper/ReviewMapper.xml"/>
   	<mapper resource="com/smhrd/mapper/BoardMapper.xml"/>
-  	<mapper resource="com/smhrd/mapper/ReplyMapper.xml"/>
   	<mapper resource="com/smhrd/mapper/Shop_BasketMapper.xml"/>
   	
   </mappers>
