@@ -45,7 +45,10 @@ public class BoardWriteCon extends HttpServlet {
 		String title = multi.getParameter("bbsTitle");
 		String nick = (String)session.getAttribute("nick");
 		String filename = multi.getFilesystemName("filename");
-		String filename_en = URLEncoder.encode(filename,"UTF-8");
+		String filename_en = null;
+		if(filename != null) {
+			filename_en = URLEncoder.encode(filename,"UTF-8");
+		}
 		String content = multi.getParameter("bbsContent");
 		
 		if(id.equals("admin")) {
@@ -59,6 +62,8 @@ public class BoardWriteCon extends HttpServlet {
 		System.out.println("writer : "+nick);
 		System.out.println("filename : "+filename);
 		System.out.println("content : "+content);
+		
+		
 		
 		// DTO로 묶기
 		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, category, filename_en);
