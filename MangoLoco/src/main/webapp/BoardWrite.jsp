@@ -20,7 +20,7 @@
         <div class="board_title">
             <strong>자유게시판</strong>
         </div>
-        <form action="BoardWriteCon" method="post">
+        <form action="BoardWriteCon" method="post" enctype="multipart/form-data">
         <div class="board_write_wrap">
             <div class="board_write">
                 <div class="title">
@@ -67,10 +67,10 @@
 	window.location.href = "BoardMain.jsp";
 	</script>
 	<%}%>
-	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script type="text/javascript">
-	/* $('.on').on({
+	 $('.on').on({
 		'click':function(){
 			$.ajax({
 			url:'BoardWriteCon',
@@ -86,7 +86,7 @@
 			}
 			})
 		}
-	}) */
-	</script>
+	})
+	</script> -->
 </body>
 </html>
