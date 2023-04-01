@@ -38,11 +38,11 @@ public class BoardWriteCon extends HttpServlet {
 		
 		String category = request.getParameter("category");
 		String id = (String)session.getAttribute("id");
-		String title = request.getParameter("title");
+		String title = request.getParameter("bbsTitle");
 		String nick = (String)session.getAttribute("nick");
 		String filename = request.getParameter("filename");
 		String filename_en = URLEncoder.encode("UTF-8");
-		String content = request.getParameter("contents");
+		String content = request.getParameter("bbsContent");
 		
 		if(id.equals("admin")) {
 			
@@ -60,7 +60,7 @@ public class BoardWriteCon extends HttpServlet {
 		imgvo.setBlob(filename_en);
 		String imgs = imgvo.getBlob();
 		// DTO로 묶기
-		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, category, imgs);
+		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, category, filename_en);
 		int cnt = 0;
 		try {
 		cnt = new BoardDAO().upload(dto);

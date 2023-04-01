@@ -53,8 +53,10 @@
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="BoardWriteCon?" class="on">등록</a>
-                <a href="BoardMain.jsp">취소</a>
+            	<input type="submit" value="등록" class="on" style="width: 100px; height: 35px;">
+            	<a href="BoardMain.jsp" style="border: 0px;"><button style="width: 100px; height: 35px;">취소</button></a>
+               <!--  <a href="BoardWriteCon?" class="on">등록</a>
+                <a href="BoardMain.jsp">취소</a> -->
             </div>
         </div>
     </div>
@@ -65,10 +67,10 @@
 	window.location.href = "BoardMain.jsp";
 	</script>
 	<%}%>
-	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script type="text/javascript">
-	$('.on').on({
+	/* $('.on').on({
 		'click':function(){
 			$.ajax({
 			url:'BoardWriteCon',
@@ -84,7 +86,7 @@
 			}
 			})
 		}
-	})
+	}) */
 	</script>
 </body>
 </html>
