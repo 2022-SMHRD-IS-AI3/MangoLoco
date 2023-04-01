@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.smhrd.mapper.BoardMapper">
 
 	<insert id="upload" parameterType="BoardDTO">
-		insert into board values(num_board.nextval, #{id}, #{nick}, #{title}, #{content}, sysdate, #{category})
+		insert into board values(num_board.nextval, #{id}, #{nick}, #{title}, #{content}, sysdate, #{category}, #{img})
 
 	</insert>
 	
