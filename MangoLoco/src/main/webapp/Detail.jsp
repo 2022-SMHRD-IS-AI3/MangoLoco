@@ -37,10 +37,46 @@ img{
 	ReviewDAO reviewDAO = new ReviewDAO();
 	List<ReviewDTO> list = reviewDAO.allReviews(model);
 	%>
+<<<<<<< HEAD
 	<div>
 	<div style="width: 1000px; margin:auto;"><h3><%=productList.getModel()%></h3>
 		 <br> <img src="img/<%=productList.getModel()%>.jpg" alt=""> 
 		 <br> <div  style="margin-left:320px"><span id="detail"><%=productList.getDetail()%></span></div>
+=======
+	
+	<h3><%=productList.getModel()%></h3>
+	
+	<div style="position: relative; width: 1500px; ">
+	<img src="img/<%=productList.getModel()%>.jpg" alt="" style="width: 300px; height: 300px; position: relative; left: 100px;">
+	<span id = "detail" style="float: right; left:100px; position: absolute;"><%=productList.getDetail() %></span>
+	</div>
+	<br>
+	<br>
+	
+	<%
+	System.out.println(list.size());
+	if (list.size() != 0) {
+		out.print("<table>");
+		out.print("<tr>");
+		out.print("<th width='100px'>순번</th>");
+		out.print("<th>제목</th>");
+		out.print("<th>내용</th>");
+		out.print("</tr>");
+			for (int i = 0 ; i < list.size(); i++) {
+				out.print("<tr>");
+				out.print("<td width='100px' style='text-align:center;'>" + (list.get(i).getINDSEQ()+1) + "</td>");
+				out.print("<td>" + list.get(i).getTITLE() + "</td>");
+				out.print("<td>" + list.get(i).getCONTENT() + "</td>");
+				out.print("<tr>");
+			}		
+		out.print("</table>");
+	}
+	%>
+	
+				
+				<a href="Main.jsp"><button id="writer">홈으로가기</button></a>
+			</div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-IS-AI3/MangoLoco.git
 
 		<%
 		System.out.println(list.size());
