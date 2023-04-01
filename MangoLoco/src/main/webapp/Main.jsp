@@ -504,7 +504,6 @@
 	let nick = '<%=nick%>';
 	let count = 0; //현재 출력된 목록의 개수
 	const limit = 6; // 몇 개씩 로딩해서 출력할건지
-<<<<<<< HEAD
 	// 스크롤 이벤트 발생 시
 	$(window).scroll(function() { 
 		if($(window).scrollTop() + $(window).height() >= $(document).height()) { // 스크롤을 끝까지 내리면
