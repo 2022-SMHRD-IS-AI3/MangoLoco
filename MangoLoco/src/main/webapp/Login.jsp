@@ -18,11 +18,11 @@
 
 <body>
 
-	<li onclick="kakaoLogout();">
+	<!-- <li onclick="kakaoLogout();">
       <a href="javascript:void(0)">
           <span>카카오 로그아웃</span>
       </a>
-	</li>
+	</li> -->
 
 	<div class="wrapper">
 		<header>로그인</header>
@@ -70,7 +70,7 @@
 			'&pw=' + $('input[name=pw]').val(),
 		dataType: 'json',
 		success: function(data) {
-			alert('�α��� ����');
+			alert('로그인에 성공하셨습니다.');
 			window.location.href = 'Main.jsp';
 		},
 		error: function() {

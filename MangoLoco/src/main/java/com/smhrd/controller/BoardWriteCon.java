@@ -17,7 +17,6 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.model.BoardDAO;
 import com.smhrd.model.BoardDTO;
-import com.smhrd.model.ImageSaveDAO;
 import com.smhrd.model.ImageSaveVO;
 import com.smhrd.model.MembersDTO;
 
@@ -27,8 +26,11 @@ public class BoardWriteCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ServletRequest session;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("[WriteBoradCon]");
+		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
+		
+		
+		System.out.println("[WriteBoradCon]");
 		MembersDTO user = (MembersDTO) session.getAttribute("user");
 		//MultipartRequest 매개변수 정리
 		//1. request 객체
@@ -49,6 +51,7 @@ public class BoardWriteCon extends HttpServlet {
 		}else {
 			category = "0";
 		}
+		
 		
 		System.out.println("title : "+title);
 		System.out.println("writer : "+nick);

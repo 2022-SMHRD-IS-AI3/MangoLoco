@@ -30,9 +30,9 @@ public class Shop_BasketDAO {
 		sqlSession.close();
 		return cnt;
 	}
-	public List<String> idBasket(String id) {
+	public List<Shop_BasketDTO> idBasket(String id) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		List<String> myList = sqlSession.selectList("mylist", id);
+		List<Shop_BasketDTO> myList = sqlSession.selectList("mylist", id);
 		sqlSession.close();
 		return myList;
 	}
@@ -40,6 +40,13 @@ public class Shop_BasketDAO {
 	public int samemodel(Shop_BasketDTO dto) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		int cnt = sqlSession.update("samemodel", dto);
+		sqlSession.close();
+		return cnt;
+	}
+	
+	public int updown(Shop_BasketDTO dto) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt = sqlSession.update("updown", dto);
 		sqlSession.close();
 		return cnt;
 	}

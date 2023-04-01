@@ -1,3 +1,4 @@
+<%@page import="java.util.Arrays"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,12 +13,39 @@
 
 </head>
 <body>
-<p>카카오페이로 결제하기</p>
-	<button id="check_module" type="button">카카오페이로 결제하기</button>
-	</p>
+<%
+	String mList = request.getParameter("tList");
+	String pList = request.getParameter("pList");
+	String val = request.getParameter("val");
 
+	String[] modelList = mList.split(",");
+	String[] price = pList.split(",");
+	String[] vall = val.split(",");
+
+	int[] priceList = new int[modelList.length];
+	int[] valList = new int[modelList.length];
+
+	for(int i=0; i<modelList.length; i++) {
+		priceList[i] = Integer.parseInt(price[i]);
+		valList[i] = Integer.parseInt(vall[i]);
+	}
+
+	String id = (String)session.getAttribute("id");
+	String nick = (String)session.getAttribute("nick");
+	
+	int result =0;
+	for(int i=0; i<modelList.length; i++){
+		
+		modelList[i] = modelList[i] + " " + valList[i]+"개";
+	}
+	for(int i=0; i<priceList.length; i++){
+		result += priceList[i] * valList[i];
+	}
+	String name = Arrays.toString(modelList);
+	
+%>
 	<script>
-		$("#check_module").click(function() {
+		$(function() {
 			var IMP = window.IMP; // 생략가능
 			IMP.init('imp74313774');
 			// 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
@@ -51,12 +79,12 @@
 				    참고하세요. 
 				    나중에 포스팅 해볼게요.
 				 */
-				name : '주문명:결제테스트',
+				name : '주문명:<%=name%>',
 				//결제창에서 보여질 이름
-				amount : 1000,
+				amount : <%=result%>,
 				//가격 
-				buyer_email : 'iamport@siot.do',
-				buyer_name : '구매자이름',
+				buyer_email : '<%=id%>',
+				buyer_name : '<%=nick%>',
 				buyer_tel : '010-1234-5678',
 				buyer_addr : '서울특별시 강남구 삼성동',
 				buyer_postcode : '123-456',
