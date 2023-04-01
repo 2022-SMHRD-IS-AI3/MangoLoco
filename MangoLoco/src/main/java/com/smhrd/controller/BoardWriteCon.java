@@ -62,11 +62,8 @@ public class BoardWriteCon extends HttpServlet {
 		// DTO로 묶기
 		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, category, filename_en);
 		int cnt = 0;
-		try {
 		cnt = new BoardDAO().upload(dto);
-		}catch(Exception e) {
-			
-		}
+
 		
 		if(cnt>0) {
 			System.out.println("업로드 성공");
