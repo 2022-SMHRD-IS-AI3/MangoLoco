@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="view.html" class="on">등록</a>
+                <a href="veiw.html" class="on">등록</a>
                 <a href="BoardMain.jsp">취소</a>
             </div>
         </div>
