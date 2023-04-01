@@ -48,19 +48,22 @@
 								<%if(board_list.get(i).getId().equals("admin")){ %>
 							<td><a href="BoardDelCon.do">삭제하기</a></td>
 								<%} %>
+								<%}%>
+								<%}%>
 					</tr>
-					<%}else{ %>
-					<tr>
-						<td width="70"><%=i+1 %></td>
-						<td width="500"><a href="BoardDetail.jsp?num=<%=board_list.get(i).getSeq()%>"><%=board_list.get(i).getTitle() %></a></td>
-						<td width="120"><%=board_list.get(i).getNick() %></td>
-						<td width="100"><%=board_list.get(i).getB_date() %></td>
-						<%if(board_list.get(i).getId().equals("admin")){ %>
-							<td><a href="BoardDelCon.do">삭제하기</a></td>
+						<%for(int k=board_list.size(); k>0; k--){ %>
+							<%if(board_list.get(k-1).getCategory().equals("0")){ %>
+						<tr>
+							<td width="70"><%=k%></td>
+							<td width="500"><a href="BoardDetail.jsp?num=<%=board_list.get(k-1).getSeq()%>"><%=board_list.get(k-1).getTitle() %></a></td>
+							<td width="120"><%=board_list.get(k-1).getNick() %></td>
+							<td width="100"><%=board_list.get(k-1).getB_date() %></td>
+							<%if(board_list.get(k-1).getId().equals("admin")){ %>
+								<td><a href="BoardDelCon.do">삭제하기</a></td>
+							<%} %>
+						</tr>
 						<%} %>
-					</tr>
-					<%} %>
-					<%} %>
+						<%} %>
 					<%} %>
 				</tbody>
 				</table id="write_btn">

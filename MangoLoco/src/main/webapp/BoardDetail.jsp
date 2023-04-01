@@ -45,7 +45,9 @@
 						<td style="width:200px; height:300px; border-right:1px solid black; border-bottom: 1px solid lightblue; text-align: center;">내용</td>
 						<td style="width:800px; height:300px; border-bottom: 1px solid lightblue;">
 							<%=board_detail.getContent() %>
-							<img alt="이미지" src="./file/<%=board_detail.getImg()%>">
+							<%if(board_detail.getImg() != null){%>
+								<img alt="이미지" src="./file/<%=board_detail.getImg()%>">
+							<%} %>
 						</td>
 					</tr>
 						<%if(board_detail.getNick().equals(nick)||board_detail.getNick().equals("admin")){ %>
