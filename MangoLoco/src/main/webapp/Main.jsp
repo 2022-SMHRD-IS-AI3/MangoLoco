@@ -25,7 +25,6 @@
 .filterCate {
 	margin: auto;
 }
-
 .slider-container {
 	position: absolute;
 	width: 1500px;
@@ -63,7 +62,7 @@
 	transform: translateY(-50%);
 	width: 50px;
 	height: 50px;
-	background-color: rgba(241, 238, 198, 0.8);
+	background-color: rgba(241, 238, 198, 0.5);
 	text-align: center;
 	line-height: 50px;
 	font-size: 24px;
@@ -212,13 +211,13 @@
 					style="background-image: url('images/slider/img01.jpg');">
 					<!-- <a href="https://www.vecteezy.com/free-photos" class="source" style="">Free Stock photos by Vecteezy</a> -->
 				</div>
-				<div class="slider-item"
-					style="background-image: url('images/slider/img02.png');">
-					<!-- <a href="http://www.freepik.com" class="source">Designed by Freepik</a> -->
-				</div>
-				<!-- <div class="slider-item" style="background-image: url('images/slider/img03.png');"> -->
+				<!-- <div class="slider-item"
+					style="background-image: url('images/slider/img02.jpg');">
+					Backgrounds Designed By Li From <a href="https://lovepik.com/image-605682091/gradient-blue-tech-banner-background.html">LovePik.com</a>
+				</div> -->
+				<div class="slider-item" style="background-image: url('images/slider/img03.jpg');">
 				<!-- <a href="http://www.freepik.com" class="source">Designed by Aleksandr_Samochernyi / Freepik</a> -->
-			<!-- </div> -->
+			</div>
 		</div>
 		<div class="slider-btn slider-btn-prev">
 			<i class="fa-solid fa-chevron-left"></i>
@@ -935,14 +934,14 @@
   $('.slider-btn-prev').click(function() {
     clearInterval(interval);
     slide('prev');
-    interval = setInterval(autoSlide, 3000);
+    interval = setInterval(autoSlide, 2000);
   });
 
   // 다음 버튼 클릭 시 이벤트
   $('.slider-btn-next').click(function() {
     clearInterval(interval);
     slide('next');
-    interval = setInterval(autoSlide, 3000);
+    interval = setInterval(autoSlide, 2000);
   });
 });
 

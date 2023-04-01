@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript"
-	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script type="text/javascript"
 	src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
@@ -46,29 +46,12 @@
 		$(function() {
 			var IMP = window.IMP; // 생략가능
 			IMP.init('imp74313774');
+			// TC0ONETIME
 			// 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
 			// i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
 			IMP.request_pay({
-				pg : 'kakao', // version 1.1.0부터 지원.
-				/* 
-				    'kakao':카카오페이, 
-				    html5_inicis':이니시스(웹표준결제)
-				        'nice':나이스페이
-				        'jtnet':제이티넷
-				        'uplus':LG유플러스
-				        'danal':다날
-				        'payco':페이코
-				        'syrup':시럽페이
-				        'paypal':페이팔
-				 */
+				pg : "kakaopay", // version 1.1.0부터 지원.
 				pay_method : 'card',
-				/* 
-				    'samsung':삼성페이, 
-				    'card':신용카드, 
-				    'trans':실시간계좌이체,
-				    'vbank':가상계좌,
-				    'phone':휴대폰소액결제 
-				 */
 				merchant_uid : 'merchant_' + new Date().getTime(),
 				/* 
 				    merchant_uid에 경우 
