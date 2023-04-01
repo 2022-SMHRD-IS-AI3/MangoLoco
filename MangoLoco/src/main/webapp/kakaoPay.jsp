@@ -32,7 +32,6 @@
 
 	String id = (String)session.getAttribute("id");
 	String nick = (String)session.getAttribute("nick");
-	
 	int result =0;
 	for(int i=0; i<modelList.length; i++){
 		
@@ -42,7 +41,6 @@
 		result += priceList[i] * valList[i];
 	}
 	String name = Arrays.toString(modelList);
-	
 %>
 	<script>
 		$(function() {

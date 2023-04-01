@@ -95,16 +95,24 @@
 	color: #fff;
 }
 
-.slide-container .slider-item.active {
-	display: block;
+.slider-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 
-.slide-container .slider-item {
-	display: none;
+.slider-item.active {
+  opacity: 1;
 }
 
 .slider-wrapper .slider-item.active {
-	background-color: #bbb;
+	background-color: #fff;
 }
 
 .slider-wrapper .slider-item{
@@ -898,58 +906,46 @@
 			 });
 			}
 		})
-		var currentIndex = 0;
-		var maxIndex = $('.slider-item').length - 1;
+		$(document).ready(function() {
 
-		function slideTo(index) {
-			if (index < 0) {
-				index = maxIndex;
-			} else if (index > maxIndex) {
-				index = 0;
-			}
-			$('.slider-item').removeClass('active');
-			$('.slider-item').eq(index).addClass('active');
-			currentIndex = index;
-		}
+  // 자동 슬라이드 interval 설정 (3초)
+  var interval = setInterval(autoSlide, 3000);
 
-		function slideNext() {
-			slideTo(currentIndex + 1);
-		}
+  // 슬라이드 화면 이동 함수
+  function slide(direction) {
+    var currentSlide = $('.slider-item.active');
+    var nextSlide = currentSlide.next('.slider-item').length ? currentSlide.next('.slider-item') : $('.slider-item').first();
+    var prevSlide = currentSlide.prev('.slider-item').length ? currentSlide.prev('.slider-item') : $('.slider-item').last();
 
-		function slidePrev() {
-			slideTo(currentIndex - 1);
-		}
+    currentSlide.removeClass('active');
 
-		$(function() {
-			$('.slider-item').first().addClass('active');
-			setInterval(slideNext, 1100);
+    if (direction === 'next') {
+      nextSlide.addClass('active');
+    } else {
+      prevSlide.addClass('active');
+    }
+  }
 
-			$('.slider-btn-prev').on('click', function() {
-				slidePrev();
-			});
+  // 자동 슬라이드 함수
+  function autoSlide() {
+    slide('next');
+  }
 
-			$('.slider-btn-next').on('click', function() {
-				slideNext();
-			});
-		});
-		
-		/* var slideIndex = 0;
-		showSlides();
+  // 이전 버튼 클릭 시 이벤트
+  $('.slider-btn-prev').click(function() {
+    clearInterval(interval);
+    slide('prev');
+    interval = setInterval(autoSlide, 3000);
+  });
 
-		function showSlides() {
-		  var i;
-		  var slides = document.getElementsByClassName("slide");
-		  for (i = 0; i < slides.length; i++) {
-		    slides[i].style.display = "none";  
-		  }
-		  slideIndex++;
-		  if (slideIndex > slides.length) {
-		    slideIndex = 1
-		  }    
-		  slides[slideIndex-1].style.display = "block";  
-		  setTimeout(showSlides, 5000); // 5초마다 슬라이드 이동
-		}
-		 */
+  // 다음 버튼 클릭 시 이벤트
+  $('.slider-btn-next').click(function() {
+    clearInterval(interval);
+    slide('next');
+    interval = setInterval(autoSlide, 3000);
+  });
+});
+
 		$('#board').on('click',function(e){ // 게시판 이동 기능
 			e.preventDefault();
 			window.location.href = "BoardMain.jsp";
