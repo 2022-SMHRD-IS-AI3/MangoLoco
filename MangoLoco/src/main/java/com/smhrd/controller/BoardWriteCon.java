@@ -28,30 +28,28 @@ public class BoardWriteCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		
-		
+
 		System.out.println("[WriteBoradCon]");
-		MembersDTO user = (MembersDTO) session.getAttribute("user");
 		//MultipartRequest 매개변수 정리
 		//1. request 객체
 		//2. 업로드된 저장경로
 		String path = request.getServletContext().getRealPath("file");
 		System.out.println(path);
 		
-		String category = request.getParameter("Writetype");
+		String category = request.getParameter("category");
 		String id = (String)session.getAttribute("id");
 		String title = request.getParameter("title");
 		String nick = (String)session.getAttribute("nick");
 		String filename = request.getParameter("filename");
 		String filename_en = URLEncoder.encode("UTF-8");
-		String content = request.getParameter("bbsContent");
+		String content = request.getParameter("contents");
 		
 		if(id.equals("admin")) {
 			
 		}else {
 			category = "0";
 		}
-		
+		System.out.println(category);
 		
 		System.out.println("title : "+title);
 		System.out.println("writer : "+nick);
@@ -63,7 +61,12 @@ public class BoardWriteCon extends HttpServlet {
 		String imgs = imgvo.getBlob();
 		// DTO로 묶기
 		BoardDTO dto = new BoardDTO(0, id, nick, title, content, null, category, imgs);
-		int cnt = new BoardDAO().upload(dto);
+		int cnt = 0;
+		try {
+		cnt = new BoardDAO().upload(dto);
+		}catch(Exception e) {
+			
+		}
 		
 		if(cnt>0) {
 			System.out.println("업로드 성공");

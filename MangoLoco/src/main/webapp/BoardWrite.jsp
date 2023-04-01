@@ -33,10 +33,14 @@
                     <dl>
                         <dt>카테고리</dt>
                         <dd>
+                        <%if(id.equals("admin")){ %>
                             <select name="category" id="">
                                 <option value="1">공지</option>
                                 <option value="0">일반</option>
                             </select>
+                            <%}else{%>
+                            	일반
+                            <%} %>
                         </dd>
                     </dl>
                     <dl>
@@ -49,7 +53,7 @@
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="view.html" class="on">등록</a>
+                <a href="BoardWriteCon?" class="on">등록</a>
                 <a href="BoardMain.jsp">취소</a>
             </div>
         </div>
@@ -63,5 +67,24 @@
 	<%}%>
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+	$('.on').on({
+		'click':function(){
+			$.ajax({
+			url:'BoardWriteCon',
+			type:'post',
+			data:{
+				title:$('input[name="bbsTitle"]').val(),
+				category:$('select[name="category"]').val(),
+				contents:$('input[name="bbsContent"]').val(),
+				filename:$('input[name="filename"]').val()
+			},
+			success:function(){
+				window.location.href = 'BoardMain.jsp';
+			}
+			})
+		}
+	})
+	</script>
 </body>
 </html>
