@@ -504,19 +504,17 @@
 	let nick = '<%=nick%>';
 	let count = 0; //현재 출력된 목록의 개수
 	const limit = 6; // 몇 개씩 로딩해서 출력할건지
+<<<<<<< HEAD
 	// 스크롤 이벤트 발생 시
 	$(window).scroll(function() { 
 		if($(window).scrollTop() + $(window).height() >= $(document).height()) { // 스크롤을 끝까지 내리면
 	        count += limit;
-	    	
-	        // AJAX 요청 보내기
 	        $.ajax({
 	            url: 'ReadProductCon',
 	            type: 'post',
 	            data: "count="+count+"&limit="+limit,
 	            dataType:'json',
 	            success: function(data) {
-	                // 받아온 데이터를 이용하여 화면에 렌더링
 	                for(let i = 0; i < data.productDTO.length; i++) {
 	                    const product = `
 	                    <div class="col-4 col-6-medium col-12-small">
@@ -905,51 +903,47 @@
 			 });
 			}
 		})
-		$(document).ready(function() {
+		
+	$(document).ready(function() { // 자동 슬라이드 설정
+		var interval = setInterval(autoSlide, 3000);
 
-  // 자동 슬라이드 interval 설정 (3초)
-  var interval = setInterval(autoSlide, 3000);
+		function slide(direction) { // 슬라이드 화면 이동
+			var currentSlide = $('.slider-item.active');
+			var nextSlide = currentSlide.next('.slider-item').length ? currentSlide.next('.slider-item') : $('.slider-item').first();
+			var prevSlide = currentSlide.prev('.slider-item').length ? currentSlide.prev('.slider-item') : $('.slider-item').last();
 
-  // 슬라이드 화면 이동 함수
-  function slide(direction) {
-    var currentSlide = $('.slider-item.active');
-    var nextSlide = currentSlide.next('.slider-item').length ? currentSlide.next('.slider-item') : $('.slider-item').first();
-    var prevSlide = currentSlide.prev('.slider-item').length ? currentSlide.prev('.slider-item') : $('.slider-item').last();
+   			currentSlide.removeClass('active');
 
-    currentSlide.removeClass('active');
+   			if (direction === 'next') {
+				nextSlide.addClass('active');
+    		} else {
+				prevSlide.addClass('active');
+			}
+		}
 
-    if (direction === 'next') {
-      nextSlide.addClass('active');
-    } else {
-      prevSlide.addClass('active');
-    }
-  }
+		function autoSlide() { // 자동 슬라이드 함수
+			slide('next');
+  		}
 
-  // 자동 슬라이드 함수
-  function autoSlide() {
-    slide('next');
-  }
+  		$('.slider-btn-prev').click(function() { // 이전 버튼 클릭 시 이벤트
+    		clearInterval(interval);
+    		slide('prev');
+    		interval = setInterval(autoSlide, 2000);
+  		});
+  		
+  		$('.slider-btn-next').click(function() { // 다음 버튼 클릭 시 이벤트
+    		clearInterval(interval);
+    		slide('next');
+    		interval = setInterval(autoSlide, 2000);
+  		});
+	});
 
-  // 이전 버튼 클릭 시 이벤트
-  $('.slider-btn-prev').click(function() {
-    clearInterval(interval);
-    slide('prev');
-    interval = setInterval(autoSlide, 2000);
-  });
-
-  // 다음 버튼 클릭 시 이벤트
-  $('.slider-btn-next').click(function() {
-    clearInterval(interval);
-    slide('next');
-    interval = setInterval(autoSlide, 2000);
-  });
-});
-
-		$('#board').on('click',function(e){ // 게시판 이동 기능
-			e.preventDefault();
-			window.location.href = "BoardMain.jsp";
-		})
-	$(document).ready(function(){
+	$('#board').on('click',function(e){ // 게시판 이동 기능
+		e.preventDefault();
+		window.location.href = "BoardMain.jsp";
+	})
+	
+	$(document).ready(function(){ // 오른쪽 밑의 업 버튼 클릭 시 화면 최상단 이동
   		$('#scrollTop').click(function(){
  	   	$('html, body').animate({scrollTop : 0}, 400);
 		});
