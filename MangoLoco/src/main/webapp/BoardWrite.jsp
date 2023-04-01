@@ -51,7 +51,7 @@
                 <div class="title">
                     <dl>
                         <dt>제목</dt>
-                        <dd><input type="text" name="title" placeholder="제목 입력"></dd>
+                        <dd><input type="text" name="bbsTitle" placeholder="제목 입력"></dd>
                     </dl>
                 </div>
                 <div class="info">
@@ -66,167 +66,11 @@
                     </dl>
                     <dl>
                         <dt></dt>
-                        <dd><input type="file" name="file"></dd>
+                        <dd><input type="file" name="filename"></dd>
                     </dl>
                 </div>
                 <div class="cont">
-                    <textarea placeholder="내용 입력" name="contents"></textarea>
-                </div>
-            </div>
-            <div class="bt_wrap">
-                <a href="view.html" class="on">등록</a>
-                <a href="BoardMain.jsp">취소</a>
-            </div>
-        </div>
-    </div>
-    </form>
-	<div class="board_wrap">
-        <div class="board_title">
-            <strong>자유게시판</strong>
-        </div>
-        <form action="BoardWriteCon" method="post">
-        <div class="board_write_wrap">
-            <div class="board_write">
-                <div class="title">
-                    <dl>
-                        <dt>제목</dt>
-                        <dd><input type="text" name="title" placeholder="제목 입력"></dd>
-                    </dl>
-                </div>
-                <div class="info">
-                    <dl>
-                        <dt>카테고리</dt>
-                        <dd>
-                            <select name="category" id="">
-                                <option value="1">공지</option>
-                                <option value="0">일반</option>
-                            </select>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt></dt>
-                        <dd><input type="file" name="file"></dd>
-                    </dl>
-                </div>
-                <div class="cont">
-                    <textarea placeholder="내용 입력" name="contents"></textarea>
-                </div>
-            </div>
-            <div class="bt_wrap">
-                <a href="view.html" class="on">등록</a>
-                <a href="BoardMain.jsp">취소</a>
-            </div>
-        </div>
-    </div>
-    </form>
-	<div class="board_wrap">
-        <div class="board_title">
-            <strong>자유게시판</strong>
-        </div>
-        <form action="BoardWriteCon" method="post">
-        <div class="board_write_wrap">
-            <div class="board_write">
-                <div class="title">
-                    <dl>
-                        <dt>제목</dt>
-                        <dd><input type="text" name="title" placeholder="제목 입력"></dd>
-                    </dl>
-                </div>
-                <div class="info">
-                    <dl>
-                        <dt>카테고리</dt>
-                        <dd>
-                            <select name="category" id="">
-                                <option value="1">공지</option>
-                                <option value="0">일반</option>
-                            </select>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt></dt>
-                        <dd><input type="file" name="file"></dd>
-                    </dl>
-                </div>
-                <div class="cont">
-                    <textarea placeholder="내용 입력" name="contents"></textarea>
-                </div>
-            </div>
-            <div class="bt_wrap">
-                <a href="view.html" class="on">등록</a>
-                <a href="BoardMain.jsp">취소</a>
-            </div>
-        </div>
-    </div>
-    </form>
-	<div class="board_wrap">
-        <div class="board_title">
-            <strong>자유게시판</strong>
-        </div>
-        <form action="BoardWriteCon" method="post">
-        <div class="board_write_wrap">
-            <div class="board_write">
-                <div class="title">
-                    <dl>
-                        <dt>제목</dt>
-                        <dd><input type="text" name="title" placeholder="제목 입력"></dd>
-                    </dl>
-                </div>
-                <div class="info">
-                    <dl>
-                        <dt>카테고리</dt>
-                        <dd>
-                            <select name="category" id="">
-                                <option value="1">공지</option>
-                                <option value="0">일반</option>
-                            </select>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt></dt>
-                        <dd><input type="file" name="file"></dd>
-                    </dl>
-                </div>
-                <div class="cont">
-                    <textarea placeholder="내용 입력" name="contents"></textarea>
-                </div>
-            </div>
-            <div class="bt_wrap">
-                <a href="view.html" class="on">등록</a>
-                <a href="BoardMain.jsp">취소</a>
-            </div>
-        </div>
-    </div>
-    </form>
-	<div class="board_wrap">
-        <div class="board_title">
-            <strong>자유게시판</strong>
-        </div>
-        <form action="BoardWriteCon" method="post">
-        <div class="board_write_wrap">
-            <div class="board_write">
-                <div class="title">
-                    <dl>
-                        <dt>제목</dt>
-                        <dd><input type="text" name="title" placeholder="제목 입력"></dd>
-                    </dl>
-                </div>
-                <div class="info">
-                    <dl>
-                        <dt>카테고리</dt>
-                        <dd>
-                            <select name="category" id="">
-                                <option value="1">공지</option>
-                                <option value="0">일반</option>
-                            </select>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt></dt>
-                        <dd><input type="file" name="file"></dd>
-                    </dl>
-                </div>
-                <div class="cont">
-                    <textarea placeholder="내용 입력" name="contents"></textarea>
+                    <textarea placeholder="내용 입력" name="bbsContent"></textarea>
                 </div>
             </div>
             <div class="bt_wrap">
