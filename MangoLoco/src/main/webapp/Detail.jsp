@@ -37,12 +37,10 @@ img{
 	ReviewDAO reviewDAO = new ReviewDAO();
 	List<ReviewDTO> list = reviewDAO.allReviews(model);
 	%>
-<<<<<<< HEAD
 	<div>
 	<div style="width: 1000px; margin:auto;"><h3><%=productList.getModel()%></h3>
 		 <br> <img src="img/<%=productList.getModel()%>.jpg" alt=""> 
 		 <br> <div  style="margin-left:320px"><span id="detail"><%=productList.getDetail()%></span></div>
-=======
 	
 	<h3><%=productList.getModel()%></h3>
 	
@@ -76,7 +74,6 @@ img{
 				
 				<a href="Main.jsp"><button id="writer">홈으로가기</button></a>
 			</div>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-IS-AI3/MangoLoco.git
 
 		<%
 		System.out.println(list.size());
