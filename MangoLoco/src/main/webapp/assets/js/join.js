@@ -130,7 +130,7 @@ form.addEventListener('submit', function(e) {
 			dataType: "json",
 			success: function(data) {
 				alert('회원가입 성공');
-				window.location.href = `Main.jsp`;
+				window.location.href = `Login.jsp`;
 			},
 			error: function() {
 				alert('회원가입 실패');
