@@ -17,7 +17,8 @@
 
 ## 외부 리소스 정보
 - HTML 문서 템플릿 소스 : HTML5UP - Miniport (https://html5up.net/miniport)
-- 데이터 크롤링 소스 : 다나와 노트북 사이트 (https://prod.danawa.com/list/?cate=112758&15main_11_02) : 노트북 기본 정보, 세부 정보, 이미지, 개별 리뷰 등   Passmark (https://www.passmark.com/) : CPU, GPU Benchmark 점수 (정량적 성능평가 점수)
+- 데이터 크롤링 소스 : 다나와 노트북 사이트 (https://prod.danawa.com/list/?cate=112758&15main_11_02) : 노트북 기본 정보, 세부 정보, 이미지, 개별 리뷰 등
+                      Passmark (https://www.passmark.com/) : CPU, GPU Benchmark 점수 (정량적 성능평가 점수)
 - DB : JDBC, SQLDeveloper
 - Server : Apache Tomcat - 9.0.71
 - Mapper Framework : MyBatis
